@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site Properties -->
+    <title>Xarago - Minimalist Shopping Template</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/slideshow.css">
+    <link rel="stylesheet" href="css/components/slidenav.css">
+    <link rel="stylesheet" href="css/components/mediaelement.css">
+    <link rel="stylesheet" href="css/components/small-icon.css">
+</head>
+
+<body>
+    <section id="main-container">
+        <header>
+            <div id="primary-info">
+                <div class="uk-container uk-container-center">
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- main logo begin -->
+                            <div id="logo">
+                                <a href="index.html"><img src="images/logo.svg" alt="xarago" /></a>
+                            </div>
+                            <div id="slogan">
+                                <p>making your home, as unique as you.</p>
+                            </div>
+                            <!-- main logo end -->
+                        </div>
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- top info begin -->
+                            <div class="idz-header-list">
+                                <ul class="uk-list uk-align-right">
+                                    <li class="idz-mini-info">
+                                        <div class="uk-button-dropdown" data-uk-dropdown>
+                                            <a href=""><span class="uk-icon-button uk-icon-shopping-cart"></span><div class="uk-badge uk-badge-notification uk-badge-danger">2</div>$ 12,685.00</a>
+                                            <div class="uk-dropdown uk-dropdown-center">
+                                                <ul class="uk-nav uk-nav-dropdown idz-product-widget">
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb1a.jpg" alt="">
+                                                            <p>Graham Sofa in Blue</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb2.jpg" alt="">
+                                                            <p>Zahra Armchair</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="subtotal-price">
+                                                        <h6>Subtotal : $ 12,685.00</h6>
+                                                    </li>
+                                                    <li>
+                                                        <a href="shopping-cart.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">View cart</a>
+                                                        <a href="checkout.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">Checkout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                </ul>
+                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                    <fieldset>
+                                        <input type="text" placeholder="search...">
+                                        <select>
+                                            <option>all categories</option>
+                                            <option>new arrivals</option>
+                                            <option>furniture</option>
+                                            <option>living room</option>
+                                            <option>dining room</option>
+                                            <option>bedroom</option>
+                                            <option>accessories</option>
+                                        </select>
+                                        <button class="uk-button uk-icon-search"></button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- top info end -->
+                        </div>
+                        <div class="uk-width-1-1">
+                            <!-- mainmenu begin -->
+                            <div id="secondary-info">
+                                <nav id="mainmenu" class="uk-navbar">
+                                    <ul class="uk-navbar-nav uk-hidden-small">
+                                        <li class="uk-active uk-parent" data-uk-dropdown>
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
+                                                href="#">Shop</a>
+                                            <div class="uk-dropdown uk-dropdown-navbar idz-megamenu">
+                                                <ul class="uk-grid" data-uk-grid-margin>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li>
+                                                                <h5>Shopping</h5>
+                                                            </li>
+                                                            <li><a href="shop-fullwidth.html">All Items</a></li>
+                                                            <li><a href="category-grid.html">Categories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li>
+                                                                <h5>Commerce</h5>
+                                                            </li>
+                                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                                            <li><a href="shopping-cart.html">View Cart page</a></li>
+                                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                                            <li><a href="order-complete.html">Complete Page</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-4-10 uk-hidden-medium">
+                                                        <h5>Why shop at reWood?</h5>
+                                                        <p>Lorem ipsum dolor sitamet consectetur adipiscing sed eiusmod
+                                                            tempor incididunt ut labore dolore magna aliqua ut enim ad
+                                                            minim veniam quis nostrud exercitation ullamco laboris nisi
+                                                            ut aliquip commodo.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="catalog.html">Catalog</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!--menu mobile-->
+                                    <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small"
+                                        data-uk-offcanvas></a>
+                                </nav>
+                                <div id="mobile-nav" class="uk-offcanvas">
+                                    <div class="uk-offcanvas-bar">
+                                        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+                                            <li class="uk-parent">
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li><a href="shop-fullwidth.html">Shop</a></li>
+                                            <li><a href="category-grid.html">Categories</a></li>
+                                            <li><a href="catalog.html">Catalog</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="uk-container uk-container-center">
+                <div id="pagetitle">
+                    <div class="uk-grid">
+                        <!-- page title headline begin -->
+                        <div class="uk-width-3-10">
+                            <h2>Blog</h2>
+                        </div>
+                        <!-- page title headline end -->
+                        <!-- breadcrumb begin -->
+                        <div class="uk-width-7-10 uk-text-truncate">
+                            <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li class="uk-active"><span>How Pointy Brackets Became a Computing Icon</span></li>
+                            </ul>
+                        </div>
+                        <!-- breadcrumb end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="uk-padding">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid">
+                    <div class="uk-width-7-10 uk-width-medium-1-1 uk-width-small-1-1">
+                        <!-- begin blog 1 -->
+                        <article class="blog-wrapper">
+                            <h3 class="idz-bottom-line center">How Pointy Brackets Became a Computing Icon</h3>
+                            <ul class="uk-list post-info">
+                                <li>By Eric Daniels</li>
+                                <li>January 24, 2016</li>
+                                <li><a href="#">Marketing</a>, <a href="#">Strategy</a></li>
+                            </ul>
+                            <div class="blog-slider uk-slidenav-position">
+                                <ul class="uk-slideshow">
+                                    <li><img src="images/sample/blog_slide1.jpg" alt=""></li>
+                                    <li><img src="images/sample/blog_slide2.jpg" alt=""></li>
+                                    <li><img src="images/sample/blog_slide3.jpg" alt=""></li>
+                                </ul>
+                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+                            </div>
+                            <div class="blog-content">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabom, nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam est, qui dolorem ipsum quia dolor sit amet consectetur adipisci.</p>
+                                <blockquote>
+                                    <p>
+                                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+                                    </p>
+                                </blockquote>
+                                <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, aut reiciendis voluptatibus maiores.</p>
+                                <h3>The solutions</h3>
+                                <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda.</p>
+                            </div>
+                            <div class="post-share">
+                                <div class="uk-grid uk-grid-divider uk-text-center">
+                                    <div class="uk-width-1-2 post-comment">
+                                        <iframe id="facebook-iframe" src="http://www.facebook.com/plugins/like.php?href=http://www.indonez.com/&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" style="border:none; overflow:hidden; width:300px; height:45px;">
+                                        </iframe>
+                                    </div>
+                                    <div class="uk-width-1-2 post-continue">
+                                        <ul class="uk-list">
+                                            <li>
+                                                <a href="#" class="uk-icon-facebook-official"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-twitter"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-pinterest"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-google-plus"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-stumbleupon"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-envelope"></a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="uk-icon-rss"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="uk-margin-large-top">2 responses to "How Pointy Brackets Became a Computing Icon"</h3>
+                            <ul class="uk-comment-list">
+                                <li>
+                                    <article class="uk-comment">
+                                        <div class="avatar">
+                                            <img src="images/sample/author.jpg" alt="" />
+                                        </div>
+                                        <div class="comment-text">
+                                            <h4>Adam Barnett</h4>
+                                            <h6 class="subheader">April 28, 2010 01:23 am</h6>
+                                            <a href="#" class="uk-button uk-button-small idz-button-grey">Reply</a> Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim id est laborum adipisci velit.
+                                        </div>
+                                    </article>
+                                    <ul>
+                                        <li>
+                                            <article class="uk-comment">
+                                                <div class="avatar">
+                                                    <img src="images/sample/author.jpg" alt="" />
+                                                </div>
+                                                <div class="comment-text">
+                                                    <h4>Marie Sullivan</h4>
+                                                    <h6 class="subheader">April 28, 2010 01:23 am</h6>
+                                                    <a href="#" class="uk-button uk-button-small idz-button-grey">Reply</a> Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim.
+                                                </div>
+                                            </article>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <article class="uk-comment">
+                                        <div class="avatar">
+                                            <img src="images/sample/author.jpg" alt="" />
+                                        </div>
+                                        <div class="comment-text">
+                                            <h4>Walter Pierce</h4>
+                                            <h6 class="subheader">April 28, 2010 01:23 am</h6>
+                                            <a href="#" class="uk-button uk-button-small idz-button-grey">Reply</a> Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim id est laborum adipisci velit.
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                            <h3 class="uk-margin-large-top">Leave a comment</h3>
+                            <form id="comment-form" class="uk-form idz-margin-bottom-small">
+                                <fieldset>
+                                    <input type="text" name="name" class="textfield" id="name" value="" />
+                                    <label>Name <em>*</em></label>
+                                    <input type="email" name="email" class="textfield" id="email" value="" />
+                                    <label>E-mail <em>*</em></label>
+                                    <input type="text" name="subject" class="textfield" id="subject" value="" />
+                                    <label>Subject <em>*</em></label>
+                                    <textarea name="message" id="message" class="textarea" cols="2" rows="6"></textarea>
+                                    <div class="uk-clearfix"></div>
+                                    <button type="submit" name="submit" class="uk-button uk-button-small idz-button-grey" id="buttonsend">Submit</button>
+                                </fieldset>
+                            </form>
+                        </article>
+                    </div>
+                    <div class="uk-width-3-10 uk-width-medium-1-1 uk-width-small-1-1">
+                        <aside>
+                            <div class="uk-panel-box idz-panel grey uk-text-contrast">
+                                <div class="idz-account-widget">
+                                    <img src="images/sample/author.jpg" alt="" />
+                                    <h4 class="uk-text-contrast">Eric Daniels</h4>
+                                    <p>A graphics designer, a web developer, a boyfriend, a friend, a son, a legend.</p>
+                                    <ul class="uk-list idz-social-widget-list">
+                                        <li>
+                                            <a href="#" class="uk-icon-facebook"></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="uk-icon-twitter"></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="uk-icon-google-plus"></a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="uk-icon-pinterest-p"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside>
+                            <h4 class="uk-margin-medium-bottom"><span class="line-accent">Categories</span></h4>
+                            <ul class="uk-list uk-list-line">
+                                <li><a href="#">National News</a></li>
+                                <li><a href="#">World of Sport</a></li>
+                                <li><a href="#">Travel &amp; Accomodation</a></li>
+                                <li><a href="#">Technology News</a></li>
+                                <li><a href="#">Entertainment</a></li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h4 class="uk-margin-medium-bottom"><span class="line-accent">Popular</span></h4>
+                            <ul class="uk-list uk-list-line idz-popular-widget">
+                                <li>
+                                    <img src="images/sample/popular_thumb1.jpg" alt="">
+                                    <a href="#">
+                                            Mayer Hawthorne: Maybe So, Maybe No
+                                            <span>72 Comments</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <img src="images/sample/popular_thumb2.jpg" alt="">
+                                    <a href="#">
+                                            Slow-Motion Bullfrogs Look Super Dramatic
+                                            <span>46 Comments</span>
+                                        </a>
+                                </li>
+                                <li>
+                                    <img src="images/sample/popular_thumb3.jpg" alt="">
+                                    <a href="#">
+                                            This Might Be Volantis, HTC's 9-Inch Nexus Tablet
+                                            <span>38 Comments</span>
+                                        </a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h4 class="uk-margin-medium-bottom"><span class="line-accent">Archive</span></h4>
+                            <ul class="uk-list uk-list-line idz-archive-widget">
+                                <li><a href="#">January 2016</a>
+                                    <div class="uk-badge uk-badge-notification uk-badge-warning">6</div>
+                                </li>
+                                <li><a href="#">December 2015</a>
+                                    <div class="uk-badge uk-badge-notification uk-badge-warning">4</div>
+                                </li>
+                                <li><a href="#">November 2016</a>
+                                    <div class="uk-badge uk-badge-notification uk-badge-warning">8</div>
+                                </li>
+                                <li><a href="#">October 2016</a>
+                                    <div class="uk-badge uk-badge-notification uk-badge-warning">3</div>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside>
+                            <h4 class="uk-margin-medium-bottom"><span class="line-accent">Tag Clouds</span></h4>
+                            <div class="idz-tag-cloud">
+                                <a href="#">Responsive</a>
+                                <a href="#">Retina</a>
+                                <a href="#">jQuery</a>
+                                <a href="#">Flat</a>
+                                <a href="#">Indonesia</a>
+                                <a href="#">Themeforest</a>
+                                <a href="#">Wordpress</a>
+                                <a href="#">HTML5</a>
+                                <a href="#">CSS3</a>
+                                <a href="#">Incredible</a>
+                                <a href="#">UIKIT</a>
+                            </div>
+                        </aside>
+                        <aside>
+                            <h4 class="uk-margin-medium-bottom"><span class="line-accent">Flickr Feed</span></h4>
+                            <ul id="flck-thumb" class="thumbs">
+                                <li></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div id="left-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <h4>Newsletter Signup</h4>
+                    <form id="footer-newsletter" class="uk-form">
+                        <fieldset>
+                            <input type="text" placeholder="enter your email...">
+                            <button class="uk-button uk-icon-envelope-o"></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="right-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <div id="footer-social" class="idz-social uk-align-right">
+                        <ul>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-google-plus"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-pinterest-p"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Stay connected</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="uk-grid">
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Company</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Product Recalls</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Client Services</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Email Preferences</a></li>
+                        <li><a href="#">Remove from Mailing List</a></li>
+                        <li><a href="#">Xarago Platinum Card</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Need Help?</h4>
+                    <ul class="uk-list">
+                        <li>Contact Us:</li>
+                        <li>Phone: 100.200.1234</li>
+                        <li>Email: orders@xaragoshop.co.id</li>
+                        <li>Hours: Monday - Friday</li>
+                        <li>8:30am - 4:45pm EST</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-1 uk-width-small-1-1">
+                    <div class="instagram-hero">
+                        <a href="#">
+                            <h2>Stay update</h2>
+                            <h5>Check out our</h5>
+                            <h4>Instagram</h4>
+                            <i class="uk-icon-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
+                <div class="uk-width-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-text-right">
+                    <p class="copyright-text">&copy; 2016. Xarago. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
+    </footer>
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/rating.js"></script>
+    <script src="js/components/price-range.js"></script>
+    <script src="js/components/flickr-feed.js"></script>
+    <script src="js/components/lightbox.js"></script>
+    <script src="js/components/slideshow.js"></script>
+    <script src="js/components/slideshow-fx.js"></script>
+    <script src="js/components/mediaelement.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site Properties -->
+    <title>Xarago - Minimalist Shopping Template</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/slideshow.css">
+    <link rel="stylesheet" href="css/components/slidenav.css">
+    <link rel="stylesheet" href="css/components/slider.css">
+    <link rel="stylesheet" href="css/components/rating.css">
+    <link rel="stylesheet" href="css/components/small-icon.css">
+</head>
+
+<body>
+    <section id="main-container">
+        <header>
+            <div id="primary-info">
+                <div class="uk-container uk-container-center">
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- main logo begin -->
+                            <div id="logo">
+                                <a href="index.html"><img src="images/logo.svg" alt="xarago" /></a>
+                            </div>
+                            <div id="slogan">
+                                <p>making your home, as unique as you.</p>
+                            </div>
+                            <!-- main logo end -->
+                        </div>
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- top info begin -->
+                            <div class="idz-header-list">
+                                <ul class="uk-list uk-align-right">
+                                    <li class="idz-mini-info">
+                                        <div class="uk-button-dropdown" data-uk-dropdown>
+                                            <a href=""><span class="uk-icon-button uk-icon-shopping-cart"></span><div class="uk-badge uk-badge-notification uk-badge-danger">2</div>$ 12,685.00</a>
+                                            <div class="uk-dropdown uk-dropdown-center">
+                                                <ul class="uk-nav uk-nav-dropdown idz-product-widget">
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb1a.jpg" alt="">
+                                                            <p>Graham Sofa in Blue</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb2.jpg" alt="">
+                                                            <p>Zahra Armchair</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="subtotal-price">
+                                                        <h6>Subtotal : $ 12,685.00</h6>
+                                                    </li>
+                                                    <li>
+                                                        <a href="shopping-cart.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">View cart</a>
+                                                        <a href="checkout.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">Checkout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                </ul>
+                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                    <fieldset>
+                                        <input type="text" placeholder="search...">
+                                        <select>
+                                            <option>all categories</option>
+                                            <option>new arrivals</option>
+                                            <option>furniture</option>
+                                            <option>living room</option>
+                                            <option>dining room</option>
+                                            <option>bedroom</option>
+                                            <option>accessories</option>
+                                        </select>
+                                        <button class="uk-button uk-icon-search"></button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- top info end -->
+                        </div>
+                        <div class="uk-width-1-1">
+                            <!-- mainmenu begin -->
+                            <div id="secondary-info"> 
+                                <nav id="mainmenu" class="uk-navbar">
+                                    <ul class="uk-navbar-nav uk-hidden-small">
+                                        <li class="uk-active uk-parent" data-uk-dropdown>
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a href="#">Shop</a>
+                                            <div class="uk-dropdown uk-dropdown-navbar idz-megamenu">
+                                                <ul class="uk-grid" data-uk-grid-margin>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li><h5>Shopping</h5></li>
+                                                            <li><a href="shop-fullwidth.html">All Items</a></li>
+                                                            <li><a href="category-grid.html">Categories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li><h5>Commerce</h5></li>
+                                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                                            <li><a href="shopping-cart.html">View Cart page</a></li>
+                                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                                            <li><a href="order-complete.html">Complete Page</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-4-10 uk-hidden-medium">
+                                                        <h5>Why shop at reWood?</h5>
+                                                        <p>Lorem ipsum dolor sitamet consectetur adipiscing sed eiusmod tempor incididunt ut labore dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip commodo.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="catalog.html">Catalog</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!--menu mobile-->
+                                    <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+                                </nav>
+                                <div id="mobile-nav" class="uk-offcanvas">
+                                    <div class="uk-offcanvas-bar">
+                                        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+                                            <li class="uk-parent">
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li><a href="shop-fullwidth.html">Shop</a></li>
+                                            <li><a href="category-grid.html">Categories</a></li>
+                                            <li><a href="catalog.html">Catalog</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="slideshow-container">
+            <!-- slideshow begin -->
+            <div id="homepage-slide" class="uk-slidenav-position">
+                <ul class="uk-slideshow uk-overlay-active" data-uk-slideshow="{autoplay:true}">
+                    <li>
+                        <!-- slide 1 -->
+                        <img src="images/slideshow/sld3.jpg" alt="">
+                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-middle">
+                            <div class="uk-container uk-container-center">
+                                <!-- slide 1 text begin -->
+                                <div class="slide-content3">
+                                    <h1><span class="damion-font">Better Prices.</span></h1>
+                                    <h1>Bumper Choices.</h1>
+                                    <div class="uk-grid uk-grid-divider">
+                                        <div class="uk-width-1-3 idz-number-wrap">
+                                            <i class="uk-icon-thumbs-up"></i>
+                                            <h4>Best Product Quality</h4>
+                                        </div>
+                                        <div class="uk-width-1-3 idz-number-wrap">
+                                            <i class="uk-icon-trophy"></i>
+                                            <h4>Best Price Guaranteed</h4>
+                                        </div>
+                                        <div class="uk-width-1-3 idz-number-wrap">
+                                            <i class="uk-icon-truck"></i>
+                                            <h4>Express Delivery</h4>
+                                        </div>
+                                    </div>
+                                    <div class="uk-clearfix"></div>
+                                </div>
+                                <!-- slide 1 text end -->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- slide 2 -->
+                        <img src="images/slideshow/sld2.jpg" alt="">
+                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-middle">
+                            <div class="uk-container uk-container-center">
+                                <!-- slide 2 text begin -->
+                                <div class="slide-content2 uk-text-contrast">
+                                    <h1>Beautify the</h1>
+                                    <h2>atmosphere</h2>
+                                    <h4>makeover your living room with ease!</h4>
+                                    <a class="uk-button uk-button-small idz-button-outline uk-margin-medium-top" href="#">Discover Now</a>
+                                    <div class="uk-clearfix"></div>
+                                </div>
+                                <!-- slide 2 text end -->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- slide 3 -->
+                        <img src="images/slideshow/sld1.jpg" alt="">
+                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-center uk-flex-middle">
+                            <div class="uk-container uk-container-center">
+                                <!-- slide 3 text begin -->
+                                <div class="slide-content1">
+                                    <h1>Today Only!</h1>
+                                    <h2 class="discount-text1">up<br/>to</h2>
+                                    <h1 class="discount-text2">40</h1>
+                                    <h2 class="discount-text1"><span class="big-percent">%</span><br/>off</h2>
+                                    <h4>check it out, get inspired</h4>
+                                    <div class="uk-clearfix"></div>
+                                </div>
+                                <!-- slide 3 text end -->
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <!-- slide 4 -->
+                        <img src="images/slideshow/sld4.jpg" alt="">
+                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-fade uk-flex uk-flex-middle">
+                            <div class="uk-container uk-container-center">
+                                <!-- slide 4 text begin -->
+                                <div class="slide-content4">
+                                    <h1><span>a spell of</span></h1>
+                                    <h2>Seating</h2>
+                                    <h4>up to 40% off</h4>
+                                    <a class="uk-button uk-button-small idz-button-grey uk-margin-medium-top" href="#">Shop Now</a>
+                                    <div class="uk-clearfix"></div>
+                                </div>
+                                <!-- slide 4 text end -->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-previous" data-uk-slideshow-item="previous"></a>
+                <a href="" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slideshow-item="next"></a>
+            </div>
+            <!-- slideshow end -->
+        </section>
+        <section class="uk-padding">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid idz-top-adjustment20">
+                    <div class="uk-width-1-1">
+                        <div class="uk-grid uk-grid-collapse idz-front-icon">
+                            <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center">
+                                <div class="icon-wrap center circle">
+                                    <i class="uk-icon-pie-chart"></i>
+                                </div>
+                                <h5>PartPay</h5>
+                                <p>Pay just 20% Advance</p>
+                            </div>
+                            <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center">
+                                <div class="icon-wrap center circle">
+                                    <i class="uk-icon-fire"></i>
+                                </div>
+                                <h5>Hot Price!</h5>
+                                <p>Best price, Always</p>
+                            </div>
+                            <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center">
+                                <div class="icon-wrap center circle">
+                                    <i class="uk-icon-cubes"></i>
+                                </div>
+                                <h5>Furniture Upgrade</h5>
+                                <p>In With the New</p>
+                            </div>
+                            <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center">
+                                <div class="icon-wrap center circle">
+                                    <i class="uk-icon-truck"></i>
+                                </div>
+                                <h5>Express Ship</h5>
+                                <p>Ship in 3 Days</p>
+                            </div>
+                            <div class="uk-width-1-5 uk-text-center uk-hidden-small">
+                                <div class="icon-wrap center circle">
+                                    <i class="uk-icon-refresh"></i>
+                                </div>
+                                <h5>Easy Return</h5>
+                                <p>On all Products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <h2 class="uk-text-center uk-margin-bottom-remove"><span class="cross-accent">Happy Furniture To You!</span></h2>
+                        <p class="uk-text-center uk-text-large uk-margin-small-top">Unlimited Choices. Unbeatable Prices. Free Shipping.</p>
+                        <div class="uk-grid uk-margin-medium-top">
+                            <div class="uk-width-3-5 uk-width-medium-1-2 uk-width-small-1-1">
+                                <div class="uk-panel idz-product-panel left uk-text-contrast">
+                                    <img src="images/product-images/product_front_home.jpg" alt="" class="uk-align-right">
+                                    <h1 class="uk-text-contrast uk-margin-medium-top">Easly Credenza</h1>
+                                    <p class="uk-text-large">Duck in A Row.</p>
+                                    <a class="uk-button uk-button-small idz-button-white uk-margin-medium-top uk-hidden-medium uk-hidden-small" href="#">Shop Now</a>
+                                </div>
+                            </div>
+                            <div class="uk-width-2-5 uk-width-medium-1-2 uk-width-small-1-1">
+                                <div class="uk-panel idz-product-panel center uk-text-contrast">
+                                    <img src="images/product-images/product_front_home2.jpg" alt="" class="uk-align-center">
+                                    <h6><a href="product-page.html">Graham Sofa in Blue</a></h6>
+                                    <select class="4star-rating" name="rating"></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <div class="uk-grid uk-grid-divider">
+                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
+                                <img src="images/product-images/product_front_home3.jpg" alt="" class="uk-align-center">
+                                <a href="#">
+                                    <p class="uk-margin-bottom-remove">Shop</p>
+                                    <h3 class="uk-margin-top-remove">Small Space</h3>
+                                    <i class="uk-icon-arrow-circle-o-right"></i>
+                                </a>
+                            </div>
+                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
+                                <img src="images/product-images/product_front_home4.jpg" alt="" class="uk-align-center">
+                                <a href="#">
+                                    <p class="uk-margin-bottom-remove">Shop</p>
+                                    <h3 class="uk-margin-top-remove">Modern</h3>
+                                    <i class="uk-icon-arrow-circle-o-right"></i>
+                                </a>
+                            </div>
+                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
+                                <img src="images/product-images/product_front_home5.jpg" alt="" class="uk-align-center">
+                                <a href="#">
+                                    <p class="uk-margin-bottom-remove">Shop</p>
+                                    <h3 class="uk-margin-top-remove">Traditional</h3>
+                                    <i class="uk-icon-arrow-circle-o-right"></i>
+                                </a>
+                            </div>
+                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
+                                <img src="images/product-images/product_front_home6.jpg" alt="" class="uk-align-center">
+                                <a href="#">
+                                    <p class="uk-margin-bottom-remove">Shop</p>
+                                    <h3 class="uk-margin-top-remove">Rustic Style</h3>
+                                    <i class="uk-icon-arrow-circle-o-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-large-bottom">
+                        <div class="uk-grid">
+                            <div class="uk-width-1-2 uk-width-small-1-1">
+                                <div class="idz-bottom-adjustment50 uk-margin-large-top idz-nomargin-top-tablet">
+                                    <h3 class="uk-margin-medium-bottom">High Class furniture for homes, offices and public rooms</h3>
+                                    <p>Excepteur sint occaecat cupidatat non proident, sunt culpa qui officia deserunt mollit anim id est laborum ipsum dolor.</p>
+                                    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor amet consectetur, adipisci velit, sed quia non numquam eius tempora incidunt ut labore dolore magnam aliquam quaerat nostrum.</p>
+                                </div>
+                            </div>
+                            <div class="uk-width-1-2 uk-width-small-1-1">
+                                <img src="images/product-images/product_front_home7.jpg" alt="" class="idz-margin-top-tabletpotrait">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <div class="uk-panel uk-panel-box">
+                            <div class="uk-grid uk-grid-collapse idz-front-icon">
+                                <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center idz-custom2-layout">
+                                    <img src="images/sample/partner-logo/client1.png" alt="">
+                                </div>
+                                <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center idz-custom2-layout">
+                                    <img src="images/sample/partner-logo/client2.png" alt="">
+                                </div>
+                                <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center idz-custom2-layout">
+                                    <img src="images/sample/partner-logo/client3.png" alt="">
+                                </div>
+                                <div class="uk-width-1-5 uk-width-small-1-2 uk-text-center idz-custom2-layout">
+                                    <img src="images/sample/partner-logo/client4.png" alt="">
+                                </div>
+                                <div class="uk-width-1-5 uk-text-center uk-hidden-small">
+                                    <img src="images/sample/partner-logo/client5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <h2 class="uk-text-center uk-margin-medium-bottom uk-text-truncate"><span class="cross-accent">New Arrivals</span></h2>
+                        <!-- product slide begin -->
+                        <div id="product-slide" class="uk-slidenav-position" data-uk-slider="{infinite: false}">
+                            <div class="uk-slider-container">
+                                <ul class="uk-slider uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-3">
+                                    <!-- new furnitures-->
+                                    <li>
+                                        <div class="product-content">
+                                            <figure class="uk-overlay uk-overlay-hover">
+                                                <ul class="product-price uk-text-right">
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="uk-badge uk-badge-notification uk-badge-warning">Sofa</div>
+                                                        </a>
+                                                    </li>
+                                                    <li>$1,440</li>
+                                                </ul>
+                                                <img src="images/product-images/product_thumb1a.jpg" alt="">
+                                                <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
+                                                    <button class="uk-button uk-icon-shopping-cart"></button>
+                                                    <button class="uk-button uk-icon-heart-o"></button>
+                                                </figcaption>
+                                            </figure>
+                                            <h6><a href="product-page.html">Graham Sofa in Blue</a></h6>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+                                <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
+                            </div>
+                        </div>
+                        <!-- product slide end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div id="left-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <h4>Newsletter Signup</h4>
+                    <form id="footer-newsletter" class="uk-form">
+                        <fieldset>
+                            <input type="text" placeholder="enter your email...">
+                            <button class="uk-button uk-icon-envelope-o"></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="right-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <div id="footer-social" class="idz-social uk-align-right">
+                        <ul>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-google-plus"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-pinterest-p"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Stay connected</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="uk-grid">
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Company</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Client Services</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Email Preferences</a></li>
+                        <li><a href="#">Remove from Mailing List</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Need Help?</h4>
+                    <ul class="uk-list">
+                        <li>Contact Us:</li>
+                        <li>Phone: 100.200.1234</li>
+                        <li>Email: orders@xaragoshop.co.id</li>
+                        <li>Hours: Monday - Friday</li>
+                        <li>8:30am - 4:45pm EST</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-1 uk-width-small-1-1">
+                    <div class="instagram-hero">
+                        <a href="#">
+                            <h2>Stay update</h2>
+                            <h5>Check out our</h5>
+                            <h4>Instagram</h4>
+                            <i class="uk-icon-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
+                <div class="uk-width-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-text-right">
+                    <p class="copyright-text">&copy; 2021. reWood. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
+    </footer>
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/components/rating.js"></script>
+    <script src="js/components/flickr-feed.js"></script>
+    <script src="js/components/slideshow.js"></script>
+    <script src="js/components/slideshow-fx.js"></script>
+    <script src="js/components/mediaelement.js"></script>
+    <script src="js/components/slider.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site Properties -->
+    <title>Xarago - Minimalist Shopping Template</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components/small-icon.css">
+</head>
+
+<body>
+    <section id="main-container">
+        <header>
+            <div id="primary-info">
+                <div class="uk-container uk-container-center">
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- main logo begin -->
+                            <div id="logo">
+                                <a href="index.html"><img src="images/logo.svg" alt="xarago" /></a>
+                            </div>
+                            <div id="slogan">
+                                <p>making your home, as unique as you.</p>
+                            </div>
+                            <!-- main logo end -->
+                        </div>
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- top info begin -->
+                            <div class="idz-header-list">
+                                <ul class="uk-list uk-align-right">
+                                    <li class="idz-mini-info">
+                                        <div class="uk-button-dropdown" data-uk-dropdown>
+                                            <a href=""><span class="uk-icon-button uk-icon-shopping-cart"></span><div class="uk-badge uk-badge-notification uk-badge-danger">2</div>$ 12,685.00</a>
+                                            <div class="uk-dropdown uk-dropdown-center">
+                                                <ul class="uk-nav uk-nav-dropdown idz-product-widget">
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb1a.jpg" alt="">
+                                                            <p>Graham Sofa in Blue</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="uk-text-truncate">
+                                                        <a href="product-page.html">
+                                                            <img src="images/product-images/product_thumb2.jpg" alt="">
+                                                            <p>Zahra Armchair</p>
+                                                        </a>
+                                                        <span>1 x $ 1,440.00</span>
+                                                    </li>
+                                                    <li class="subtotal-price">
+                                                        <h6>Subtotal : $ 12,685.00</h6>
+                                                    </li>
+                                                    <li>
+                                                        <a href="shopping-cart.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">View cart</a>
+                                                        <a href="checkout.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">Checkout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="login.html">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="wishlist.html">Wishlist</a>
+                                    </li>
+                                </ul>
+                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                    <fieldset>
+                                        <input type="text" placeholder="search...">
+                                        <select>
+                                            <option>all categories</option>
+                                            <option>new arrivals</option>
+                                            <option>furniture</option>
+                                            <option>living room</option>
+                                            <option>dining room</option>
+                                            <option>bedroom</option>
+                                            <option>accessories</option>
+                                        </select>
+                                        <button class="uk-button uk-icon-search"></button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- top info end -->
+                        </div>
+                        <div class="uk-width-1-1">
+                            <!-- mainmenu begin -->
+                            <div id="secondary-info">
+                                <nav id="mainmenu" class="uk-navbar">
+                                    <ul class="uk-navbar-nav uk-hidden-small">
+                                        <li class="uk-active uk-parent" data-uk-dropdown>
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
+                                                href="#">Shop</a>
+                                            <div class="uk-dropdown uk-dropdown-navbar idz-megamenu">
+                                                <ul class="uk-grid" data-uk-grid-margin>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li>
+                                                                <h5>Shopping</h5>
+                                                            </li>
+                                                            <li><a href="shop-fullwidth.html">All Items</a></li>
+                                                            <li><a href="category-grid.html">Categories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li>
+                                                                <h5>Commerce</h5>
+                                                            </li>
+                                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                                            <li><a href="shopping-cart.html">View Cart page</a></li>
+                                                            <li><a href="checkout.html">Checkout Page</a></li>
+                                                            <li><a href="order-complete.html">Complete Page</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="uk-width-4-10 uk-hidden-medium">
+                                                        <h5>Why shop at reWood?</h5>
+                                                        <p>Lorem ipsum dolor sitamet consectetur adipiscing sed eiusmod
+                                                            tempor incididunt ut labore dolore magna aliqua ut enim ad
+                                                            minim veniam quis nostrud exercitation ullamco laboris nisi
+                                                            ut aliquip commodo.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="catalog.html">Catalog</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                    <!--menu mobile-->
+                                    <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small"
+                                        data-uk-offcanvas></a>
+                                </nav>
+                                <div id="mobile-nav" class="uk-offcanvas">
+                                    <div class="uk-offcanvas-bar">
+                                        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+                                            <li class="uk-parent">
+                                                <a href="index.html">Home</a>
+                                            </li>
+                                            <li><a href="shop-fullwidth.html">Shop</a></li>
+                                            <li><a href="category-grid.html">Categories</a></li>
+                                            <li><a href="catalog.html">Catalog</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="contact.html">Contact</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="uk-container uk-container-center">
+                <div id="pagetitle">
+                    <div class="uk-grid">
+                        <!-- page title headline begin -->
+                        <div class="uk-width-3-10">
+                            <h2>Checkout</h2>
+                        </div>
+                        <!-- page title headline end -->
+                        <!-- breadcrumb begin -->
+                        <div class="uk-width-7-10">
+                            <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
+                                <li><a href="index.html">Home</a></li>
+                                <li class="uk-active"><span>Checkout</span></li>
+                            </ul>
+                        </div>
+                        <!-- breadcrumb end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="uk-padding">
+            <div class="uk-container uk-container-center">
+                <div class="uk-grid uk-grid-divider uk-margin-large-bottom idz-checkout">
+                    <div class="uk-width-1-3 idz-number-wrap uk-text-center uk-hidden-small">
+                        <h1>01</h1>
+                        <h4><span class="line-accent">Shopping Cart</span></h4>
+                    </div>
+                    <div class="uk-width-1-3 uk-width-small-1-1 idz-number-wrap uk-text-center">
+                        <h1>02</h1>
+                        <h4><span class="line-accent">Check Out</span></h4>
+                    </div>
+                    <div class="uk-width-1-3 idz-number-wrap uk-text-center uk-hidden-small">
+                        <h1>03</h1>
+                        <h4>Order Complete</h4>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-6-10 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-medium-top uk-margin-large-bottom">
+                        <h4 class="uk-margin-medium-bottom">Billing Details</h4>
+                        <form id="idz-checkout-form" class="uk-form">
+                            <div class="uk-grid uk-grid-medium">
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">First Name <em>*</em></label>
+                                    <input type="text" placeholder="" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">Last Name <em>*</em></label>
+                                    <input type="text" placeholder="" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <label class="uk-form-label">Company Name <em>*</em></label>
+                                    <input type="text" placeholder="" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">Email Address <em>*</em></label>
+                                    <input type="text" placeholder="" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">Phone <em>*</em></label>
+                                    <input type="text" placeholder="" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <label class="uk-form-label">Country <em>*</em></label>
+                                    <select class="uk-width-1-1">
+                                        <option value="">Select a country&hellip;</option>
+                                        <option value="AX">&#197;land Islands</option>
+                                        <option value="AF">Afghanistan</option>
+                                        <option value="AL">Albania</option>
+                                        <option value="DZ">Algeria</option>
+                                        <option value="AD">Andorra</option>
+                                        <option value="AO">Angola</option>
+                                        <option value="AI">Anguilla</option>
+                                        <option value="AQ">Antarctica</option>
+                                        <option value="AG">Antigua and Barbuda</option>
+                                        <option value="AR">Argentina</option>
+                                        <option value="AM">Armenia</option>
+                                        <option value="AW">Aruba</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="AT">Austria</option>
+                                        <option value="AZ">Azerbaijan</option>
+                                        <option value="BS">Bahamas</option>
+                                        <option value="BH">Bahrain</option>
+                                        <option value="BD">Bangladesh</option>
+                                        <option value="BB">Barbados</option>
+                                        <option value="BY">Belarus</option>
+                                        <option value="PW">Belau</option>
+                                        <option value="BE">Belgium</option>
+                                        <option value="BZ">Belize</option>
+                                        <option value="BJ">Benin</option>
+                                        <option value="BM">Bermuda</option>
+                                        <option value="BT">Bhutan</option>
+                                        <option value="BO">Bolivia</option>
+                                        <option value="BQ">Bonaire, Saint Eustatius and Saba</option>
+                                        <option value="BA">Bosnia and Herzegovina</option>
+                                        <option value="BW">Botswana</option>
+                                        <option value="BV">Bouvet Island</option>
+                                        <option value="BR">Brazil</option>
+                                        <option value="IO">British Indian Ocean Territory</option>
+                                        <option value="VG">British Virgin Islands</option>
+                                        <option value="BN">Brunei</option>
+                                        <option value="BG">Bulgaria</option>
+                                        <option value="BF">Burkina Faso</option>
+                                        <option value="BI">Burundi</option>
+                                        <option value="KH">Cambodia</option>
+                                        <option value="CM">Cameroon</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="CV">Cape Verde</option>
+                                        <option value="KY">Cayman Islands</option>
+                                        <option value="CF">Central African Republic</option>
+                                        <option value="TD">Chad</option>
+                                        <option value="CL">Chile</option>
+                                        <option value="CN">China</option>
+                                        <option value="CX">Christmas Island</option>
+                                        <option value="CC">Cocos (Keeling) Islands</option>
+                                        <option value="CO">Colombia</option>
+                                        <option value="KM">Comoros</option>
+                                        <option value="CG">Congo (Brazzaville)</option>
+                                        <option value="CD">Congo (Kinshasa)</option>
+                                        <option value="CK">Cook Islands</option>
+                                        <option value="CR">Costa Rica</option>
+                                        <option value="HR">Croatia</option>
+                                        <option value="CU">Cuba</option>
+                                        <option value="CW">Cura&Ccedil;ao</option>
+                                        <option value="CY">Cyprus</option>
+                                        <option value="CZ">Czech Republic</option>
+                                        <option value="DK">Denmark</option>
+                                        <option value="DJ">Djibouti</option>
+                                        <option value="DM">Dominica</option>
+                                        <option value="DO">Dominican Republic</option>
+                                        <option value="EC">Ecuador</option>
+                                        <option value="EG">Egypt</option>
+                                        <option value="SV">El Salvador</option>
+                                        <option value="GQ">Equatorial Guinea</option>
+                                        <option value="ER">Eritrea</option>
+                                        <option value="EE">Estonia</option>
+                                        <option value="ET">Ethiopia</option>
+                                        <option value="FK">Falkland Islands</option>
+                                        <option value="FO">Faroe Islands</option>
+                                        <option value="FJ">Fiji</option>
+                                        <option value="FI">Finland</option>
+                                        <option value="FR">France</option>
+                                        <option value="GF">French Guiana</option>
+                                        <option value="PF">French Polynesia</option>
+                                        <option value="TF">French Southern Territories</option>
+                                        <option value="GA">Gabon</option>
+                                        <option value="GM">Gambia</option>
+                                        <option value="GE">Georgia</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="GH">Ghana</option>
+                                        <option value="GI">Gibraltar</option>
+                                        <option value="GR">Greece</option>
+                                        <option value="GL">Greenland</option>
+                                        <option value="GD">Grenada</option>
+                                        <option value="GP">Guadeloupe</option>
+                                        <option value="GT">Guatemala</option>
+                                        <option value="GG">Guernsey</option>
+                                        <option value="GN">Guinea</option>
+                                        <option value="GW">Guinea-Bissau</option>
+                                        <option value="GY">Guyana</option>
+                                        <option value="HT">Haiti</option>
+                                        <option value="HM">Heard Island and McDonald Islands</option>
+                                        <option value="HN">Honduras</option>
+                                        <option value="HK">Hong Kong</option>
+                                        <option value="HU">Hungary</option>
+                                        <option value="IS">Iceland</option>
+                                        <option value="IN">India</option>
+                                        <option value="ID">Indonesia</option>
+                                        <option value="IR">Iran</option>
+                                        <option value="IQ">Iraq</option>
+                                        <option value="IM">Isle of Man</option>
+                                        <option value="IL">Israel</option>
+                                        <option value="IT">Italy</option>
+                                        <option value="CI">Ivory Coast</option>
+                                        <option value="JM">Jamaica</option>
+                                        <option value="JP">Japan</option>
+                                        <option value="JE">Jersey</option>
+                                        <option value="JO">Jordan</option>
+                                        <option value="KZ">Kazakhstan</option>
+                                        <option value="KE">Kenya</option>
+                                        <option value="KI">Kiribati</option>
+                                        <option value="KW">Kuwait</option>
+                                        <option value="KG">Kyrgyzstan</option>
+                                        <option value="LA">Laos</option>
+                                        <option value="LV">Latvia</option>
+                                        <option value="LB">Lebanon</option>
+                                        <option value="LS">Lesotho</option>
+                                        <option value="LR">Liberia</option>
+                                        <option value="LY">Libya</option>
+                                        <option value="LI">Liechtenstein</option>
+                                        <option value="LT">Lithuania</option>
+                                        <option value="LU">Luxembourg</option>
+                                        <option value="MO">Macao S.A.R., China</option>
+                                        <option value="MK">Macedonia</option>
+                                        <option value="MG">Madagascar</option>
+                                        <option value="MW">Malawi</option>
+                                        <option value="MY">Malaysia</option>
+                                        <option value="MV">Maldives</option>
+                                        <option value="ML">Mali</option>
+                                        <option value="MT">Malta</option>
+                                        <option value="MH">Marshall Islands</option>
+                                        <option value="MQ">Martinique</option>
+                                        <option value="MR">Mauritania</option>
+                                        <option value="MU">Mauritius</option>
+                                        <option value="YT">Mayotte</option>
+                                        <option value="MX">Mexico</option>
+                                        <option value="FM">Micronesia</option>
+                                        <option value="MD">Moldova</option>
+                                        <option value="MC">Monaco</option>
+                                        <option value="MN">Mongolia</option>
+                                        <option value="ME">Montenegro</option>
+                                        <option value="MS">Montserrat</option>
+                                        <option value="MA">Morocco</option>
+                                        <option value="MZ">Mozambique</option>
+                                        <option value="MM">Myanmar</option>
+                                        <option value="NA">Namibia</option>
+                                        <option value="NR">Nauru</option>
+                                        <option value="NP">Nepal</option>
+                                        <option value="NL">Netherlands</option>
+                                        <option value="AN">Netherlands Antilles</option>
+                                        <option value="NC">New Caledonia</option>
+                                        <option value="NZ">New Zealand</option>
+                                        <option value="NI">Nicaragua</option>
+                                        <option value="NE">Niger</option>
+                                        <option value="NG">Nigeria</option>
+                                        <option value="NU">Niue</option>
+                                        <option value="NF">Norfolk Island</option>
+                                        <option value="KP">North Korea</option>
+                                        <option value="NO">Norway</option>
+                                        <option value="OM">Oman</option>
+                                        <option value="PK">Pakistan</option>
+                                        <option value="PS">Palestinian Territory</option>
+                                        <option value="PA">Panama</option>
+                                        <option value="PG">Papua New Guinea</option>
+                                        <option value="PY">Paraguay</option>
+                                        <option value="PE">Peru</option>
+                                        <option value="PH">Philippines</option>
+                                        <option value="PN">Pitcairn</option>
+                                        <option value="PL">Poland</option>
+                                        <option value="PT">Portugal</option>
+                                        <option value="QA">Qatar</option>
+                                        <option value="IE">Republic of Ireland</option>
+                                        <option value="RE">Reunion</option>
+                                        <option value="RO">Romania</option>
+                                        <option value="RU">Russia</option>
+                                        <option value="RW">Rwanda</option>
+                                        <option value="ST">S&atilde;o Tom&eacute; and Pr&iacute;ncipe</option>
+                                        <option value="BL">Saint Barth&eacute;lemy</option>
+                                        <option value="SH">Saint Helena</option>
+                                        <option value="KN">Saint Kitts and Nevis</option>
+                                        <option value="LC">Saint Lucia</option>
+                                        <option value="SX">Saint Martin (Dutch part)</option>
+                                        <option value="MF">Saint Martin (French part)</option>
+                                        <option value="PM">Saint Pierre and Miquelon</option>
+                                        <option value="VC">Saint Vincent and the Grenadines</option>
+                                        <option value="SM">San Marino</option>
+                                        <option value="SA">Saudi Arabia</option>
+                                        <option value="SN">Senegal</option>
+                                        <option value="RS">Serbia</option>
+                                        <option value="SC">Seychelles</option>
+                                        <option value="SL">Sierra Leone</option>
+                                        <option value="SG">Singapore</option>
+                                        <option value="SK">Slovakia</option>
+                                        <option value="SI">Slovenia</option>
+                                        <option value="SB">Solomon Islands</option>
+                                        <option value="SO">Somalia</option>
+                                        <option value="ZA">South Africa</option>
+                                        <option value="GS">South Georgia/Sandwich Islands</option>
+                                        <option value="KR">South Korea</option>
+                                        <option value="SS">South Sudan</option>
+                                        <option value="ES">Spain</option>
+                                        <option value="LK">Sri Lanka</option>
+                                        <option value="SD">Sudan</option>
+                                        <option value="SR">Suriname</option>
+                                        <option value="SJ">Svalbard and Jan Mayen</option>
+                                        <option value="SZ">Swaziland</option>
+                                        <option value="SE">Sweden</option>
+                                        <option value="CH">Switzerland</option>
+                                        <option value="SY">Syria</option>
+                                        <option value="TW">Taiwan</option>
+                                        <option value="TJ">Tajikistan</option>
+                                        <option value="TZ">Tanzania</option>
+                                        <option value="TH">Thailand</option>
+                                        <option value="TL">Timor-Leste</option>
+                                        <option value="TG">Togo</option>
+                                        <option value="TK">Tokelau</option>
+                                        <option value="TO">Tonga</option>
+                                        <option value="TT">Trinidad and Tobago</option>
+                                        <option value="TN">Tunisia</option>
+                                        <option value="TR">Turkey</option>
+                                        <option value="TM">Turkmenistan</option>
+                                        <option value="TC">Turks and Caicos Islands</option>
+                                        <option value="TV">Tuvalu</option>
+                                        <option value="UG">Uganda</option>
+                                        <option value="UA">Ukraine</option>
+                                        <option value="AE">United Arab Emirates</option>
+                                        <option value="GB">United Kingdom (UK)</option>
+                                        <option value="US" selected='selected'>United States (US)</option>
+                                        <option value="UY">Uruguay</option>
+                                        <option value="UZ">Uzbekistan</option>
+                                        <option value="VU">Vanuatu</option>
+                                        <option value="VA">Vatican</option>
+                                        <option value="VE">Venezuela</option>
+                                        <option value="VN">Vietnam</option>
+                                        <option value="WF">Wallis and Futuna</option>
+                                        <option value="EH">Western Sahara</option>
+                                        <option value="WS">Western Samoa</option>
+                                        <option value="YE">Yemen</option>
+                                        <option value="ZM">Zambia</option>
+                                        <option value="ZW">Zimbabwe</option>
+                                    </select>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <label class="uk-form-label">Address <em>*</em></label>
+                                    <input type="text" placeholder="Street address" class="uk-width-1-1">
+                                    <input type="text" placeholder="Apartement, suite, unit etc. (optional)" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">Town / City <em>*</em></label>
+                                    <input type="text" placeholder="Town / City" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <label class="uk-form-label">Postcode / Zip <em>*</em></label>
+                                    <input type="text" placeholder="Postcode / Zip" class="uk-width-1-1">
+                                </div>
+                                <div class="uk-width-1-1 uk-margin-top">
+                                    <label>
+                                        <input type="checkbox" checked>Billing address is same as shipping address</label>
+                                </div>
+                            </div>
+                            <hr/>
+                            <a href="checkout.html" class="uk-button uk-button-small idz-button-grey uk-width-1-1">Continue</a>
+                        </form>
+                    </div>
+                    <div class="uk-width-4-10 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-medium-top uk-margin-large-bottom">
+                        <div class="uk-panel-box idz-panel grey uk-text-contrast">
+                            <h4 class="uk-text-contrast">Your Order</h4>
+                            <table id="checkout-table" class="uk-table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-name">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="product-name">Graham Sofa in Blue</td>
+                                        <td>$1,440</td>
+                                        <tr>
+                                            <td class="product-name">Brooklyn Lamp Table</td>
+                                            <td>$1,440</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-name">Sub Total</td>
+                                            <td>$2,880.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-name">Shipping</td>
+                                            <td>Free Shipping</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-name">Total</td>
+                                            <td>$2,880.00</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                            <div id="payment-option">
+                                <ul>
+                                    <li>
+                                        <label for="first">Direct Bank Transfer</label>
+                                        <input type="radio" name="accordion" id="first" checked>
+                                        <div class="content">
+                                            <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won’t be shipped until the funds have cleared in our account.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="second">Cheque Payment</label>
+                                        <input type="radio" name="accordion" id="second">
+                                        <div class="content">
+                                            <p>Please send your cheque to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <label for="third">Paypal</label>
+                                        <input type="radio" name="accordion" id="third">
+                                        <div class="content">
+                                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                            <img src="images/paypal_payment.png" alt="" class="payment-img">
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="order-complete.html" class="uk-button uk-button-small idz-button-white uk-width-1-1">Place Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div id="left-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <h4>Newsletter Signup</h4>
+                    <form id="footer-newsletter" class="uk-form">
+                        <fieldset>
+                            <input type="text" placeholder="enter your email...">
+                            <button class="uk-button uk-icon-envelope-o"></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="right-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <div id="footer-social" class="idz-social uk-align-right">
+                        <ul>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-google-plus"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-pinterest-p"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Stay connected</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="uk-grid">
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Company</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Product Recalls</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Client Services</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Email Preferences</a></li>
+                        <li><a href="#">Remove from Mailing List</a></li>
+                        <li><a href="#">Xarago Platinum Card</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Need Help?</h4>
+                    <ul class="uk-list">
+                        <li>Contact Us:</li>
+                        <li>Phone: 100.200.1234</li>
+                        <li>Email: orders@xaragoshop.co.id</li>
+                        <li>Hours: Monday - Friday</li>
+                        <li>8:30am - 4:45pm EST</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-1 uk-width-small-1-1">
+                    <div class="instagram-hero">
+                        <a href="#">
+                            <h2>Stay update</h2>
+                            <h5>Check out our</h5>
+                            <h4>Instagram</h4>
+                            <i class="uk-icon-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
+                <div class="uk-width-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-text-right">
+                    <p class="copyright-text">&copy; 2016. Xarago. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
+    </footer>
+    <!-- Javascript -->
+    <script src="js/jquery.js"></script>
+    <script src="js/uikit.min.js"></script>
+    <script src="js/config.js"></script>
+</body>
+
+</html>
