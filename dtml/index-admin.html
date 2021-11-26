@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!-- CSS -->
+        <link rel="stylesheet"  href="dtml/css/style-dash.css">
+        
+        <title>Administration dashboard</title>
+    </head>
+
+    <body>
+        <!--sidebar nav-->
+        <div class="sidebar">
+            <div class="logo-wrapper">
+                <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
+            </div>
+            <a href="index-admin.html" class="active">
+                <ion-icon name="home"></ion-icon>
+                <div class="text">Dashboard</div>
+            </a>
+            <a href="product.html">
+                <ion-icon name="cube"></ion-icon>
+                <div class="text">Products</div>
+            </a>
+            <a href="catalogs.html">
+                <ion-icon name="book"></ion-icon>
+                <div class="text">Catalogs</div>
+            </a>
+            <a href="blog-editor.html">
+                <ion-icon name="newspaper"></ion-icon>
+                <div class="text">Blog</div>
+            </a>
+            <a href="contacts-editor.html">
+                <ion-icon name="chatbubbles"></ion-icon>
+                <div class="text">Contacts</div>
+            </a>
+            <a class="tablink logout">
+                <ion-icon name="log-out"></ion-icon>
+                <div class="text">Logout</div>
+            </a>
+        </div>
+        <!--end sidebar nav-->
+        
+        <div class="wrapper">
+            <div class="main-content">
+                <div class="box-wrapper">
+                    <div class="box" >
+                        <h1>Total income</h1>
+                        <p class="value"> 0000000000000000</p>
+                    </div>
+                    <div class="box">
+                        <h1>Orders</h1>
+                        <p class="value"> 0000000000000000</p>
+                    </div>
+                    <div class="box">
+                        <h1>Clients</h1>
+                        <p class="value"> 0000000000000000</p>
+                    </div>
+                </div>
+
+                
+                <div class="table-container">
+                    <h3>Latest orders</h3>
+                    <br>
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Orderd number</th>
+                                <th>User</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <[foreach]>
+                                <td><[order_number]></td>
+                                <td>Doe</td>
+                                <td>21/11/2021</td>
+                            <[/foreach]>
+                            <tr>
+                                <td>0001</td>
+                                <td>Doe</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td>Otto</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0003</td>
+                                <td>Jacob</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0001</td>
+                                <td>Doe</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td>Otto</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0003</td>
+                                <td>Jacob</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0001</td>
+                                <td>Doe</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0002</td>
+                                <td>Otto</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                            <tr>
+                                <td>0003</td>
+                                <td>Jacob</td>
+                                <td>21/11/2021</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+
+        </div>
+    </body>
+</html>

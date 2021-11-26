@@ -20,7 +20,7 @@
     http://www.becontent.org
     
     */
-
+error_reporting(E_ERROR | E_PARSE);
 
 DEFINE("SQUARE", 1);
 DEFINE("CURL", 2);

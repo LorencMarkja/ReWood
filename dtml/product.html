@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <link rel="stylesheet"  href="css/style-dash.css">
+        <title>Administration dashboard</title>
+    </head>
+
+    <body>
+        <!--sidebar nav-->
+        <div class="sidebar">
+            <div class="logo-wrapper">
+                <img src="images/logo.svg" alt="reWood" class="logo" />
+            </div>
+            <a href="index-admin.html">
+                <ion-icon name="home"></ion-icon>
+                <div class="text">Dashboard</div>
+            </a>
+            <a href="product.html" class="active">
+                <ion-icon name="cube"></ion-icon>
+                <div class="text">Products</div>
+            </a>
+            <a href="catalogs.html">
+                <ion-icon name="book"></ion-icon>
+                <div class="text">Catalogs</div>
+            </a>
+            <a href="blog-editor.html">
+                <ion-icon name="newspaper"></ion-icon>
+                <div class="text">Blog</div>
+            </a>
+            <a href="contacts-editor.html">
+                <ion-icon name="chatbubbles"></ion-icon>
+                <div class="text">Contacts</div>
+            </a>
+            <a class="tablink logout">
+                <ion-icon name="log-out"></ion-icon>
+                <div class="text">Logout</div>
+            </a>
+        </div>
+        <!--end sidebar nav-->
+
+        <div class="wrapper">
+            <div class="overlay"></div>
+            <div class="main-content">
+                <div class="flex-container">
+                    <h1>PRODUCTS</h1>
+                    <button class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
+                </div>
+
+                <div class="table-container" style="margin-top: 20px;">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Pieces</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Blue Sofa</td>
+                                <td>A blue sofa</td>
+                                <td>€200</td>
+                                <td>5</td> 
+                                <td class="btn-container" >
+                                    <button class="edit-btn" onclick="document.getElementById('edit').style.display='block'">
+                                        EDIT
+                                    </button>
+                                    <button class="delete-btn">
+                                        DELETE
+                                    </button>
+                                </td>                               
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="insert" class="modal">
+                    <div class="modal-content">
+                      <div class="content-container">
+                        <button onclick="document.getElementById('insert').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                        <h1>Insert new product</h1>
+                        <form id="insert-form" class="form" action="/action_page.php" method="post">
+                            <div class="flex-container-form">
+                                <div class="left-content">
+                                    <input type="text" name="name" placeholder="Name" />
+                                    <textarea name="desc" placeholder="Description"></textarea>
+                                    <input type="file" id="images-upload" class="file" multiple>
+                                    <div class="flex-container">
+                                        <input type="number" name="pieces" placeholder="Pieces">
+                                        <input type="text" name="price" placeholder="Price">
+                                    </div>
+                                </div>
+                                <div class="right-content">
+                                    <input type="text" name="dim" placeholder="Dimension" />
+                                    <input type="text" name="weight" placeholder="Weight" />
+                                    <input type="text" name="material" placeholder="Material"/>
+    
+                                    <select id="categories" name="category" form="insert-form">
+                                        <option value="" selected disabled hidden>Choose category</option>
+                                        <option value="living-room">Living room</option>
+                                        <option value="bedroom">Bedroom</option>
+                                        <option value="bathroom">Bathroom</option>
+                                        <option value="kitchen">Kitchen</option>
+                                    </select>
+    
+                                    <select id="catalogs" name="catalog" form="insert-form">
+                                        <option value="" selected disabled hidden>Choose catalog</option>
+                                        <option value="living-room">Light wood 2021</option>
+                                        <option value="bedroom">Elegant 2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                      
+                            <div class="buttons">
+                                <input type="reset" value="RESET" class="reset-btn">
+                                <input type="submit" value="SUBMIT" class="sub-btn">
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+
+                <div id="edit" class="modal">
+                    <div class="modal-content">
+                      <div class="content-container">
+                        <button onclick="document.getElementById('edit').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                        <h1>Edit product</h1>
+                        <form id="edit-form" class="form" action="/action_page.php" method="post">
+                            <div class="flex-container-form">
+                                <div class="left-content">
+                                    <input type="text" name="name" placeholder="Name" />
+                                    <textarea name="desc" placeholder="Description"></textarea>
+                                    <input type="file" id="images-upload" class="file" multiple>
+                                    <div class="flex-container">
+                                        <input type="number" name="pieces" placeholder="Pieces">
+                                        <input type="text" name="price" placeholder="Price">
+                                    </div>
+                                </div>
+                                <div class="right-content">
+                                    <input type="text" name="dim" placeholder="Dimension" />
+                                    <input type="text" name="weight" placeholder="Weight" />
+                                    <input type="text" name="material" placeholder="Material"/>
+    
+                                    <select id="categories" name="category" form="insert-form">
+                                        <option value="" selected disabled hidden>Choose category</option>
+                                        <option value="living-room">Living room</option>
+                                        <option value="bedroom">Bedroom</option>
+                                        <option value="bathroom">Bathroom</option>
+                                        <option value="kitchen">Kitchen</option>
+                                    </select>
+    
+                                    <select id="catalogs" name="catalog" form="insert-form">
+                                        <option value="" selected disabled hidden>Choose catalog</option>
+                                        <option value="living-room">Light wood 2021</option>
+                                        <option value="bedroom">Elegant 2021</option>
+                                    </select>
+                                </div>
+                            </div>
+                      
+                            <div class="buttons">
+                                <input type="reset" value="RESET" class="reset-btn">
+                                <input type="submit" value="SUBMIT" class="sub-btn">
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
