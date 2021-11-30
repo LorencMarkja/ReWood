@@ -75,27 +75,6 @@
     color: white;
 }
 
-
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-@media screen and (max-width: 700px) {
-    .wrapper {
-        grid-template-columns: repeat(8, 1fr);
-        column-gap: 0;
-    }
-
-    .sidebar {
-        grid-column: 1 / 2;
-    }
-
-    .sidebar .logo-wrapper .logo {
-        width: 50px;
-    }
-
-    .sidebar a .text {
-        display: none;
-    }
-}
-
 .main-content {
     grid-column: 3 / span 10;
     margin-top: 85px;
@@ -150,7 +129,12 @@
     text-align: left;
     padding: 8px;
 }
-
+.desc{
+    max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -258,13 +242,14 @@ tr:nth-child(even) {
     row-gap: 16px;
 }
 
+
 .flex-container-form{
     display: flex; 
     flex-direction: row;
     align-items:flex-start;
     column-gap: 50px;
     width: 100%;
-    margin-top: 25px;
+    margin-top: 16px;
 }
 input[type="text"], input[type="number"], select{
     border-radius: 10px;
@@ -293,6 +278,9 @@ input[type=number] {
      width: 40%;
 }
 
+.images-up-container{
+    margin-top: 6px;
+}
 .buttons{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -316,9 +304,42 @@ input[type=number] {
     color: white;
     transition: .3s all ease-in-out;
 }
-
+.disabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
 .sub-btn:hover{
     background-color: green !important;
     color: white;
     transition: .3s all ease-in-out;
+}
+
+.message{
+   margin-top: 8px;
+}
+
+/* On screens that are less than 1800px, display the bar vertically, instead of horizontally */
+@media (max-width: 800px) {
+    .wrapper {
+        grid-template-columns: repeat(8, 1fr);
+        column-gap: 0;
+    }
+
+    .sidebar {
+        max-width: 80px;
+    }
+
+    .sidebar .logo-wrapper .logo {
+        width: 50px;
+    }
+    .sidebar a {
+        width: 44px;
+    }
+    .sidebar a .text {
+        display: none;
+    }
+
+    .main-content{
+        margin: 5%;
+    }
 }

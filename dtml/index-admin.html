@@ -29,7 +29,7 @@
                 <ion-icon name="home"></ion-icon>
                 <div class="text">Dashboard</div>
             </a>
-            <a href="product.html">
+            <a href="product-admin.php">
                 <ion-icon name="cube"></ion-icon>
                 <div class="text">Products</div>
             </a>
@@ -57,15 +57,15 @@
                 <div class="box-wrapper">
                     <div class="box" >
                         <h1>Total income</h1>
-                        <p class="value"> 0000000000000000</p>
+                        <p class="value"><[total_income]></p>
                     </div>
                     <div class="box">
                         <h1>Orders</h1>
-                        <p class="value"> 0000000000000000</p>
+                        <p class="value"><[orders_numb]></p>
                     </div>
                     <div class="box">
                         <h1>Clients</h1>
-                        <p class="value"> 0000000000000000</p>
+                        <p class="value"><[clients_numb]></p>
                     </div>
                 </div>
 
@@ -79,59 +79,18 @@
                                 <th>Orderd number</th>
                                 <th>User</th>
                                 <th>Date</th>
+                                <th>Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <[foreach]>
-                                <td><[order_number]></td>
-                                <td>Doe</td>
-                                <td>21/11/2021</td>
+                                <tr>
+                                    <td><[order_number]></td>
+                                    <td><[username]></td>
+                                    <td><[date]></td>
+                                    <td><[total_price]></td>
+                                </tr>
                             <[/foreach]>
-                            <tr>
-                                <td>0001</td>
-                                <td>Doe</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0002</td>
-                                <td>Otto</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0003</td>
-                                <td>Jacob</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0001</td>
-                                <td>Doe</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0002</td>
-                                <td>Otto</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0003</td>
-                                <td>Jacob</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0001</td>
-                                <td>Doe</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0002</td>
-                                <td>Otto</td>
-                                <td>21/11/2021</td>
-                            </tr>
-                            <tr>
-                                <td>0003</td>
-                                <td>Jacob</td>
-                                <td>21/11/2021</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>

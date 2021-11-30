@@ -13,7 +13,8 @@
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-        <link rel="stylesheet"  href="css/style-dash.css">
+
+        <link rel="stylesheet"  href="dtml/css/style-dash.css">
         <title>Administration dashboard</title>
     </head>
 
@@ -21,13 +22,13 @@
         <!--sidebar nav-->
         <div class="sidebar">
             <div class="logo-wrapper">
-                <img src="images/logo.svg" alt="reWood" class="logo" />
+                <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
             </div>
-            <a href="index-admin.html">
+            <a href="index-admin.php">
                 <ion-icon name="home"></ion-icon>
                 <div class="text">Dashboard</div>
             </a>
-            <a href="product.html" class="active">
+            <a href="product-admin.php" class="active">
                 <ion-icon name="cube"></ion-icon>
                 <div class="text">Products</div>
             </a>
@@ -55,7 +56,7 @@
             <div class="main-content">
                 <div class="flex-container">
                     <h1>PRODUCTS</h1>
-                    <button class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
+                    <button id="openForm" class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
                 </div>
 
                 <div class="table-container" style="margin-top: 20px;">
@@ -71,65 +72,78 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Blue Sofa</td>
-                                <td>A blue sofa</td>
-                                <td>€200</td>
-                                <td>5</td> 
-                                <td class="btn-container" >
-                                    <button class="edit-btn" onclick="document.getElementById('edit').style.display='block'">
-                                        EDIT
-                                    </button>
-                                    <button class="delete-btn">
-                                        DELETE
-                                    </button>
-                                </td>                               
-                            </tr>
+                            <[foreach]>
+                                <tr>
+                                    <td><[id]></td>
+                                    <td class="name"><[name]></td>
+                                    <td class="desc"><[desc]></td>
+                                    <td>€<[price]></td>
+                                    <td><[pieces]></td> 
+                                    <td class="btn-container" >
+                                        <button class="edit-btn" onclick="document.getElementById('edit').style.display='block'">
+                                            EDIT
+                                        </button>
+                                        <button class="delete-btn">
+                                            DELETE
+                                        </button>
+                                    </td>                               
+                                </tr>
+                            <[/foreach]>
                         </tbody>
                     </table>
                 </div>
-
+    
                 <div id="insert" class="modal">
                     <div class="modal-content">
                       <div class="content-container">
                         <button onclick="document.getElementById('insert').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
                         <h1>Insert new product</h1>
-                        <form id="insert-form" class="form" action="/action_page.php" method="post">
+                        <form autocomplete="off" id="insert-form" enctype="multipart/form-data" class="form" action="" method="post">
+                            <p class="message"><[message]></p>
                             <div class="flex-container-form">
                                 <div class="left-content">
-                                    <input type="text" name="name" placeholder="Name" />
-                                    <textarea name="desc" placeholder="Description"></textarea>
-                                    <input type="file" id="images-upload" class="file" multiple>
-                                    <div class="flex-container">
-                                        <input type="number" name="pieces" placeholder="Pieces">
-                                        <input type="text" name="price" placeholder="Price">
+                                    <input type="text" name="name" placeholder="Name" required/>
+                                    <textarea name="desc" placeholder="Description" required></textarea>
+                                    <div class="images-up-container">
+                                        <label for="files" class="btn">Select Front Image: </label>
+                                        <input type="file" class="file" name="front_img" accept="image/png, image/gif, image/jpeg">
                                     </div>
+                                    <div class="images-up-container">
+                                        <label for="files" class="btn">Select Back Image: </label>
+                                        <input type="file" class="file" name="back_img" accept="image/png, image/gif, image/jpeg">
+                                    </div>
+                                    <div class="images-up-container">
+                                        <label for="files" class="btn">Select Side Image:  </label>
+                                        <input type="file" class="file" name="side_img" accept="image/png, image/gif, image/jpeg">
+                                    </div>        
+                                    
+                                    <div class="flex-container">
+                                        <input type="number" name="pieces" placeholder="Pieces" required>
+                                        <input type="text" name="price" placeholder="Price" required>
+                                    </div>
+                                    
                                 </div>
                                 <div class="right-content">
-                                    <input type="text" name="dim" placeholder="Dimension" />
-                                    <input type="text" name="weight" placeholder="Weight" />
-                                    <input type="text" name="material" placeholder="Material"/>
-    
-                                    <select id="categories" name="category" form="insert-form">
+                                    <input type="text" name="dim" placeholder="Dimension" required />
+                                    <input type="text" name="weight" placeholder="Weight"/>
+                                    <input type="text" name="material" placeholder="Material"required/>
+
+                                   
+                                    <select id="categories" name="category[]" form="insert-form" required multiple>
                                         <option value="" selected disabled hidden>Choose category</option>
-                                        <option value="living-room">Living room</option>
-                                        <option value="bedroom">Bedroom</option>
-                                        <option value="bathroom">Bathroom</option>
-                                        <option value="kitchen">Kitchen</option>
+                                        <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-    
-                                    <select id="catalogs" name="catalog" form="insert-form">
+                                    <select id="catalogs" name="catalog[]" form="insert-form" multiple>
                                         <option value="" selected disabled hidden>Choose catalog</option>
-                                        <option value="living-room">Light wood 2021</option>
-                                        <option value="bedroom">Elegant 2021</option>
+                                        <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
+
                                 </div>
                             </div>
                       
                             <div class="buttons">
                                 <input type="reset" value="RESET" class="reset-btn">
-                                <input type="submit" value="SUBMIT" class="sub-btn">
+                                <input type="submit" name="insert" value="SUBMIT" class="sub-btn">
                             </div>
                         </form>
                       </div>
@@ -141,16 +155,13 @@
                       <div class="content-container">
                         <button onclick="document.getElementById('edit').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
                         <h1>Edit product</h1>
-                        <form id="edit-form" class="form" action="/action_page.php" method="post">
+                        <form autocomplete="off" id="edit-form" class="form" action="" method="post">
                             <div class="flex-container-form">
                                 <div class="left-content">
                                     <input type="text" name="name" placeholder="Name" />
                                     <textarea name="desc" placeholder="Description"></textarea>
-                                    <input type="file" id="images-upload" class="file" multiple>
-                                    <div class="flex-container">
-                                        <input type="number" name="pieces" placeholder="Pieces">
-                                        <input type="text" name="price" placeholder="Price">
-                                    </div>
+                                    <input type="number" name="pieces" placeholder="Pieces">
+                                    <input type="text" name="price" placeholder="Price">
                                 </div>
                                 <div class="right-content">
                                     <input type="text" name="dim" placeholder="Dimension" />
@@ -183,5 +194,8 @@
                 </div>
             </div>
         </div>
+
+        
+        <[buttonClick]>
     </body>
 </html>
