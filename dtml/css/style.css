@@ -3966,8 +3966,10 @@ ul.order-complete li strong {
 
 #login-account .uk-form-icon,
 #login-account input[type="text"],
+#login-account input[type="password"],
 #register-account .uk-form-icon,
-#register-account input[type="text"] {
+#register-account input[type="text"],
+#register-account input[type="password"] {
     width: 100%
 }
 
@@ -3980,9 +3982,14 @@ ul.order-complete li strong {
 #login-account .uk-form-icon:not(.uk-form-icon-flip) > input,
 #register-account .uk-form-icon:not(.uk-form-icon-flip) > input {
     padding-left: 38px!important
+    height: 45px;
+    margin-bottom: 20px;
+    padding: 4px 12px;
 }
 
 #login-account input[type="text"],
+#login-account input[type="password"],
+#register-account input[type="password"],
 #register-account input[type="text"] {
     height: 45px;
     margin-bottom: 20px;
