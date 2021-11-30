@@ -172,7 +172,7 @@
                         <!-- breadcrumb begin -->
                         <div class="uk-width-7-10 uk-width-small-1-2">
                             <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li class="uk-active"><span>My Account</span></li>
                             </ul>
                         </div>
@@ -188,53 +188,66 @@
                         <div class="uk-tab-center">
                             <ul class="uk-tab" data-uk-tab="{connect:'#tab-top-content'}">
                                 <li><a href="">Login</a></li>
-                                <li><a href="">Register</a></li>
+                                <li id="registration123"><a href="">Register</a></li>
                             </ul>
                         </div>
                         <ul id="tab-top-content" class="uk-switcher uk-margin">
                             <li>
-                                <form id="login-account" class="uk-form">
+                                <form action ="login.php" method="post" id="login-account" class="uk-form">
                                     <fieldset>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
-                                            <input type="text" placeholder="Username">
-                                        </div>
-                                        <div class="uk-form-icon">
-                                            <i class="uk-icon-envelope"></i>
-                                            <input type="text" placeholder="Email">
+                                            <input type="text" name="username" placeholder="Username">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-key"></i>
-                                            <input type="text" placeholder="Password">
+                                            <input type="password" name="password" placeholder="Password">
                                         </div>
-                                        <label>
-                                            <input type="checkbox">Remember me</label>
-                                        <a href="my-account.html" class="uk-button uk-button-small idz-button-grey uk-width-1-1">Login</a>
+                                        <label >
+                                            <p class="message"><[message]> </p>
+                                        </label>
+                                           <!--<input type="checkbox">Remember me</label> 
+                                        <a href="my-account.html" class="uk-button uk-button-small idz-button-grey uk-width-1-1">Login</a> -->
+                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="login_user" value="Login" >
+
                                     </fieldset>
                                 </form>
                             </li>
                             <li>
-                                <form id="register-account" class="uk-form">
+                                <form action ="register.php" method ="post" id="register-account" class="uk-form">
                                     <fieldset>
                                         <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="name" placeholder="Name">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="surname" placeholder="Surname">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="username" placeholder="Username">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-phone"></i>
+                                            <input type="text" name="telephone" placeholder="Telephone">
+                                        </div>
+                                        <div class="uk-form-icon">
                                             <i class="uk-icon-envelope"></i>
-                                            <input type="text" placeholder="Email address">
+                                            <input type="text" name="email" placeholder="Email">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-key"></i>
-                                            <input type="text" placeholder="Password">
-                                        </div>
-                                        <div class="uk-form-icon">
-                                            <i class="uk-icon-key"></i>
-                                            <input type="text" placeholder="Repeat password">
+                                            <input type="password" name="password" placeholder="Password">
                                         </div>
                                         <label>
-                                            <input type="checkbox">I agree to the <a href="#">Terms</a></label>
-                                        <a href="my-account.html" class="uk-button uk-button-small idz-button-grey uk-width-1-1">Register</a>
+                                            <!-- <input type="checkbox">I agree to the <a href="#">Terms</a></label> -->
+                                           <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="reg_user" value="Register" >
                                     </fieldset>
                                 </form>
                             </li>
                         </ul>
+                        <div> <p> <[error_message]> </p></div>
                     </div>
                 </div>
             </div>
@@ -328,6 +341,7 @@
         <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
     </footer>
     <!-- Javascript -->
+    <[buttonClick]>
     <script src="dtml/js/jquery.js"></script>
     <script src="dtml/js/uikit.min.js"></script>
     <script src="dtml/js/config.js"></script>
