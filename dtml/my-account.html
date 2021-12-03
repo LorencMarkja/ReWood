@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Site Properties -->
     <title>Xarago - Minimalist Shopping Template</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <link rel="shortcut icon" href="dtml/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="dtml/images/apple-touch-icon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/uikit.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components/small-icon.css">
+    <link rel="stylesheet" href="dtml/css/uikit.css">
+    <link rel="stylesheet" href="dtml/css/style.css">
+    <link rel="stylesheet" href="dtml/css/components/small-icon.css">
 </head>
 
 <body>
@@ -29,7 +29,7 @@
                         <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
                             <!-- main logo begin -->
                             <div id="logo">
-                                <a href="index.html"><img src="images/logo.svg" alt="xarago" /></a>
+                                <a href="index.html"><img src="dtml/images/logo.svg" alt="xarago" /></a>
                             </div>
                             <div id="slogan">
                                 <p>making your home, as unique as you.</p>
@@ -199,7 +199,7 @@
         <section class="uk-padding">
             <div class="uk-container uk-container-center">
                 <div class="uk-grid uk-margin-large-bottom">
-                    <div class="uk-width-1-4 uk-width-small-1-1 idz-margin-bottom-small">
+                  <!---  <div class="uk-width-1-4 uk-width-small-1-1 idz-margin-bottom-small">
                         <aside>
                             <div class="uk-panel-box idz-panel grey uk-text-contrast">
                                 <div class="idz-account-widget">
@@ -218,19 +218,24 @@
                                 </div>
                             </div>
                         </aside>
-                    </div>
+                    </div> -->
                     <div class="uk-width-3-4 uk-width-small-1-1">
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-margin-bottom">
                                 <h4 class="uk-margin-medium-bottom"><span class="line-accent">My Account</span></h4>
-                                <p>Hello John Doe (not John Doe? <a href="">Sign out</a>). From your account dashboard
-                                    you can view your recent orders, manage your shipping and billing addresses and <a
-                                        href="">edit your password and account details.</a></p>
+                                <address>
+
+                                    <label id="name"> <[name]>
+                                    <br> <label id=""> <[surname]> </label>
+                                    <br> <label id=""><[email]> </label>
+                                    <br> <label id=""> <[telephone]></label>
+                                    <br> <label id=""> <[username]></label>  
+                                </address>
                             </div>
                         </div>
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-margin-bottom">
-                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">Recent Orders</span></h4>
+                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">My Orders</span></h4>
                                 <table id="ord-cmpt-table" class="uk-table uk-table-striped">
                                     <thead>
                                         <tr>
@@ -242,37 +247,62 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <[foreach]>
                                         <tr>
-                                            <td><a href="">#2334</a></td>
-                                            <td class="uk-hidden-small">January 16, 2016</td>
+                                            <td><a href=""><[orderNumber]></a></td>
+                                            <td class="uk-hidden-small"><[date]></td>
                                             <td>Processing</td>
-                                            <td class="uk-hidden-small">$1,440 for 1 item</td>
+                                            <td class="uk-hidden-small"><[total]></td>
                                             <td class="uk-hidden-small"><a href=""
                                                     class="uk-button uk-button-small idz-button-grey uk-width-1-1">View</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td><a href="">#2335</a></td>
-                                            <td class="uk-hidden-small">January 16, 2016</td>
-                                            <td>Processing</td>
-                                            <td class="uk-hidden-small">$1,440 for 1 item</td>
-                                            <td class="uk-hidden-small"><a href=""
-                                                    class="uk-button uk-button-small idz-button-grey uk-width-1-1">View</a>
-                                            </td>
-                                        </tr>
+                                        <[/foreach]>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-margin-bottom">
-                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">My Address</span></h4>
-                                <p>The following addresses will be used on the checkout page by default.</p>
+                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">Edit you're data</span></h4>
+                                 <label id=""> <[errorMessage]></label>
+                                <form action ="my-account.php" method="post" id="login-account" class="uk-form">
+                                    <fieldset>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="address" placeholder="New Address">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="city" placeholder="New City">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="postcode" placeholder="New Postcode">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-user"></i>
+                                            <input type="text" name="country" placeholder="New country">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-key"></i>
+                                            <input type="password" name="password" placeholder="New Password">
+                                        </div>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-key"></i>
+                                            <input type="password" name="repeatPassword" placeholder="Repeat New Password">
+                                        </div>
+                
+                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="updateData" value="Update you're data" >
+
+                                    </fieldset>
+                                </form>
+                                <!--<p>The following addresses will be used on the checkout page by default.</p>-->
                             </div>
                         </div>
                         <div class="uk-grid">
-                            <div class="uk-width-1-2 uk-width-small-1-1 idz-margin-bottom-small">
-                                <div class="address-info-wrap">
+                          <!--   <div class="uk-width-1-2 uk-width-small-1-1 idz-margin-bottom-small">
+                               <div class="address-info-wrap">
                                     <h4 class="uk-margin-medium-bottom"><span class="line-accent">Billing Address</span>
                                     </h4>
                                     <a href="">
@@ -288,22 +318,18 @@
                                         <br> United States (US)
                                     </address>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="uk-width-1-2 uk-width-small-1-1">
                                 <div class="address-info-wrap">
-                                    <h4 class="uk-margin-medium-bottom"><span class="line-accent">Shipping
-                                            Address</span></h4>
+                                    <h4 class="uk-margin-medium-bottom"><span class="line-accent">My address</span></h4>
                                     <a href="">
-                                        <div class="uk-badge uk-badge-notification uk-badge-warning">Edit</div>
+                                        
                                     </a>
                                     <address>
-                                        <strong>Jonathan Doe</strong>
-                                        <br> Maskuline, Inc.
-                                        <br> 795 Folsom Ave
-                                        <br> Paddington Suite 600
-                                        <br> San Francisco
-                                        <br> CA 94107
-                                        <br> United States (US)
+                                        <label id="address"> <[address]>
+                                        <br> <label id="city"> <[city]> </label>
+                                        <br> <label id="postcode"><[postcode]> </label>
+                                        <br> <label id="country"> <[country]>
                                     </address>
                                 </div>
                             </div>
