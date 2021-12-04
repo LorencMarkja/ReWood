@@ -109,9 +109,17 @@
 .main-content .box-wrapper .box .value {
     font-size: 20px;
 }
-
+.section-table-container{
+    margin-top: 60px;
+}
 .table-container {
-    margin-top: 60px; 
+    height: 590px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.table-container.orders{
+    height: 390px;
 }
 
 .custom-table{
@@ -129,12 +137,19 @@
     text-align: left;
     padding: 8px;
 }
+.id{
+    max-width: 80px;
+}
+.name{
+    width: 220px !important;
+}
 .desc{
-    max-width: 450px;
+    max-width: 200px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; 
 }
+
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
@@ -169,7 +184,7 @@ tr:nth-child(even) {
     display: flex;
     justify-content: space-between;
 }
-.btn-container button{
+.btn-container input[type="submit"]{
     border: none;
     outline: none;
     width: 45%;
@@ -316,6 +331,10 @@ input[type=number] {
 
 .message{
    margin-top: 8px;
+}
+.message.error{
+    color: red;
+    font-weight: 500;
 }
 
 /* On screens that are less than 1800px, display the bar vertically, instead of horizontally */

@@ -30,26 +30,6 @@
 
 		}
 
-		function notification($name, $data, $pars) {
-
-			switch ($data) {
-				case "error":
-					$buffer = "<p class=\"warnbox red\"><i class=\"icon-remove\"></i> There was an error!</p>";
-					break;
-				case "success";
-					$buffer = "<p class=\"warnbox green\"><i class=\"icon-ok\"></i> The item has been succesfully added!</p>";
-					break;
-				default:
-					$buffer = "";
-					break;
-			}
-			
-
-			return $buffer;
-
-
-		}
-
 
 	}
 

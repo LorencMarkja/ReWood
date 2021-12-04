@@ -70,29 +70,31 @@
                 </div>
 
                 
-                <div class="table-container">
+                <div class="section-table-container">
                     <h3>Latest orders</h3>
                     <br>
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>Orderd number</th>
-                                <th>User</th>
-                                <th>Date</th>
-                                <th>Total Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <[foreach]>
+                    <div class="table-container orders">
+                        <table class="custom-table">
+                            <thead>
                                 <tr>
-                                    <td><[order_number]></td>
-                                    <td><[username]></td>
-                                    <td><[date]></td>
-                                    <td><[total_price]></td>
+                                    <th>Orderd number</th>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th>Total Price</th>
                                 </tr>
-                            <[/foreach]>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <[foreach]>
+                                    <tr>
+                                        <td><[order_number]></td>
+                                        <td><[username]></td>
+                                        <td><[date]></td>
+                                        <td><[total_price]></td>
+                                    </tr>
+                                <[/foreach]>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 
             </div>

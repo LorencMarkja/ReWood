@@ -4457,3 +4457,14 @@ footer hr {
 .prod-link:hover{
     color: #BF8360 !important;
 }
+
+
+/*custom css*/
+.img-box{
+    width: 100%;
+    height: 220px;
+}
+.img-box img{
+    margin: 0;
+    background: none;
+}

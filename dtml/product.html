@@ -12,6 +12,8 @@
         <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 
         <link rel="stylesheet"  href="dtml/css/style-dash.css">
@@ -63,9 +65,9 @@
                     <table class="custom-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Description</th>
+                                <th class="id">ID</th>
+                                <th class="name">Name</th>
+                                <th class="desc">Description</th>
                                 <th>Price</th>
                                 <th>Pieces</th>
                                 <th></th>
@@ -74,18 +76,13 @@
                         <tbody>
                             <[foreach]>
                                 <tr>
-                                    <td><[id]></td>
+                                    <td class="id"><[id]></td>
                                     <td class="name"><[name]></td>
                                     <td class="desc"><[desc]></td>
                                     <td>€<[price]></td>
                                     <td><[pieces]></td> 
-                                    <td class="btn-container" >
-                                        <button class="edit-btn" onclick="document.getElementById('edit').style.display='block'">
-                                            EDIT
-                                        </button>
-                                        <button class="delete-btn">
-                                            DELETE
-                                        </button>
+                                    <td class="btn-container">
+                                        <[btn_form]>
                                     </td>                               
                                 </tr>
                             <[/foreach]>
@@ -96,10 +93,10 @@
                 <div id="insert" class="modal">
                     <div class="modal-content">
                       <div class="content-container">
-                        <button onclick="document.getElementById('insert').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                        <button onclick="document.getElementById('insert').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
                         <h1>Insert new product</h1>
                         <form autocomplete="off" id="insert-form" enctype="multipart/form-data" class="form" action="" method="post">
-                            <p class="message"><[message]></p>
+                            <p class="message error"><[message]></p>
                             <div class="flex-container-form">
                                 <div class="left-content">
                                     <input type="text" name="name" placeholder="Name" required/>
@@ -153,40 +150,27 @@
                 <div id="edit" class="modal">
                     <div class="modal-content">
                       <div class="content-container">
-                        <button onclick="document.getElementById('edit').style.display='none'" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                        <button onclick="document.getElementById('edit').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
                         <h1>Edit product</h1>
-                        <form autocomplete="off" id="edit-form" class="form" action="" method="post">
+                        <form autocomplete="off" id="edit-form" enctype="multipart/form-data" class="form" action="" method="post">
+                            <p class="message error"><[message_edit]></p>
                             <div class="flex-container-form">
-                                <div class="left-content">
-                                    <input type="text" name="name" placeholder="Name" />
-                                    <textarea name="desc" placeholder="Description"></textarea>
-                                    <input type="number" name="pieces" placeholder="Pieces">
-                                    <input type="text" name="price" placeholder="Price">
-                                </div>
-                                <div class="right-content">
-                                    <input type="text" name="dim" placeholder="Dimension" />
-                                    <input type="text" name="weight" placeholder="Weight" />
-                                    <input type="text" name="material" placeholder="Material"/>
-    
-                                    <select id="categories" name="category" form="insert-form">
+                                <[left_content]>
+                                <div class='right-content'>
+                                    <[right_content]>
+                                    <select id="categories" name="category[]" form="edit-form" required multiple>
                                         <option value="" selected disabled hidden>Choose category</option>
-                                        <option value="living-room">Living room</option>
-                                        <option value="bedroom">Bedroom</option>
-                                        <option value="bathroom">Bathroom</option>
-                                        <option value="kitchen">Kitchen</option>
+                                        <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-    
-                                    <select id="catalogs" name="catalog" form="insert-form">
+                                    <select id="catalogs" name="catalog[]" form="edit-form" multiple>
                                         <option value="" selected disabled hidden>Choose catalog</option>
-                                        <option value="living-room">Light wood 2021</option>
-                                        <option value="bedroom">Elegant 2021</option>
+                                        <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
+                                    
                                 </div>
                             </div>
-                      
                             <div class="buttons">
-                                <input type="reset" value="RESET" class="reset-btn">
-                                <input type="submit" value="SUBMIT" class="sub-btn">
+                                <input type="submit" name="edit" value="SUBMIT" class="sub-btn">
                             </div>
                         </form>
                       </div>
@@ -194,8 +178,6 @@
                 </div>
             </div>
         </div>
-
-        
-        <[buttonClick]>
+        <[script]>
     </body>
 </html>
