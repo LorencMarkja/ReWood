@@ -77,7 +77,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="login.html">My Account</a>
+                                        <a href="my-account.php">My Account</a>
                                     </li>
                                     <li>
                                         <a href="wishlist.html">Wishlist</a>
@@ -107,7 +107,7 @@
                                 <nav id="mainmenu" class="uk-navbar">
                                     <ul class="uk-navbar-nav uk-hidden-small">
                                         <li class="uk-active uk-parent" data-uk-dropdown>
-                                            <a href="index.html">Home</a>
+                                            <a href="index.php">Home</a>
                                         </li>
                                         <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
                                                 href="#">Shop</a>
@@ -187,7 +187,7 @@
                         <!-- breadcrumb begin -->
                         <div class="uk-width-7-10 uk-width-small-1-2">
                             <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.php">Home</a></li>
                                 <li class="uk-active"><span>My Account</span></li>
                             </ul>
                         </div>
@@ -222,15 +222,14 @@
                     <div class="uk-width-3-4 uk-width-small-1-1">
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-margin-bottom">
-                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">My Account</span></h4>
-                                <address>
-
-                                    <label id="name"> <[name]>
-                                    <br> <label id=""> <[surname]> </label>
-                                    <br> <label id=""><[email]> </label>
-                                    <br> <label id=""> <[telephone]></label>
-                                    <br> <label id=""> <[username]></label>  
-                                </address>
+                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">My Informations</span></h4>
+                                <div>
+                                    <div class="text" style="display: flex; align-items: center; column-gap: 16px; margin-bottom: 5px;"><h5 style="margin: 0; font-weight: 600;">Name:</h5><[name]></div>
+                                    <div class="text" style="display: flex; align-items: center; column-gap: 16px; margin-bottom: 5px;"><h5 style="margin: 0; font-weight: 600;">Surname:</h5><[surname]></div>
+                                    <div class="text" style="display: flex; align-items: center; column-gap: 16px; margin-bottom: 5px;"><h5 style="margin: 0; font-weight: 600;">Username:</h5><[username]></div>
+                                    <div class="text" style="display: flex; align-items: center; column-gap: 16px; margin-bottom: 5px;"><h5 style="margin: 0; font-weight: 600;">Email:</h5><[email]></div>
+                                    <div class="text" style="display: flex; align-items: center; column-gap: 16px; margin-bottom: 5px;"><h5 style="margin: 0; font-weight: 600;">Telephone:</h5><[telephone]></div>
+                                </div>
                             </div>
                         </div>
                         <div class="uk-grid">
@@ -240,8 +239,7 @@
                                     <thead>
                                         <tr>
                                             <th>Order</th>
-                                            <th class="uk-hidden-small">Date</th>
-                                            <th>Status</th>
+                                            <th>Date</th>
                                             <th class="uk-hidden-small">Total</th>
                                             <th class="uk-hidden-small"></th>
                                         </tr>
@@ -250,11 +248,9 @@
                                         <[foreach]>
                                         <tr>
                                             <td><a href=""><[orderNumber]></a></td>
-                                            <td class="uk-hidden-small"><[date]></td>
-                                            <td>Processing</td>
+                                            <td><[date]></td>
                                             <td class="uk-hidden-small"><[total]></td>
-                                            <td class="uk-hidden-small"><a href=""
-                                                    class="uk-button uk-button-small idz-button-grey uk-width-1-1">View</a>
+                                            <td class="uk-hidden-small"><a href="" class="uk-button uk-button-small idz-button-grey uk-width-1-1">View</a>
                                             </td>
                                         </tr>
                                         <[/foreach]>
@@ -264,36 +260,38 @@
                         </div>
                         <div class="uk-grid">
                             <div class="uk-width-1-1 uk-margin-bottom">
-                                <h4 class="uk-margin-medium-bottom"><span class="line-accent">Edit you're data</span></h4>
+                                <h4 class=""><span class="line-accent">Edit your data</span></h4>
                                  <label id=""> <[errorMessage]></label>
                                 <form action ="my-account.php" method="post" id="login-account" class="uk-form">
                                     <fieldset>
+                                        <h6>Edit your address:</h6>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
-                                            <input type="text" name="address" placeholder="New Address">
+                                            <input type="text" name="address" placeholder=" New Address">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
-                                            <input type="text" name="city" placeholder="New City">
+                                            <input type="text" name="city" placeholder=" New City">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
-                                            <input type="text" name="postcode" placeholder="New Postcode">
+                                            <input type="text" name="postcode" placeholder=" New Postcode">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
-                                            <input type="text" name="country" placeholder="New country">
+                                            <input type="text" name="country" placeholder=" New country">
+                                        </div>
+                                        <h6>Edit your password:</h6>
+                                        <div class="uk-form-icon">
+                                            <i class="uk-icon-key"></i>
+                                            <input type="password" name="password" placeholder=" New Password">
                                         </div>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-key"></i>
-                                            <input type="password" name="password" placeholder="New Password">
-                                        </div>
-                                        <div class="uk-form-icon">
-                                            <i class="uk-icon-key"></i>
-                                            <input type="password" name="repeatPassword" placeholder="Repeat New Password">
+                                            <input type="password" name="repeatPassword" placeholder=" Repeat New Password">
                                         </div>
                 
-                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="updateData" value="Update you're data" >
+                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="updateData" value="Update your data" >
 
                                     </fieldset>
                                 </form>

@@ -35,22 +35,22 @@
       
         if(!empty($_POST["address"]))
         {  
-            $updateAddress="update billing_address set address = '$newAddress' WHERE user ='$id_user'";
+            $updateAddress="update address set address = '$newAddress' WHERE user ='$id_user'";
             $run=mysqli_query($mysqli,$updateAddress);
         }   
         if(!empty($_POST["city"]))
         {  
-            $updateCity="update billing_address set city = '$newCity' WHERE user ='$id_user'";
+            $updateCity="update address set city = '$newCity' WHERE user ='$id_user'";
             $run2=mysqli_query($mysqli,$updateCity);
         }   
         if(!empty($_POST["postcode"]))
         {  
-            $updatePostcode="update billing_address set postcode = '$newPostcode' WHERE user ='$id_user'";
+            $updatePostcode="update address set postcode = '$newPostcode' WHERE user ='$id_user'";
             $run3=mysqli_query($mysqli,$updatePostcode);
         }   
         if(!empty($_POST["country"]))
         {  
-            $updateCountry="update billing_address set country = '$newCountry' WHERE user ='$id_user'";
+            $updateCountry="update address set country = '$newCountry' WHERE user ='$id_user'";
             $run4=mysqli_query($mysqli,$updateCountry);
         }   
 
@@ -65,7 +65,7 @@
           
       }
 
-    $check_address="select * from billing_address WHERE user='$id_user'";
+    $check_address="select * from address WHERE user='$id_user'";
     $run6=mysqli_query($mysqli,$check_address);
     while ($data1 = $run6->fetch_assoc()){
         $postcodeDisplay = $data1['postcode'];
