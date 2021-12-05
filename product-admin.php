@@ -2,7 +2,7 @@
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
 
-    $main = new Template("dtml/product.html");
+    $main = new Template("dtml/product-admin.html");
 
     $product_info = $mysqli->query("
         SELECT *

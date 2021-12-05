@@ -36,7 +36,7 @@
     $clients = $mysqli->query("
         SELECT COUNT(*) AS number_clients
         FROM group_user
-        WHERE group_user.group_type = 2; ");
+        WHERE group_user.group_type = 2;");
 
     while ($data = $clients->fetch_assoc()) {
         $main->setContent("clients_numb", $data['number_clients']);

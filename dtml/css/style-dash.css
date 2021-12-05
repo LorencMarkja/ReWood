@@ -196,14 +196,14 @@ tr:nth-child(even) {
     transition: .3s all ease-in-out;
 }
 
-.edit-btn:hover{
-    background-color: green;
+input[type="submit"].edit-btn:hover{
+    background-color: green !important;
     color: white;
     transition: .3s all ease-in-out;
 }
 
-.delete-btn:hover{
-    background-color: red;
+input[type="submit"].delete-btn:hover{
+    background-color: red !important;
     color: white;
     transition: .3s all ease-in-out;
 }

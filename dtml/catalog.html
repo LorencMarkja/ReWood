@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-gb" dir="ltr">
-
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Site Properties -->
-    <title>Xarago - Minimalist Shopping Template</title>
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <title>Rewood - Minimalist Shopping Template</title>
+    <link rel="shortcut icon" href="dtml/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="dtml/images/apple-touch-icon.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/uikit.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components/small-icon.css">
+    <link rel="stylesheet" href="dtml/css/uikit.css">
+    <link rel="stylesheet" href="dtml/css/style.css">
+    <link rel="stylesheet" href="dtml/css/components/small-icon.css">
 </head>
 
 <body>
@@ -29,7 +28,7 @@
                         <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
                             <!-- main logo begin -->
                             <div id="logo">
-                                <a href="index.html"><img src="images/logo.svg" alt="xarago" /></a>
+                                <a href="index.php"><img src="dtml/images/logo.svg" alt="rewood" /></a>
                             </div>
                             <div id="slogan">
                                 <p>making your home, as unique as you.</p>
@@ -39,44 +38,7 @@
                         <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
                             <!-- top info begin -->
                             <div class="idz-header-list">
-                                <ul class="uk-list uk-align-right">
-                                    <li class="idz-mini-info">
-                                        <div class="uk-button-dropdown" data-uk-dropdown>
-                                            <a href=""><span class="uk-icon-button uk-icon-shopping-cart"></span><div class="uk-badge uk-badge-notification uk-badge-danger">2</div>$ 12,685.00</a>
-                                            <div class="uk-dropdown uk-dropdown-center">
-                                                <ul class="uk-nav uk-nav-dropdown idz-product-widget">
-                                                    <li class="uk-text-truncate">
-                                                        <a href="product-page.html">
-                                                            <img src="images/product-images/product_thumb1a.jpg" alt="">
-                                                            <p>Graham Sofa in Blue</p>
-                                                        </a>
-                                                        <span>1 x $ 1,440.00</span>
-                                                    </li>
-                                                    <li class="uk-text-truncate">
-                                                        <a href="product-page.html">
-                                                            <img src="images/product-images/product_thumb2.jpg" alt="">
-                                                            <p>Zahra Armchair</p>
-                                                        </a>
-                                                        <span>1 x $ 1,440.00</span>
-                                                    </li>
-                                                    <li class="subtotal-price">
-                                                        <h6>Subtotal : $ 12,685.00</h6>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shopping-cart.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">View cart</a>
-                                                        <a href="checkout.html" class="uk-button uk-button-mini idz-button-white uk-width-1-2">Checkout</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">My Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html">Wishlist</a>
-                                    </li>
-                                </ul>
+                                <[logged]>
                                 <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
                                     <fieldset>
                                         <input type="text" placeholder="search...">
@@ -101,7 +63,7 @@
                                 <nav id="mainmenu" class="uk-navbar">
                                     <ul class="uk-navbar-nav uk-hidden-small">
                                         <li class="uk-active uk-parent" data-uk-dropdown>
-                                            <a href="index.html">Home</a>
+                                            <a href="index.php">Home</a>
                                         </li>
                                         <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
                                                 href="#">Shop</a>
@@ -112,8 +74,8 @@
                                                             <li>
                                                                 <h5>Shopping</h5>
                                                             </li>
-                                                            <li><a href="shop-fullwidth.html">All Items</a></li>
-                                                            <li><a href="category-grid.html">Categories</a></li>
+                                                            <li><a href="shop-fullwidth.php">All Items</a></li>
+                                                            <li><a href="category-grid.php">Categories</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="uk-width-2-10 uk-width-medium-1-3">
@@ -121,10 +83,10 @@
                                                             <li>
                                                                 <h5>Commerce</h5>
                                                             </li>
-                                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                                            <li><a href="shopping-cart.html">View Cart page</a></li>
-                                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                                            <li><a href="order-complete.html">Complete Page</a></li>
+                                                            <li><a href="wishlist.php">Wishlist Page</a></li>
+                                                            <li><a href="shopping-cart.php">View Cart page</a></li>
+                                                            <li><a href="checkout.php">Checkout Page</a></li>
+                                                            <li><a href="order-complete.php">Complete Page</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="uk-width-4-10 uk-hidden-medium">
@@ -137,10 +99,10 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="catalog.html">Catalog</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="catalog.php">Catalog</a></li>
+                                        <li><a href="blog.php">Blog</a></li>
+                                        <li><a href="about.php">About</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                     <!--menu mobile-->
                                     <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small"
@@ -150,14 +112,14 @@
                                     <div class="uk-offcanvas-bar">
                                         <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
                                             <li class="uk-parent">
-                                                <a href="index.html">Home</a>
+                                                <a href="index.php">Home</a>
                                             </li>
-                                            <li><a href="shop-fullwidth.html">Shop</a></li>
-                                            <li><a href="category-grid.html">Categories</a></li>
-                                            <li><a href="catalog.html">Catalog</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="shop-fullwidth.php">Shop</a></li>
+                                            <li><a href="category-grid.php">Categories</a></li>
+                                            <li><a href="catalog.php">Catalog</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
 
                                         </ul>
                                     </div>
@@ -175,14 +137,14 @@
                     <div class="uk-grid">
                         <!-- page title headline begin -->
                         <div class="uk-width-3-10">
-                            <h2>Gallery</h2>
+                            <h2>Catalogs</h2>
                         </div>
                         <!-- page title headline end -->
                         <!-- breadcrumb begin -->
                         <div class="uk-width-7-10">
                             <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
-                                <li><a href="index.html">Home</a></li>
-                                <li class="uk-active"><span>Gallery</span></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li class="uk-active"><span>Catalogs</span></li>
                             </ul>
                         </div>
                         <!-- breadcrumb end -->
@@ -194,76 +156,21 @@
             <div class="uk-container uk-container-center">
                 <div class="uk-grid uk-margin-large-bottom">
                     <div class="uk-width-1-1">
-                        <ul id="filter" class="uk-subnav uk-subnav-pill uk-flex-center uk-margin-large-bottom">
-                            <li class="uk-active" data-uk-filter=""><a href="#">All</a></li>
-                            <li data-uk-filter="print"><a href="#">Print Design</a></li>
-                            <li data-uk-filter="web"><a href="#">Web Design</a></li>
-                            <li data-uk-filter="motion"><a href="#">Motion Graphics</a></li>
-                        </ul>
                         <ul id="pf-container" class="uk-grid-width-medium-1-3 uk-grid-width-small-1-2 uk-margin-medium-bottom" data-uk-grid="{gutter: 35, controls: '#filter'}">
-                            <li data-uk-filter="web, motion">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p1.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p1.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="motion">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p2.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p2.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="web, print">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p3.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p4.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="web">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p4.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p5.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="print">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p5.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p5.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="motion">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p6.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p6.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="print">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p7.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p7.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="motion">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p8.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p8.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
-                            <li data-uk-filter="web">
-                                <figure class="uk-overlay uk-overlay-hover">
-                                    <img src="images/portfolio-thumb/p9.jpg" alt="" class="uk-overlay-spin" />
-                                    <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
-                                    <a class="uk-position-cover" href="images/portfolio-big/p9.jpg" data-uk-lightbox="{group:'portfolio'}" title="Project Name"></a>
-                                </figure>
-                            </li>
+                            <[foreach]>
+                                <li>
+                                    <figure class="uk-overlay uk-overlay-hover">
+                                        <div class="img-box-catalog">
+                                            <[img]>
+                                        </div>
+                                        <!-- <img src="images/portfolio-thumb/p1.jpg" alt="" class="uk-overlay-spin" /> -->
+                                        <div class="uk-overlay-panel uk-overlay-background uk-overlay-icon uk-overlay-fade"></div>
+                                        <[a]>
+                                        <!-- <a class="uk-position-cover" href="product-page.php" title="Project Name"></a> -->
+                                    </figure>
+                                    <h2><[name]></h2>
+                                </li>
+                            <[/foreach]>
                         </ul>
                     </div>
                 </div>
@@ -358,11 +265,11 @@
         <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
     </footer>
     <!-- Javascript -->
-    <script src="js/jquery.js"></script>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/components/grid.js"></script>
-    <script src="js/components/lightbox.js"></script>
-    <script src="js/config.js"></script>
+    <script src="dtml/js/jquery.js"></script>
+    <script src="dtml/js/uikit.min.js"></script>
+    <script src="dtml/js/components/grid.js"></script>
+    <script src="dtml/js/components/lightbox.js"></script>
+    <script src="dtml/js/config.js"></script>
 </body>
 
 </html>

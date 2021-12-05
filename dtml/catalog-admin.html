@@ -13,7 +13,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <link rel="stylesheet" href="css/style-dash.css">
+    <link rel="stylesheet" href="dtml/css/style-dash.css">
     <title>Administration dashboard</title>
 </head>
 
@@ -21,25 +21,25 @@
     <!--sidebar nav-->
     <div class="sidebar">
         <div class="logo-wrapper">
-            <img src="images/logo.svg" alt="reWood" class="logo" />
+            <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
         </div>
-        <a href="index-admin.html">
+        <a href="admin.php">
             <ion-icon name="home"></ion-icon>
             <div class="text">Dashboard</div>
         </a>
-        <a href="product.html">
+        <a href="product-admin.php">
             <ion-icon name="cube"></ion-icon>
             <div class="text">Products</div>
         </a>
-        <a href="catalogs.html" class="active">
+        <a href="catalog-admin.php" class="active">
             <ion-icon name="book"></ion-icon>
             <div class="text">Catalogs</div>
         </a>
-        <a href="blog-editor.html">
+        <a href="blog-editor.php">
             <ion-icon name="newspaper"></ion-icon>
             <div class="text">Blog</div>
         </a>
-        <a href="contacts-editor.html">
+        <a href="contacts-editor.php">
             <ion-icon name="chatbubbles"></ion-icon>
             <div class="text">Contacts</div>
         </a>
@@ -61,26 +61,25 @@
                 <table class="custom-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th class="id">ID</th>
                             <th>Name</th>
                             <th>Date of creation</th>
+                            <th class="desc">Description</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Light Wood</td>
-                            <td>05/03/2021</td>
-                            <td class="btn-container">
-                                <button class="edit-btn">
-                                    EDIT
-                                </button>
-                                <button class="delete-btn">
-                                    DELETE
-                                </button>
-                            </td>
-                        </tr>
+                        <[foreach]>
+                            <tr>
+                                <td><[id]></td>
+                                <td><[name]></td>
+                                <td><[date]></td>
+                                <td class="desc"><[desc]></td>
+                                <td class="btn-container">
+                                    <[btn_form]>
+                                </td>
+                            </tr>
+                        <[/foreach]>
                     </tbody>
                 </table>
             </div>
