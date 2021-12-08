@@ -3201,7 +3201,7 @@ ul.idz-product-widget li span.strikethrough-price {
 
 /* [ 2.2. index-layout2.html - Home 2 ] */
 
-.idz-xarago-wdgt1:before {
+.idz-reWood-wdgt1:before {
     width: 100%;
     height: 247px;
     background: url(../images/sample/xarago_widget_bg1.png) no-repeat;
@@ -3211,23 +3211,23 @@ ul.idz-product-widget li span.strikethrough-price {
     left: 0px;
 }
 
-.idz-xarago-wdgt1 {
+.idz-reWood-wdgt1 {
     padding-bottom: 12px;
 }
 
-.idz-xarago-wdgt1 h1 {
+.idz-reWood-wdgt1 h1 {
     font-family: 'Damion', cursive;
     font-size: 120px;
     text-transform: lowercase;
     margin-bottom: 43px;
 }
 
-.idz-xarago-wdgt1 h3 {
+.idz-reWood-wdgt1 h3 {
     margin-top: 12px;
     margin-bottom: -23px;
 }
 
-.idz-xarago-wdgt2:before {
+.idz-reWood-wdgt2:before {
     width: 100%;
     height: 247px;
     background: url(../images/sample/xarago_widget_bg2.png) no-repeat;
@@ -3237,11 +3237,11 @@ ul.idz-product-widget li span.strikethrough-price {
     left: 0px;
 }
 
-.idz-xarago-wdgt2 {
+.idz-reWood-wdgt2 {
     padding-bottom: 12px;
 }
 
-.idz-xarago-wdgt2 h1 {
+.idz-reWood-wdgt2 h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 70px;
     color: #ebfb1c;
@@ -3250,7 +3250,7 @@ ul.idz-product-widget li span.strikethrough-price {
     float: left;
 }
 
-.idz-xarago-wdgt2 h2 {
+.idz-reWood-wdgt2 h2 {
     font-family: 'Damion', cursive;
     font-size: 36px;
     line-height: 34px;
@@ -3259,26 +3259,26 @@ ul.idz-product-widget li span.strikethrough-price {
     float: left;
 }
 
-.idz-xarago-wdgt2 h2.widget-upto {
+.idz-reWood-wdgt2 h2.widget-upto {
     margin: 10px 0 0 28px;
 }
 
-.idz-xarago-wdgt2 h2.widget-off-size {
+.idz-reWood-wdgt2 h2.widget-off-size {
     margin-top: 28px;
     font-size: 72px
 }
 
-.idz-xarago-wdgt2 h3 {
+.idz-reWood-wdgt2 h3 {
     position: relative;
     left: -35px;
     float: left;
 }
 
-.idz-xarago-wdgt3 {
+.idz-reWood-wdgt3 {
     height: 255px;
 }
 
-.idz-xarago-wdgt3 h1 {
+.idz-reWood-wdgt3 h1 {
     font-family: 'Roboto', sans-serif;
     font-size: 46px;
     color: #ebfb1c;
@@ -3287,7 +3287,7 @@ ul.idz-product-widget li span.strikethrough-price {
     float: left;
 }
 
-.idz-xarago-wdgt3 h2 {
+.idz-reWood-wdgt3 h2 {
     font-family: 'Damion', cursive;
     font-size: 22px;
     line-height: 22px;
@@ -3297,18 +3297,18 @@ ul.idz-product-widget li span.strikethrough-price {
     float: left;
 }
 
-.idz-xarago-wdgt3 h2.widget-off-size {
+.idz-reWood-wdgt3 h2.widget-off-size {
     font-size: 39px;
     top: 10px;
     position: relative;
 }
 
-.idz-xarago-wdgt3 span {
+.idz-reWood-wdgt3 span {
     width: 100%;
     float: left;
 }
 
-.idz-xarago-wdgt3 a i {
+.idz-reWood-wdgt3 a i {
     font-size: 30px;
     color: #fff;
 }

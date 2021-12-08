@@ -2,10 +2,11 @@
   <defs>
     <style>
       .cls-1 {
-        font-size: 37.5px;
+        font-size: 44.5px;
         fill: #10100f;
-        font-family: "Eastman Trial";
-        font-weight: 800;
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+
       }
     </style>
   </defs>

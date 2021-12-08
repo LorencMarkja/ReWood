@@ -12,16 +12,18 @@ $id_category = $_GET['id'];
 
 $category_product="select * from product_info LEFT JOIN product_category ON product_info.id_product = product_category.product WHERE category='$id_category'";
     $run=mysqli_query($mysqli,$category_product);
+    $count = 0;
 
     while ($data = $run->fetch_assoc()){
-    $main->setContent("name", $data['name']);
-    $main->setContent("price", $data['price']);
-    $price=$data['price'];
-    $front=$data['front'];
-    $main->setContent("front", "<img src='products/$front'  style='width:100%; height:272px; object-fit: cover;' alt='product image'>");
-    $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+        $count++;
+        $main->setContent("name", $data['name']);
+        $main->setContent("price", $data['price']);
+        $price=$data['price'];
+        $front=$data['front'];
+        $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
+        $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
     }
 
-
+    $main->setContent("count", $count);
 
 $main->close();

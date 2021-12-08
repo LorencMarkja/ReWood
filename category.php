@@ -11,13 +11,13 @@ $check_category="select * from category";
     $run=mysqli_query($mysqli,$check_category);
 
     while ($data = $run->fetch_assoc()){
+    
     $main->setContent("name", $data['name']);
     $main->setContent("image", $data['image']);
     $main->setContent("id", $data['id_category']);
     $id_category = $data['id_category'];
     $main->setContent("pageRef", "<a href='category-product.php?id=$id_category'>View Products &raquo;</a>");
     }
-    
     
 
 $main->close();

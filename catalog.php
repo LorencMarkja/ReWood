@@ -6,8 +6,10 @@
     require "include/isLogged.inc.php";
    
     $catalog_info = $mysqli->query("SELECT * FROM rewood.catalog ORDER BY id_catalog DESC LIMIT 12");
+    
 
     while ($data = $catalog_info->fetch_assoc()) {
+        
         $id=$data['id_catalog'];
         $name=$data['name'];
         $description=$data['description'];
