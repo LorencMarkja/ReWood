@@ -4462,9 +4462,11 @@ footer hr {
 /*custom css*/
 .img-box{
     width: 100%;
-    height: 220px;
+    height: 250px;
 }
 .img-box img{
+    height: 225px;
+    object-fit: scale-down;
     margin: 0;
     background: none;
 }

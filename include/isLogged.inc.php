@@ -49,7 +49,7 @@
                    <a href='#'>Home</a>
                </li>
                <li>
-                   <a href='wishlist.php'>Register</a>
+                   <a href='login-register.php'>Register</a>
                </li>
                <li>
                    <a href='login-register.php'>Login</a> 

@@ -5,5 +5,18 @@
     $main = new Template("dtml/shop-fullwidth.html");
     require "include/isLogged.inc.php";
 
+    $id_catalog = $_GET['id'];
+    
+    $product = $mysqli->query("SELECT * FROM product_info LEFT JOIN product_catalog ON product_info.id_product = product_catalog.product WHERE catalog='$id_catalog' ORDER BY id_product;");
+
+    while ($data = $product->fetch_assoc()) {
+        $id=$data['id_product'];
+        $main->setContent("name", $data['name']);            
+        $main->setContent("price", $data['price']);
+        $price=$data['price'];
+        $front=$data['front'];
+        $main->setContent("front", "<img src='products/$front' alt='product image'>");
+        $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+    }
     $main->close();
 ?>
