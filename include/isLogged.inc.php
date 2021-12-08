@@ -46,7 +46,7 @@
        $main->setContent("logged", " 
            <ul class='uk-list uk-align-right'>
                <li>
-                   <a href='#'>Home</a>
+                   <a href='index.php'>Home</a>
                </li>
                <li>
                    <a href='login-register.php'>Register</a>

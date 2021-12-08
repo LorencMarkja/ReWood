@@ -4483,3 +4483,14 @@ footer hr {
     margin: 0;
     background: none;
 }
+
+.img-box-last{
+    width: 100%;
+    object-fit: contain;
+    background-color: white;
+}
+
+.img-box-last img{
+    height: 275px;
+}
+

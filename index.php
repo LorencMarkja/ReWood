@@ -14,7 +14,7 @@
         $main->setContent("price", $data['price']);
         $main->setContent("pieces", $data['pieces']);
         $img_name =  $data['front'];
-        $main->setContent("img", "<img src='products/$img_name' style='width:100%; height:85%; object-fit: contain;' alt='product image'>");
+        $main->setContent("img", "<img src='dtml/images/product-images/$img_name' style='width:100%; height:85%; object-fit: contain;' alt='product image'>");
     };
 
     $last_product = $mysqli->query("SELECT * FROM product_info WHERE id_product=(SELECT max(id_product) FROM product);");
@@ -25,7 +25,7 @@
         $main->setContent("desc_last", $data['description']);
         $main->setContent("price_last", $data['price']);
         $img_name = $data['front'];
-        $main->setContent("img_last", "<img src='products/$img_name'  style='width:100%; height:272px; object-fit: cover;' alt='product image'>");
+        $main->setContent("img_last", "<img src='dtml/images/product-images/$img_name' alt='product image'>");
     };
 
     $main->close();
