@@ -54,7 +54,7 @@
             <div class="flex-container">
                 <h1>CATALOGS</h1>
                 <button class="add-btn">
-                    <ion-icon name="add-circle"></ion-icon>
+                    <button id="openForm" class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
                 </button>
             </div>
             <div class="table-container" style="margin-top: 20px;">
@@ -83,8 +83,64 @@
                     </tbody>
                 </table>
             </div>
+
+            <div id="insert" class="modal">
+                <div class="modal-content">
+                  <div class="content-container">
+                    <button onclick="document.getElementById('insert').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                    <h1>Insert new Catalog</h1>
+                    <form autocomplete="off" id="insert-form" enctype="multipart/form-data" class="form" action="" method="post">
+                        <p class="message error"><[message]></p>
+                        <div class="flex-container-form">
+                            <div class="left-content">
+                                <input type="text" name="name" placeholder="Name" required/>
+                                <textarea name="desc" placeholder="Description" required></textarea>
+                            </div>
+                            <div class="right-content">
+                                <input type="date" value="" required>
+                                <div class="images-up-container" style="margin-top: 10px;">
+                                    <label for="files" class="btn">Select Image: </label>
+                                    <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
+                                </div>
+                            </div>
+                        </div>
+                  
+                        <div class="buttons">
+                            <input type="reset" value="RESET" class="reset-btn">
+                            <input type="submit" name="insert" value="SUBMIT" class="sub-btn">
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+
+            <div id="edit" class="modal">
+                <div class="modal-content">
+                  <div class="content-container">
+                    <button onclick="document.getElementById('edit').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                    <h1>Edit Catalog</h1>
+                    <form autocomplete="off" id="edit-form" enctype="multipart/form-data" class="form" action="" method="post">
+                        <p class="message error"><[message_edit]></p>
+                        <div class="flex-container-form">
+                           <[left_content]>
+                            <div class="right-content">
+                                <[right_content]>
+                                <div class="images-up-container" style="margin-top: 10px;">
+                                    <label for="files" class="btn">Select Image: </label>
+                                    <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <input type="submit" name="edit" value="SUBMIT" class="sub-btn">
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
+    <[script]>
 </body>
 
 </html>
