@@ -11,9 +11,9 @@
 
     
     $check_user="select * from user WHERE username='$usernameLogged' ";
-    $run=mysqli_query($mysqli,$check_user);
+    $run8=mysqli_query($mysqli,$check_user);
 
-    while ($data = $run->fetch_assoc()){
+    while ($data = $run8->fetch_assoc()){
       $usernameDisplay = $data['username'];
       $passwordDisplay = $data['password'];
       $id_user = $data['id_user'];
@@ -24,6 +24,31 @@
       
     }
     
+    $check_address="select * from address WHERE user='$id_user'";
+    $run7=mysqli_query($mysqli,$check_address);
+    while ($data1 = $run7->fetch_assoc()){
+        $postcodeDisplay = $data1['postcode'];
+        $cityDisplay = $data1['city'];
+        $countryDisplay = $data1['country'];
+        $addressDisplay = $data1['address'];
+        
+      }
+      
+    $numRows = mysqli_num_rows($run7);
+
+    $check_orders="select * FROM rewood.order AS orders LEFT JOIN cart ON orders.cart=id_cart WHERE orders.user='$id_user' and cart.user='$id_user' ORDER BY date DESC LIMIT 5";
+    $run6=mysqli_query($mysqli,$check_orders);
+    while ($data1 = $run6->fetch_assoc()){
+        $main->setContent("orderNumber", $data1['order_number']);
+        $main->setContent("date", $data1['date']);
+        $main->setContent("total", $data1['total_price']);  
+        $main->setContent("view", "<a class='uk-button uk-button-small idz-button-grey uk-width-1-1'>View</a>");      
+    };
+
+
+    if($numRows !=0) {
+        $main->setContent("infoAddress", "Edit your address");
+        $main->setContent("valueButt", "Edit your data");
     if(isset($_POST['updateData'])) {  
         $newAddress=addslashes($_POST['address']);
         $newCity=addslashes($_POST['city']);
@@ -62,26 +87,33 @@
         else if($_POST["password"]!=$_POST["repeatPassword"]){
             $main->setContent("errorMessage", "Attenzione, le password non coincidono!");
         }
-          
+        header("Location: my-account.php");
       }
+    }
+    if($numRows == 0){
+        $main->setContent("infoAddress", "Insert your address");
+        $main->setContent("valueButt", "Insert your data");
+        if (isset($_POST['updateData'])){
+        echo("ECCO LA PROVA ADATTA");
+        $newAddress=addslashes($_POST['address']);
+        $newCity=addslashes($_POST['city']);
+        $newPostcode=$_POST['postcode'];
+        $newCountry=$_POST['country'];
 
-    $check_address="select * from address WHERE user='$id_user'";
-    $run6=mysqli_query($mysqli,$check_address);
-    while ($data1 = $run6->fetch_assoc()){
-        $postcodeDisplay = $data1['postcode'];
-        $cityDisplay = $data1['city'];
-        $countryDisplay = $data1['country'];
-        $addressDisplay = $data1['address'];
         
+            $insertAddress="INSERT INTO address  VALUES (
+                0,
+                '$newPostcode', 
+                '$newCity',
+                '$newCountry',
+                '$newAddress',
+                '$id_user')";
+            $run9=mysqli_query($mysqli,$insertAddress);
+           
+            header("Location: my-account.php");
       }
-
-      $check_orders="select * FROM rewood.order AS orders LEFT JOIN cart ON orders.cart=id_cart WHERE orders.user='$id_user' and cart.user='$id_user' ORDER BY date DESC LIMIT 5";
-    $run7=mysqli_query($mysqli,$check_orders);
-    while ($data1 = $run7->fetch_assoc()){
-        $main->setContent("orderNumber", $data1['order_number']);
-        $main->setContent("date", $data1['date']);
-        $main->setContent("total", $data1['total_price']);  
-      };
+      
+    }
 
 
     $main->setContent("name", $nameDisplay);

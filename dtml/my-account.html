@@ -250,7 +250,7 @@
                                             <td><a href=""><[orderNumber]></a></td>
                                             <td><[date]></td>
                                             <td class="uk-hidden-small"><[total]></td>
-                                            <td class="uk-hidden-small"><a href="" class="uk-button uk-button-small idz-button-grey uk-width-1-1">View</a>
+                                            <td class="uk-hidden-small"> <[view]>
                                             </td>
                                         </tr>
                                         <[/foreach]>
@@ -264,7 +264,7 @@
                                  <label id=""> <[errorMessage]></label>
                                 <form action ="my-account.php" method="post" id="login-account" class="uk-form">
                                     <fieldset>
-                                        <h6>Edit your address:</h6>
+                                        <h6><[infoAddress]>:</h6>
                                         <div class="uk-form-icon">
                                             <i class="uk-icon-user"></i>
                                             <input type="text" name="address" placeholder=" New Address">
@@ -291,7 +291,7 @@
                                             <input type="password" name="repeatPassword" placeholder=" Repeat New Password">
                                         </div>
                 
-                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="updateData" value="Update your data" >
+                                        <input type="submit"class="uk-button uk-button-small idz-button-grey uk-width-1-1" name="updateData" value="<[valueButt]>" >
 
                                     </fieldset>
                                 </form>
