@@ -152,7 +152,8 @@
                         <div class="idz-sorting-wrap uk-margin-medium-bottom">
                             <div class="uk-grid uk-grid-medium">
                                 <div class="uk-width-3-4 uk-width-small-1-2">
-                                    <p>Showing 1–12 of <[count]> results</p>
+                                    <!--<p>Showing 1 –<[totalRecordsPerPage]> of <[recordsTotal]> results</p> !-->
+                                    <p> </p>
                                 </div>
                                 <div class="uk-width-1-4 uk-width-small-1-2">
                                     <form  method="post" action="shop-fullwidth.php" class="uk-form">
@@ -190,12 +191,16 @@
                                     <[/foreach]>
                         </ul>
                         <!-- begin pagination -->
+                        <form method="get" action="shop-fullwidth.php" >
                         <ul class="uk-pagination uk-pagination-left">
-                            <li class="uk-active"><span>1</span></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">&raquo;</a></li>
+                            
+                            <li><a href='shop-fullwidth.php?page-number=1'> 1 </a> </li>
+
+                            <[foreach]>
+                            <li class="uk-active"> <[page_number]> </li>
+                            <[/foreach]>
                         </ul>
+                    </form>
                     </div>
                 </div>
             </div>
