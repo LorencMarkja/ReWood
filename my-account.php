@@ -1,10 +1,12 @@
 <?php
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
+    
 
     session_start();
 
     $main = new Template("dtml/my-account.html");
+    require "include/isLogged.inc.php";
     $usernameLogged=$_SESSION['username'];
   
     
@@ -128,6 +130,7 @@
     $main->setContent("country", $countryDisplay);
     $main->setContent("address", $addressDisplay);
 
+    $_SESSION['id_user']= $id_user;
     
     $main->close();
 

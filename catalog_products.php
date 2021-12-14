@@ -2,8 +2,12 @@
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
     
+    session_start();
+
     $main = new Template("dtml/shop-fullwidth.html");
     require "include/isLogged.inc.php";
+
+    $usernameLogged=$_SESSION['username'];
 
     $id_catalog = $_GET['id'];
     $count = 0;

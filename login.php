@@ -51,6 +51,8 @@ else{ */
     }  
   
 $_SESSION['username']= $username;
+$_SESSION['id_user']= $id_user;
+
 
 
 

@@ -3,8 +3,13 @@
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
 
+    session_start();
+    $id_user=$_SESSION['id_user'];
+
     $main = new Template("dtml/shop-fullwidth.html");
     require "include/isLogged.inc.php";
+
+
 
 // Current Page Number
     if (isset($_GET['page-number']) && $_GET['page-number']!="") {
@@ -28,6 +33,13 @@
         $total_no_of_pages = ceil($total_records / $total_records_per_page);
         $second_last = $total_no_of_pages - 1;
 
+
+    $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
+    $run1=mysqli_query($mysqli,$check_idWishlist);
+    while ($data = $run1->fetch_assoc()){
+        $id_wishlist = $data['id_wishlist'];     
+    }
+
     $product = $mysqli->query("SELECT * FROM product_info ORDER BY id_product LIMIT $offset, $total_records_per_page;");
     while ($data = $product->fetch_assoc()) {
         $id=$data['id_product'];
@@ -37,6 +49,9 @@
         $front=$data['front'];
         $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
         $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+        $main->setContent("idRef", $id);
+        $main->setContent("idWref", $id_wishlist);
+        
     }
 
     $contatore = $total_no_of_pages; 
@@ -47,7 +62,8 @@
         $contatore = $contatore -1;
 
     }
-
+ 
+    
     //sezione showing results
     //nella prima pagina deve mostrare                         1          -    $total_records_per_page of 18 $recordsTotal                          1 - 12    of 18
     //nella seconda pagina deve mostrare ($total_records_per_page)+1      -    ($total_records_per_page * 2)                                        13 - 24

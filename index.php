@@ -1,9 +1,13 @@
 <?php
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
-    
+
+    session_start();
+
     $main = new Template("dtml/index.html");
     require "include/isLogged.inc.php";
+    
+    $usernameLogged=$_SESSION['username'];
 
     $product_info = $mysqli->query("SELECT * FROM product_info ORDER BY id_product DESC LIMIT 8");
 

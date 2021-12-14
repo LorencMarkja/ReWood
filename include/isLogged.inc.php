@@ -36,7 +36,7 @@
                    </div>
                </li>
                <li>
-                   <a href='login-register.php'>My Account</a>
+                   <a href='my-account.php'>My Account</a>
                </li>
                <li>
                    <a href='wishlist.php'>Wishlist</a>

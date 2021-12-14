@@ -7,6 +7,8 @@ session_start();
 $main = new Template("dtml/category-grid.html");
 require "include/isLogged.inc.php";
 
+$usernameLogged=$_SESSION['username'];
+
 $check_category="select * from category";
     $run=mysqli_query($mysqli,$check_category);
 
