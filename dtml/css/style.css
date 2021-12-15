@@ -471,7 +471,7 @@ strong {
 }
 
 .uk-margin-medium-bottom {
-    margin-bottom: 45px!important
+    margin-bottom: 50px!important
 }
 
 
@@ -2643,12 +2643,13 @@ form#rating-form .br-widget a {
     color: #fff;
 }
 
-.uk-pagination > .uk-active > span {
+.uk-pagination > li.uk-active{
     background-color: #010101;
-    border: 1px solid #010101;
-    color: #fff;
 }
 
+.uk-pagination > li.uk-active > a{
+    color: #fff;
+}
 
 /* [ 1.19. widget ] */
 

@@ -19,7 +19,8 @@ $category_product="select * from product_info LEFT JOIN product_category ON prod
 
     while ($data = $run->fetch_assoc()){
         $count++;
-        $main->setContent("name", $data['name']);
+        $name_prod=$data['name'];
+        $main->setContent("name", "<a href='product-page.php?name=$name_prod'>$name_prod</a>");
         $main->setContent("price", $data['price']);
         $price=$data['price'];
         $front=$data['front'];

@@ -43,7 +43,8 @@
     $product = $mysqli->query("SELECT * FROM product_info ORDER BY id_product LIMIT $offset, $total_records_per_page;");
     while ($data = $product->fetch_assoc()) {
         $id=$data['id_product'];
-        $main->setContent("name", $data['name']);            
+        $name=$data['name'];
+        $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");            
         $main->setContent("price", $data['price']);
         $price=$data['price'];
         $front=$data['front'];
@@ -57,7 +58,7 @@
     $contatore = $total_no_of_pages; 
     $contatore_pagine = 2;
     while($contatore > 1 ){
-        $main->setContent("page_number", "<a href='shop-fullwidth.php?page-number=$contatore_pagine'> $contatore_pagine </a>");
+        $main->setContent("page_number", "<li id='page$contatore_pagine'><a href='shop-fullwidth.php?page-number=$contatore_pagine'> $contatore_pagine </a><li>");
         $contatore_pagine = $contatore_pagine + 1;
         $contatore = $contatore -1;
 

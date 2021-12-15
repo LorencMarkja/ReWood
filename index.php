@@ -13,7 +13,8 @@
 
     while ($data = $product_info->fetch_assoc()) {
         $main->setContent("id", $data['id_product']);
-        $main->setContent("name", $data['name']);
+        $name_prod= $data['name'];
+        $main->setContent("name", "<a href='product-page.php?name=$name_prod'>$name_prod</a>");
         $main->setContent("desc", $data['description']);
         $main->setContent("price", $data['price']);
         $main->setContent("pieces", $data['pieces']);
@@ -25,7 +26,8 @@
     while ($data = $last_product->fetch_assoc()) {
         $main->setContent("id_last", $data['id_product']);
         $id_last=$data['id_product'];
-        $main->setContent("name_last", $data['name']);
+        $name_last= $data['name'];
+        $main->setContent("name_last", "<a href='product-page.php?name=$name_last'>$name_last</a>");
         $main->setContent("desc_last", $data['description']);
         $main->setContent("price_last", $data['price']);
         $img_name = $data['front'];

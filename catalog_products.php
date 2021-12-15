@@ -16,7 +16,8 @@
     while ($data = $product->fetch_assoc()) {
         $count++;
         $id=$data['id_product'];
-        $main->setContent("name", $data['name']);            
+        $name=$data['name'];
+        $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");                 
         $main->setContent("price", $data['price']);
         $price=$data['price'];
         $front=$data['front'];

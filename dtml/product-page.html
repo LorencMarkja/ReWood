@@ -15,11 +15,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/uikit.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/components/slideshow.css">
-    <link rel="stylesheet" href="css/components/rating.css">
-    <link rel="stylesheet" href="css/components/small-icon.css">
+    <link rel="stylesheet" href="dtml/css/uikit.css">
+    <link rel="stylesheet" href="dtml/css/style.css">
+    <link rel="stylesheet" href="dtml/css/components/slideshow.css">
+    <link rel="stylesheet" href="dtml/css/components/rating.css">
+    <link rel="stylesheet" href="dtml/css/components/small-icon.css">
+    <link rel="stylesheet" href="dtml/css/components/slider.css">
+    <link rel="stylesheet" href="dtml/css/components/small-icon.css">
+    <link rel="stylesheet" href="dtml/css/components/slidenav.css">
+
 </head>
 
 <body>
@@ -31,7 +35,7 @@
                         <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
                             <!-- main logo begin -->
                             <div id="logo">
-                                <a href="index.html"><img src="images/logo.svg" alt="reWood" /></a>
+                                <a href="index.php"><img src="dtml/images/logo.svg" alt="reWood" /></a>
                             </div>
                             <div id="slogan">
                                 <p>making your home, as unique as you.</p>
@@ -41,50 +45,7 @@
                         <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
                             <!-- top info begin -->
                             <div class="idz-header-list">
-                                <ul class="uk-list uk-align-right">
-                                    <li class="idz-mini-info">
-                                        <div class="uk-button-dropdown" data-uk-dropdown>
-                                            <a href=""><span class="uk-icon-button uk-icon-shopping-cart"></span>
-                                                <div class="uk-badge uk-badge-notification uk-badge-danger">2</div>$
-                                                12,685.00
-                                            </a>
-                                            <div class="uk-dropdown uk-dropdown-center">
-                                                <ul class="uk-nav uk-nav-dropdown idz-product-widget">
-                                                    <li class="uk-text-truncate">
-                                                        <a href="product-page.html">
-                                                            <img src="images/product-images/product_thumb1a.jpg" alt="">
-                                                            <p>Graham Sofa in Blue</p>
-                                                        </a>
-                                                        <span>1 x $ 1,440.00</span>
-                                                    </li>
-                                                    <li class="uk-text-truncate">
-                                                        <a href="product-page.html">
-                                                            <img src="images/product-images/product_thumb2.jpg" alt="">
-                                                            <p>Zahra Armchair</p>
-                                                        </a>
-                                                        <span>1 x $ 1,440.00</span>
-                                                    </li>
-                                                    <li class="subtotal-price">
-                                                        <h6>Subtotal : $ 12,685.00</h6>
-                                                    </li>
-                                                    <li>
-                                                        <a href="shopping-cart.html"
-                                                            class="uk-button uk-button-mini idz-button-white uk-width-1-2">View
-                                                            cart</a>
-                                                        <a href="checkout.html"
-                                                            class="uk-button uk-button-mini idz-button-white uk-width-1-2">Checkout</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="login.html">My Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="wishlist.html">Wishlist</a>
-                                    </li>
-                                </ul>
+                                <[logged]>
                                 <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
                                     <fieldset>
                                         <input type="text" placeholder="search...">
@@ -109,7 +70,7 @@
                                 <nav id="mainmenu" class="uk-navbar">
                                     <ul class="uk-navbar-nav uk-hidden-small">
                                         <li class="uk-active uk-parent" data-uk-dropdown>
-                                            <a href="index.html">Home</a>
+                                            <a href="index.php">Home</a>
                                         </li>
                                         <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
                                                 href="#">Shop</a>
@@ -120,19 +81,8 @@
                                                             <li>
                                                                 <h5>Shopping</h5>
                                                             </li>
-                                                            <li><a href="shop-fullwidth.html">All Items</a></li>
-                                                            <li><a href="category-grid.html">Categories</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
-                                                        <ul class="uk-list idz-list-arrow">
-                                                            <li>
-                                                                <h5>Commerce</h5>
-                                                            </li>
-                                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                                            <li><a href="shopping-cart.html">View Cart page</a></li>
-                                                            <li><a href="checkout.html">Checkout Page</a></li>
-                                                            <li><a href="order-complete.html">Complete Page</a></li>
+                                                            <li><a href="shop-fullwidth.php">All Items</a></li>
+                                                            <li><a href="category.php">Categories</a></li>
                                                         </ul>
                                                     </li>
                                                     <li class="uk-width-4-10 uk-hidden-medium">
@@ -145,10 +95,10 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="catalog.html">Catalog</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="catalog.php">Catalog</a></li>
+                                        <li><a href="blog.php">Blog</a></li>
+                                        <li><a href="about.php">About</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
                                     </ul>
                                     <!--menu mobile-->
                                     <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small"
@@ -158,14 +108,14 @@
                                     <div class="uk-offcanvas-bar">
                                         <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
                                             <li class="uk-parent">
-                                                <a href="index.html">Home</a>
+                                                <a href="index.php">Home</a>
                                             </li>
-                                            <li><a href="shop-fullwidth.html">Shop</a></li>
-                                            <li><a href="category-grid.html">Categories</a></li>
-                                            <li><a href="catalog.html">Catalog</a></li>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="shop-fullwidth.php">Shop</a></li>
+                                            <li><a href="category.php">Categories</a></li>
+                                            <li><a href="catalog.php">Catalog</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
 
                                         </ul>
                                     </div>
@@ -189,10 +139,9 @@
                         <!-- breadcrumb begin -->
                         <div class="uk-width-7-10">
                             <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="#">Shop</a></li>
-                                <li><a href="#">Sofa</a></li>
-                                <li class="uk-active"><span>Graham Sofa in Blue</span></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="shop-fullwidth.php">Shop</a></li>
+                                <li class="uk-active"><span><[name]></span></li>
                             </ul>
                         </div>
                         <!-- breadcrumb end -->
@@ -208,350 +157,134 @@
                         <div id="product-slide">
                             <ul class="uk-slideshow">
                                 <li>
-                                    <img src="images/product-images/product_detail1a.jpg" alt="">
+                                    <[front]>
                                 </li>
                                 <li>
-                                    <img src="images/product-images/product_detail1b.jpg" alt="">
+                                    <[side]>
                                 </li>
                                 <li>
-                                    <img src="images/product-images/product_detail1c.jpg" alt="">
+                                    <[back]>
                                 </li>
                             </ul>
                             <ul class="idz-slide-thumb">
                                 <li data-uk-slideshow-item="0">
-                                    <a href="#"><img src="images/product-images/product_thumb1a.jpg" alt=""></a>
+                                    <a href="#"><[front]></a>
                                 </li>
                                 <li data-uk-slideshow-item="1">
-                                    <a href="#"><img src="images/product-images/product_thumb1b.jpg" alt=""></a>
+                                    <a href="#"><[side]></a>
                                 </li>
                                 <li data-uk-slideshow-item="2">
-                                    <a href="#"><img src="images/product-images/product_thumb1c.jpg" alt=""></a>
+                                    <a href="#"><[back]></a>
                                 </li>
                             </ul>
                         </div>
                         <!-- slideshow end -->
                     </div>
                     <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1 idz-product-desc">
-                        <h2><span class="cross-accent">Graham Sofa in Blue</span></h2>
-                        <div class="idz-product-rating">
-                            <select class="4star-rating" name="rating">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                            <a href="#">3 customer reviews</a>
-                        </div>
-                        <span class="product-price">$1,440</span><span class="strikethrough-price">$2,155</span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                        <h2><span class="cross-accent"><[name]></span></h2>
+            
+                        <span class="product-price">€ <[price]></span>
+                        <p><[desc]></p>
                         <div class="uk-margin-medium-top">
                             <form class="uk-form">
-                                <input type="number" id="quantity-value" min="0" value="1">
+                                <input type="number" id="quantity-value" min="0" max="<[pieces]>" value="1">
                                 <button class="uk-button uk-button-small idz-button-grey">Add to cart</button>
                             </form>
                         </div>
                         <hr />
                         <div class="product-tag">
-                            <span>Tags :</span>
-                            <a href="#">Sofa</a>, <a href="#">Blue</a>, <a href="#">Simple</a>, <a href="#">Comfort</a>,
-                            <a href="#">Modern</a>
+                            <span>Categories :</span>
+                            <[foreach]>
+                              <[category]> |
+                            <[/foreach]>
                         </div>
                         <div class="product-wishlist-share">
                             <button class="uk-button"><i class="uk-icon-heart-o"></i>Add to Wishlist</button>
-                            <div class="idz-social uk-align-right">
-                                <ul>
-                                    <li>
-                                        <a href="#" class="uk-icon-button uk-icon-facebook"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="uk-icon-button uk-icon-twitter"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="uk-icon-button uk-icon-google-plus"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="uk-icon-button uk-icon-pinterest-p"></a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="uk-icon-button uk-icon-envelope"></a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="uk-grid">
                     <div class="uk-width-1-1 idz-product-desc uk-margin-bottom">
                         <ul class="uk-tab" data-uk-tab="{connect:'#tab-top-content'}">
-                            <li><a href="">Description</a></li>
                             <li><a href="">Additional Information</a></li>
-                            <li><a href="">Reviews (3)</a></li>
+                            <li><a href="">Shipping Information</a></li>
                         </ul>
                         <ul id="tab-top-content" class="uk-switcher uk-margin-medium">
-                            <li>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident. Sed ut
-                                    perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                                    laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                    architecto beatae vitae dicta sunt explicabo.</p>
-                            </li>
                             <li>
                                 <table class="uk-table uk-table-striped">
                                     <tbody>
                                         <tr>
                                             <td class="idz-table-width-280"><strong>Size</strong></td>
-                                            <td>84" W x 36" D x 34" H</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="idz-table-width-280"><strong>Seat Height</strong></td>
-                                            <td>19"</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="idz-table-width-280"><strong>Arm Height</strong></td>
-                                            <td>26"</td>
+                                            <td><[dim]></td>
                                         </tr>
                                         <tr>
                                             <td class="idz-table-width-280"><strong>Materials</strong></td>
-                                            <td>Polyester fabric, solid ash wood legs</td>
+                                            <td><[materials]></td>
                                         </tr>
                                         <tr>
                                             <td class="idz-table-width-280"><strong>Care Instructions</strong></td>
                                             <td>Do not use household cleaners. Upholstery requires professional
                                                 cleaning.</td>
                                         </tr>
+                                        <tr>
+                                            <td class="idz-table-width-280"><strong>Available Pieces</strong></td>
+                                            <td><[pieces]></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </li>
                             <li>
-                                <ul class="uk-comment-list">
-                                    <li>
-                                        <article class="uk-comment">
-                                            <div class="avatar">
-                                                <img src="images/sample/author.jpg" alt="" />
-                                            </div>
-                                            <div class="comment-text">
-                                                <h4>Willie Walker</h4>
-                                                <h6 class="subheader">April 28, 2010 01:23 am</h6>
-                                                <select class="4star-rating" name="rating">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                                                quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo
-                                                voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim
-                                                id est laborum adipisci velit.
-                                            </div>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="uk-comment">
-                                            <div class="avatar">
-                                                <img src="images/sample/author.jpg" alt="" />
-                                            </div>
-                                            <div class="comment-text">
-                                                <h4>Jessica Holland</h4>
-                                                <h6 class="subheader">April 28, 2010 01:23 am</h6>
-                                                <select class="4star-rating" name="rating">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                                                quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo
-                                                voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim
-                                                id est laborum adipisci velit.
-                                            </div>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="uk-comment">
-                                            <div class="avatar">
-                                                <img src="images/sample/author.jpg" alt="" />
-                                            </div>
-                                            <div class="comment-text">
-                                                <h4>Brian George</h4>
-                                                <h6 class="subheader">April 28, 2010 01:23 am</h6>
-                                                <select class="4star-rating" name="rating">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                </select>
-                                                Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-                                                quam nihil molestiae consequ vel illum qui dolorem eum fugiat quo
-                                                voluptas nulla pariatur sunt in culpa qui officia deserunt mollit anim.
-                                            </div>
-                                        </article>
-                                    </li>
-                                </ul>
-                                <h4 class="uk-margin-large-bottom"><span class="line-accent">Add a review</span></h4>
-                                <form id="rating-form" class="uk-form">
-                                    <fieldset>
-                                        <label>Name <em>*</em></label>
-                                        <input type="text" name="name" class="textfield" id="name" value="" />
-                                        <label>E-mail <em>*</em></label>
-                                        <input type="email" name="email" class="textfield" id="email" value="" />
-                                        <label>Your Rating</label>
-                                        <select class="0star-rating" name="rating">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                        </select>
-                                        <label>Your Review</label>
-                                        <textarea name="message" id="message" class="textarea" cols="2"
-                                            rows="4"></textarea>
-                                        <div class="uk-clearfix"></div>
-                                        <button type="submit" name="submit"
-                                            class="uk-button uk-button-small idz-button-grey"
-                                            id="buttonsend">Submit</button>
-                                    </fieldset>
-                                </form>
+                                We use a number of delivery partners to help us get your order to your home. Which partner we use 
+                                depends on the type of product you have bought. If your order contains lots of different kinds
+                                of products we usually try to ship with the partner that delivers the largest item you ordered.
+                                We will notify you via email once the item has been shipped from our facility. A tracking number 
+                                and tracking details will be provided in that automated email as well.<br><br>
+                                We use the industry best packaging to ensure safe delivery. However in a rare case of damage, 
+                                please contact us immediately. You can find our contacts in our <a href="contacts.php">Contact</a> page.
+                                
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
-                    <div class="uk-width-1-1">
-                        <h2 class="uk-text-center uk-margin-medium-bottom"><span class="cross-accent">Related
-                                Products</span></h2>
-                        <ul class="uk-grid uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-3">
-                            <li>
-                                <div class="product-content">
-                                    <figure class="uk-overlay uk-overlay-hover">
-                                        <ul class="product-price uk-text-right">
-                                            <li>
-                                                <a href="#">
-                                                    <div class="uk-badge uk-badge-notification uk-badge-warning">Sofa
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>$1,440</li>
-                                            <li class="strikethrough-price">$2,155</li>
-                                        </ul>
-                                        <img src="images/product-images/product_thumb1a.jpg" alt="">
-                                        <figcaption
-                                            class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
-                                            <button class="uk-button uk-icon-shopping-cart"></button>
-                                            <button class="uk-button uk-icon-heart-o"></button>
-                                        </figcaption>
-                                    </figure>
-                                    <h6><a href="product-page.html">Graham Sofa in Blue</a></h6>
-                                    <select class="4star-rating" name="rating">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-content">
-                                    <figure class="uk-overlay uk-overlay-hover">
-                                        <ul class="product-price uk-text-right">
-                                            <li>
-                                                <a href="#">
-                                                    <div class="uk-badge uk-badge-notification uk-badge-warning">Office
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>$1,440</li>
-                                            <li class="strikethrough-price">$2,155</li>
-                                        </ul>
-                                        <img src="images/product-images/product_thumb4.jpg" alt="">
-                                        <figcaption
-                                            class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
-                                            <button class="uk-button uk-icon-shopping-cart"></button>
-                                            <button class="uk-button uk-icon-heart-o"></button>
-                                        </figcaption>
-                                    </figure>
-                                    <h6><a href="product-page.html">Axiom Drafting Table</a></h6>
-                                    <select class="3star-rating" name="rating">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="product-content">
-                                    <figure class="uk-overlay uk-overlay-hover">
-                                        <ul class="product-price uk-text-right">
-                                            <li>
-                                                <a href="#">
-                                                    <div class="uk-badge uk-badge-notification uk-badge-warning">Bedroom
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>$1,440</li>
-                                            <li class="strikethrough-price">$2,155</li>
-                                        </ul>
-                                        <img src="images/product-images/product_thumb3.jpg" alt="">
-                                        <figcaption
-                                            class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
-                                            <button class="uk-button uk-icon-shopping-cart"></button>
-                                            <button class="uk-button uk-icon-heart-o"></button>
-                                        </figcaption>
-                                    </figure>
-                                    <h6><a href="product-page.html">Brooklyn Lamp Table</a></h6>
-                                    <select class="4star-rating" name="rating">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </li>
-                            <li class="uk-hidden-medium uk-hidden-small">
-                                <div class="product-content">
-                                    <figure class="uk-overlay uk-overlay-hover">
-                                        <ul class="product-price uk-text-right">
-                                            <li>
-                                                <a href="#">
-                                                    <div class="uk-badge uk-badge-notification uk-badge-warning">Chair
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>$1,440</li>
-                                            <li class="strikethrough-price">$2,155</li>
-                                        </ul>
-                                        <img src="images/product-images/product_thumb2.jpg" alt="">
-                                        <figcaption
-                                            class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
-                                            <button class="uk-button uk-icon-shopping-cart"></button>
-                                            <button class="uk-button uk-icon-heart-o"></button>
-                                        </figcaption>
-                                    </figure>
-                                    <h6><a href="product-page.html">Zahra Armchair</a></h6>
-                                    <select class="5star-rating ro" name="rating">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div>
-                            </li>
-                        </ul>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <h2 class="uk-text-center uk-margin-medium-bottom uk-text-truncate"><span class="cross-accent">Related Products</span></h2>
+                        <!-- product slide begin -->
+                        <div id="product-slide" class="uk-slidenav-position" data-uk-slider="{infinite: false}">
+                            <div class="uk-slider-container">
+                                <ul class="uk-slider uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-3">
+                                    <!-- new furnitures-->
+                                    <[foreach]>
+                                    <li>
+                                        <div class="product-content">
+                                            <figure class="uk-overlay uk-overlay-hover" style="display: block;">
+                                                <ul class="product-price uk-text-right">
+                                                    <li>
+                                                        <a href="category-product.php?id=<[id_categ]>">
+                                                            <div class="uk-badge uk-badge-notification uk-badge-warning"><[name_categ]></div>
+                                                        </a>
+                                                    </li>
+                                                    <li>€<[price_rel]></li>
+                                                </ul>
+                                                <div class="img-box">
+                                                    <[img_rel]>
+                                                </div>
+                                                
+                                                <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
+                                                    <button class="uk-button uk-icon-shopping-cart"></button>
+                                                    <a href='addItemWishlist.php?id=<[idRef]>&idW=<[idWref]>'><button class="uk-button uk-icon-heart-o"></button></a>
+                                                </figcaption>
+                                            </figure>
+                                            <h6><[name_rel]></h6>
+                                        </div>
+                                    </li>
+                                    <[/foreach]>
+                                </ul>
+                                <a href="" class="uk-slidenav uk-slidenav-previous" data-uk-slider-item="previous"></a>
+                                <a href="" class="uk-slidenav uk-slidenav-next" data-uk-slider-item="next"></a>
+                            </div>
+                        </div>
+                        <!-- product slide end -->
                     </div>
                 </div>
             </div>
@@ -645,15 +378,16 @@
         <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
     </footer>
     <!-- Javascript -->
-    <script src="js/jquery.js"></script>
-    <script src="js/uikit.min.js"></script>
-    <script src="js/components/rating.js"></script>
-    <script src="js/components/price-range.js"></script>
-    <script src="js/components/flickr-feed.js"></script>
-    <script src="js/components/slideshow.js"></script>
-    <script src="js/components/slideshow-fx.js"></script>
-    <script src="js/components/mediaelement.js"></script>
-    <script src="js/config.js"></script>
+    <script src="dtml/js/jquery.js"></script>
+    <script src="dtml/js/uikit.min.js"></script>
+    <script src="dtml/js/components/rating.js"></script>
+    <script src="dtml/js/components/price-range.js"></script>
+    <script src="dtml/js/components/flickr-feed.js"></script>
+    <script src="dtml/js/components/slideshow.js"></script>
+    <script src="dtml/js/components/slideshow-fx.js"></script>
+    <script src="dtml/js/components/mediaelement.js"></script>
+    <script src="dtml/js/config.js"></script>
+    <script src="dtml/js/components/slider.js"></script>
 </body>
 
 </html>
