@@ -41,19 +41,35 @@
     }
 
     $product = $mysqli->query("SELECT * FROM product_info ORDER BY id_product LIMIT $offset, $total_records_per_page;");
-    while ($data = $product->fetch_assoc()) {
-        $id=$data['id_product'];
-        $name=$data['name'];
-        $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");            
-        $main->setContent("price", $data['price']);
-        $price=$data['price'];
-        $front=$data['front'];
-        $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
-        $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
-        $main->setContent("idRef", $id);
-        $main->setContent("idWref", $id_wishlist);
-        
+
+    if(isset($_SESSION['username'])){
+        while ($data = $product->fetch_assoc()) {
+            $id=$data['id_product'];
+            $name=$data['name'];
+            $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");            
+            $main->setContent("price", $data['price']);
+            $price=$data['price'];
+            $front=$data['front'];
+            $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
+            $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+            $main->setContent("wishlist", "<a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>");
+            
+        }
+    } else {
+        while ($data = $product->fetch_assoc()) {
+            $id=$data['id_product'];
+            $name=$data['name'];
+            $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");            
+            $main->setContent("price", $data['price']);
+            $price=$data['price'];
+            $front=$data['front'];
+            $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
+            $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+            $main->setContent("wishlist", "<a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>");
+            
+        }    
     }
+
 
     $contatore = $total_no_of_pages; 
     $contatore_pagine = 2;

@@ -41,7 +41,7 @@ else{ */
         if($group_type == 1){
           header("Location: index-admin.php");
         }else{
-          header("Location: my-account.php");
+          header("Location: index.php");
         }
     }else{  
 

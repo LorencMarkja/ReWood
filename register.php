@@ -34,17 +34,22 @@
         if (count($errors) == 0) {
     	$password = md5($password);
 
-    	$query = "INSERT INTO user (name, surname, username, telephone, email, password) 
-  			      VALUES('$name','$surname','$username','$telephone', '$email', '$password')";
-    	  mysqli_query($mysqli, $query);
-  	    header('location: login-register.php');
-     }else {
+    	$query = "INSERT INTO user VALUES(0, '$name','$surname','$username','$telephone', '$email', '$password')";
+    	  
 
-      //$main = new Template("dtml/login.html");
-      header("Location: login-register.php");
+        if(mysqli_query($mysqli, $query)){
+
+          $last_id = $mysqli->insert_id;
+
+          $query2 = "INSERT INTO wishlist VALUES ( 0,'$last_id')";
+          $result = mysqli_query($mysqli, $query2);
+          header('location: login-register.php');
+        } 
+        
+     } else {
+      $main = new Template("dtml/login.html");
       $main->setContent("buttonClick",  "<script type='text/javascript'>document.getElementById('registration123').click()</script>");
       $main->setContent("error_message", "Username o email already in use");
-    
      }
 }
 
