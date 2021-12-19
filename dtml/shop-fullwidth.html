@@ -43,19 +43,21 @@
                             <div class="idz-header-list">
                                 <[logged]>
                                 
-                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                <form name="header-search" id="header-search" action ="search.php" method="get" class="uk-form uk-hidden-medium uk-hidden-small">
                                     <fieldset>
-                                        <input type="text" placeholder="search...">
-                                        <select>
-                                            <option>all categories</option>
-                                            <option>new arrivals</option>
-                                            <option>furniture</option>
-                                            <option>living room</option>
-                                            <option>dining room</option>
-                                            <option>bedroom</option>
-                                            <option>accessories</option>
+                                        <input type="text" name = "search_text" placeholder="search...">
+                                        <select name = "category_id">
+                                            <option value="7">all categories</option>
+                                            <option value="3">bedroom</option>
+                                            <option value="5">decor</option>
+                                            <option value="1">chairs</option>
+                                            <option value="4">living room</option>
+                                            <option value="6">office</option>
+                                            <option value="2">tables</option>
                                         </select>
-                                        <button class="uk-button uk-icon-search"></button>
+
+                                        <button type="submit" id="search-button" class="uk-button uk-icon-search"></button>
+                                        
                                     </fieldset>
                                 </form>
                             </div>
@@ -152,8 +154,9 @@
                         <div class="idz-sorting-wrap uk-margin-medium-bottom">
                             <div class="uk-grid uk-grid-medium">
                                 <div class="uk-width-3-4 uk-width-small-1-2">
-                                    <!--<p>Showing 1 –<[totalRecordsPerPage]> of <[recordsTotal]> results</p> !-->
-                                    <p> </p>
+
+                                    <[first_result]>
+
                                 </div>
                                 <div class="uk-width-1-4 uk-width-small-1-2">
                                     <form  method="post" action="shop-fullwidth.php" class="uk-form">
@@ -171,18 +174,18 @@
                         <ul class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-3 prod-container">
                             <[foreach]>
                                     <[info_sort]>
-                                        <div class="product-content uk-margin-medium-bottom">
+                                    <div class="product-content uk-margin-medium-bottom">
                                             <figure class="uk-overlay uk-overlay-hover" style="display: block;">
                                                 <ul class="product-price uk-text-right">
                                                     <li>€<[price]></li>
                                                 </ul>
-                                                <div class="img-box" >
-                                                    <[front]> 
+                                                <div class="img-box">
+                                                    <[front]>
                                                 </div>
+                                                
                                                 <figcaption class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom">
                                                     <button class="uk-button uk-icon-shopping-cart"></button>
                                                     <[wishlist]>
-                                                    
                                                 </figcaption>
                                             </figure>
                                             <h6><[name]></h6>
@@ -191,12 +194,11 @@
                                     <[/foreach]>
                         </ul>
                         <!-- begin pagination -->
-                        <form method="get" action="" >
-                            <ul class="uk-pagination uk-pagination-left">
-                                
-                                <li id="page1"><a href='?page-number=1'>1</a></li>
+                        <form method="get" >
+                        <ul class="uk-pagination uk-pagination-left">
+                            <li id="page1"><a href='?page-number=1'>1</a></li>
 
-                                <[foreach]>
+                            <[foreach]>
                                     <[page_number]>
                                 <[/foreach]>
                             </ul>
