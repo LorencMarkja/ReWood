@@ -43,7 +43,7 @@
     while ($data1 = $run6->fetch_assoc()){
         $main->setContent("orderNumber", $data1['order_number']);
         $main->setContent("date", $data1['date']);
-        $main->setContent("total", $data1['total_price']);  
+        $main->setContent("total", $data1['total']);  
         $main->setContent("view", "<a class='uk-button uk-button-small idz-button-grey uk-width-1-1'>View</a>");      
     };
 

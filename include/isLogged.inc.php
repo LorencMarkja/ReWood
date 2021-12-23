@@ -1,38 +1,30 @@
 <?php
    session_start();
    $username=$_SESSION['username'];
+   $id_user=$_SESSION['id_user'];
 
    if(isset($_SESSION['username'])){
+    $count = "SELECT COUNT(name) AS cont FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE id_user = $id_user) ";
+    $run=mysqli_query($mysqli,$count);
+    while ($data1 = $run->fetch_assoc()){
+        $cont=$data1['cont'];
+    };
+
+    $subtot = "SELECT price, quantity FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE id_user = $id_user) ";
+    $run2=mysqli_query($mysqli,$subtot);
+    while ($data2 = $run2->fetch_assoc()){
+        $price = $data2['price'];
+        $quantity = $data2['quantity'];
+        $subtotal = $price * $quantity;
+        $total_price = $total_price + $subtotal;
+    };
+
        $main->setContent("logged","
            <ul class='uk-list uk-align-right'>
                <li class='idz-mini-info'>
                    <div class='uk-button-dropdown' data-uk-dropdown>
-                       <a href=''><span class='uk-icon-button uk-icon-shopping-cart'></span><div class='uk-badge uk-badge-notification uk-badge-danger'>2</div>$ 12,685.00</a>
-                       <div class='uk-dropdown uk-dropdown-center'>
-                           <ul class='uk-nav uk-nav-dropdown idz-product-widget'>
-                               <li class='uk-text-truncate'>
-                                   <a href='product-page.html'>
-                                       <img src='images/product-images/product_thumb1a.jpg' alt=''>
-                                       <p>Graham Sofa in Blue</p>
-                                   </a>
-                                   <span>1 x $ 1,440.00</span>
-                               </li>
-                               <li class='uk-text-truncate'>
-                                   <a href='product-page.html'>
-                                       <img src='images/product-images/product_thumb2.jpg' alt=''>
-                                       <p>Zahra Armchair</p>
-                                   </a>
-                                   <span>1 x $ 1,440.00</span>
-                               </li>
-                               <li class='subtotal-price'>
-                                   <h6>Subtotal : $ 12,685.00</h6>
-                               </li>
-                               <li>
-                                   <a href='shopping-cart.html' class='uk-button uk-button-mini idz-button-white uk-width-1-2'>View cart</a>
-                                   <a href='checkout.html' class='uk-button uk-button-mini idz-button-white uk-width-1-2'>Checkout</a>
-                               </li>
-                           </ul>
-                       </div>
+                       <a href=''><span class='uk-icon-button uk-icon-shopping-cart'></span><div class='uk-badge uk-badge-notification uk-badge-danger'>$cont</div>€ $total_price</a>
+                       
                    </div>
                </li>
                <li>
