@@ -71,7 +71,7 @@ if ($category_option != '7') {
 
     } else {
         $showingOne = 0;
-        $main->setContent("noResults", "No products found for the specified parameters");
+        $main->setContent("noResults", "<p style='width:100%; font-size: 20px;'> No products found for the specified parameters</p>");
     }
 
 
@@ -110,7 +110,7 @@ if ($category_option == '7') {
 
     } else {
         $showingOne = 0;
-        $main->setContent("noResults", "No products found for the specified parameters");
+        $main->setContent("noResults", "<p style='width:100%; font-size: 20px;'> No products found for the specified parameters</p>");
     }
 
     $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE name LIKE '%$search_text%' ;");

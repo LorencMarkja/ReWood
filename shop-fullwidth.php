@@ -26,7 +26,7 @@ $next_page = $page_no + 1;
 $adjacents = "2";
 
 //Total Number of Pages for Pagination
-$records = mysqli_query($mysqli, "SELECT COUNT(*) AS total_records FROM `product_info`");
+$records = mysqli_query($mysqli, "SELECT COUNT(*) AS total_records FROM `product_info` WHERE pieces > 0");
 $total_records = mysqli_fetch_array($records);
 $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
@@ -37,7 +37,7 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
         $id_wishlist = $data['id_wishlist'];     
     }
 
-    $product = $mysqli->query("SELECT * FROM product_info ORDER BY id_product LIMIT $offset, $total_records_per_page;");
+    $product = $mysqli->query("SELECT * FROM product_info WHERE pieces > 0 ORDER BY id_product LIMIT $offset, $total_records_per_page;");
 
     if(isset($_SESSION['username'])){
         while ($data = $product->fetch_assoc()) {
@@ -51,9 +51,9 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
             $main->setContent("euro", "€");
             $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-           <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
-            <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
-             </figcaption>");
+                <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
+                <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
+                </figcaption>");
         }
 
     } else {
@@ -68,7 +68,7 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
             $main->setContent("euro", "€");
             $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-            <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
+                <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
                 <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
                 </figcaption>");
             }

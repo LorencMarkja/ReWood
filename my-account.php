@@ -46,6 +46,11 @@
         $main->setContent("total", $data1['total']);  
         $main->setContent("view", "<a class='uk-button uk-button-small idz-button-grey uk-width-1-1'>View</a>");      
     };
+    $rowCount = mysqli_num_rows($run6);
+    if($rowCount==0){
+        $main->setContent("orderNumber", "You have no orders");
+        $main->setContent("view", "<a class='uk-button uk-button-small idz-button-grey uk-width-1-1' href='shop-fullwidth.php'>Check Products</a>");  
+    }
 
 
     if($numRows !=0) {
@@ -95,13 +100,14 @@
     if($numRows == 0){
         $main->setContent("infoAddress", "Insert your address");
         $main->setContent("valueButt", "Insert your data");
-        if (isset($_POST['updateData'])){
-        echo("ECCO LA PROVA ADATTA");
-        $newAddress=addslashes($_POST['address']);
-        $newCity=addslashes($_POST['city']);
-        $newPostcode=$_POST['postcode'];
-        $newCountry=$_POST['country'];
+        $main->setContent("noAddress", "No address provided.");
 
+        if (isset($_POST['updateData'])){
+            $newAddress=addslashes($_POST['address']);
+            $newCity=addslashes($_POST['city']);
+            $newPostcode=$_POST['postcode'];
+            $newCountry=$_POST['country'];
+        
         
             $insertAddress="INSERT INTO address  VALUES (
                 0,
@@ -129,6 +135,7 @@
     $main->setContent("city", $cityDisplay);
     $main->setContent("country", $countryDisplay);
     $main->setContent("address", $addressDisplay);
+
 
     $_SESSION['id_user']= $id_user;
     

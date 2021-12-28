@@ -45,6 +45,8 @@
           $result = mysqli_query($mysqli, $query2);
           $query3 = "INSERT INTO cart VALUES ( 0,'$last_id')";
           $result2 = mysqli_query($mysqli, $query3);
+          $query4 = "INSERT INTO group_user VALUES ( 0, '2','$last_id')";
+          $result3 = mysqli_query($mysqli, $query4);
           header('location: login-register.php');
         } 
         

@@ -46,19 +46,21 @@
                             <!-- top info begin -->
                             <div class="idz-header-list">
                                 <[logged]>
-                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                <form name="header-search" id="header-search" action ="search.php" method="get" class="uk-form uk-hidden-medium uk-hidden-small">
                                     <fieldset>
-                                        <input type="text" placeholder="search...">
-                                        <select>
-                                            <option>all categories</option>
-                                            <option>new arrivals</option>
-                                            <option>furniture</option>
-                                            <option>living room</option>
-                                            <option>dining room</option>
-                                            <option>bedroom</option>
-                                            <option>accessories</option>
+                                        <input type="text" name = "search_text" placeholder="search...">
+                                        <select name = "category_id">
+                                            <option value="7">all categories</option>
+                                            <option value="3">bedroom</option>
+                                            <option value="5">decor</option>
+                                            <option value="1">chairs</option>
+                                            <option value="4">living room</option>
+                                            <option value="6">office</option>
+                                            <option value="2">tables</option>
                                         </select>
-                                        <button class="uk-button uk-icon-search"></button>
+
+                                        <button type="submit" id="search-button" class="uk-button uk-icon-search"></button>
+                                        
                                     </fieldset>
                                 </form>
                             </div>

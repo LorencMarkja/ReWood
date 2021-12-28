@@ -18,7 +18,7 @@
         $description=$data['description'];
         $img_name =  $data['image'];
         $main->setContent("img", "<img src='dtml/images/catalog-images/$img_name' alt='catalog image' class='uk-overlay-spin'/>");
-        $main->setContent("a", "<a class='uk-position-cover' href='catalog_products.php?id=$id' title='$name'></a>");
+        $main->setContent("a", "<a class='uk-position-cover' href='catalog-products.php?id=$id' title='$name'></a>");
         $main->setContent("name", $name);
     };
 
