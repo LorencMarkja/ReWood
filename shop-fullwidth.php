@@ -49,9 +49,13 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $front=$data['front'];
             $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
-            $main->setContent("wishlist", "<a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>");
-            
+            $main->setContent("euro", "€");
+            $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
+            <button class='uk-button uk-icon-shopping-cart'></button>
+            <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
+             </figcaption>");
         }
+
     } else {
         while ($data = $product->fetch_assoc()) {
             $id=$data['id_product'];
@@ -62,15 +66,21 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $front=$data['front'];
             $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
-            $main->setContent("wishlist", "<a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>");
-            
-        }    
-    }
+            $main->setContent("euro", "€");
+            $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
+                <button class='uk-button uk-icon-shopping-cart'></button>
+                <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
+                </figcaption>");
+            }
+    
+        }  
+        $main->setContent("page_1", "<li id='page1'><a href='?page-number=1'>1</a></li>");
 
 $contatore = $total_no_of_pages;
 $contatore_pagine = 2;
 while ($contatore > 1) {
-    $main->setContent("page_number", "<li id='page$contatore_pagine'><a href='shop-fullwidth.php?page-number=$contatore_pagine'> $contatore_pagine </a><li>");    $contatore_pagine = $contatore_pagine + 1;
+    $main->setContent("page_number", "<li id='page$contatore_pagine'><a href='shop-fullwidth.php?page-number=$contatore_pagine'> $contatore_pagine </a><li>");  
+    $contatore_pagine = $contatore_pagine + 1;
     $contatore = $contatore - 1;
 }
 
