@@ -52,7 +52,7 @@
       $main->setContent("error_message", "Username o email already in use");
      }
 }
-
+$main->close();
 
 ?>
 
