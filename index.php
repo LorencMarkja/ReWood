@@ -35,5 +35,9 @@
         $main->setContent("img_last", "<img src='dtml/images/product-images/$img_name' alt='product image'>");
     };
 
+    $_SESSION['username']= $username;
+    $_SESSION['id_user']= $id_user;
+    $_SESSION['cart']= $id_cart;    
+
     $main->close();
 ?>

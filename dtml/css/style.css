@@ -220,6 +220,7 @@ aside ul.idz-product-widget li a:after {
 .uk-form textarea,
 .uk-form input:not([type]),
 .uk-form input[type="text"],
+.uk-form input[type="email"],
 .uk-form input[type="password"],
 .uk-form input[type="datetime"],
 .uk-form input[type="datetime-local"],
@@ -3967,9 +3968,11 @@ ul.order-complete li strong {
 
 #login-account .uk-form-icon,
 #login-account input[type="text"],
+#login-account input[type="email"],
 #login-account input[type="password"],
 #register-account .uk-form-icon,
 #register-account input[type="text"],
+#register-account input[type="email"],
 #register-account input[type="password"] {
     width: 100%
 }
@@ -3990,7 +3993,9 @@ ul.order-complete li strong {
 
 #login-account input[type="text"],
 #login-account input[type="password"],
+#login-account input[type="email"],
 #register-account input[type="password"],
+#register-account input[type="email"],
 #register-account input[type="text"] {
     height: 45px;
     margin-bottom: 20px;
