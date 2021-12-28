@@ -43,7 +43,7 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
 //case categories 1 to 6 selected
 if ($category_option != '7') {
 
-    $search = $mysqli->query("SELECT * FROM product_search WHERE category = $category_option AND (name LIKE '%$search_text%' OR description LIKE '%$search_text%') ORDER BY id_product LIMIT $offset, $total_records_per_page ;");
+    $search = $mysqli->query("SELECT * FROM product_search WHERE category = $category_option AND (name LIKE '%$search_text%') ORDER BY id_product LIMIT $offset, $total_records_per_page ;");
     $rowcount = mysqli_num_rows($search);
     if ($rowcount != 0) {
         while ($data = $search->fetch_assoc()) {
@@ -75,13 +75,13 @@ if ($category_option != '7') {
     }
 
 
-    $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE category = $category_option AND (name LIKE '%$search_text%' OR description LIKE '%$search_text%');");
+    $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE category = $category_option AND (name LIKE '%$search_text%');");
 }
 
 // case all categories selected
 if ($category_option == '7') {
 
-    $search = $mysqli->query("SELECT * FROM product_search WHERE name LIKE '%$search_text%' AND description LIKE '%$search_text%' GROUP BY id_product LIMIT $offset, $total_records_per_page;");
+    $search = $mysqli->query("SELECT * FROM product_search WHERE name LIKE '%$search_text%' GROUP BY id_product LIMIT $offset, $total_records_per_page;");
     $rowcount = mysqli_num_rows($search);
     if ($rowcount != 0) {
 
@@ -113,7 +113,7 @@ if ($category_option == '7') {
         $main->setContent("noResults", "No products found for the specified parameters");
     }
 
-    $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE name LIKE '%$search_text%' OR description LIKE '%$search_text%';");
+    $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE name LIKE '%$search_text%' ;");
 }
 
 //Total Number of Pages for Pagination
