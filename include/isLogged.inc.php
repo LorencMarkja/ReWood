@@ -4,13 +4,13 @@
    $id_user=$_SESSION['id_user'];
 
    if(isset($_SESSION['username'])){
-    $count = "SELECT COUNT(name) AS cont FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE id_user = $id_user) ";
+    $count = "SELECT COUNT(name) AS cont FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE user = $id_user) ";
     $run=mysqli_query($mysqli,$count);
     while ($data1 = $run->fetch_assoc()){
         $cont=$data1['cont'];
     };
 
-    $subtot = "SELECT price, quantity FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE id_user = $id_user) ";
+    $subtot = "SELECT price, quantity FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE user = $id_user) ";
     $run2=mysqli_query($mysqli,$subtot);
     while ($data2 = $run2->fetch_assoc()){
         $price = $data2['price'];

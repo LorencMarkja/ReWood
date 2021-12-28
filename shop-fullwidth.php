@@ -51,7 +51,7 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
             $main->setContent("euro", "€");
             $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-            <button class='uk-button uk-icon-shopping-cart'></button>
+           <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
             <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
              </figcaption>");
         }
@@ -68,7 +68,7 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
             $main->setContent("euro", "€");
             $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-                <button class='uk-button uk-icon-shopping-cart'></button>
+            <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
                 <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
                 </figcaption>");
             }

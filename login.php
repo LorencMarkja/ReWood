@@ -36,12 +36,21 @@ else{ */
       
     }
 
+    $sql = "SELECT MAX(id_cart) AS id_cart FROM cart WHERE user = '$id_user'";
+    $result = $mysqli -> query($sql);
+
+    // Associative array
+    $row = $result -> fetch_assoc();
+    $id_cart=$row['id_cart'];
+
     if(mysqli_num_rows($run)) {  
 
         if($group_type == 1){
+          
           header("Location: index-admin.php");
         }else{
-          header("Location: index.php");
+
+               header("Location: index.php");
         }
     }else{  
 
@@ -49,14 +58,16 @@ else{ */
       require "include/isLogged.inc.php";
       $main->setContent("message", "Username or password are incorrect!");
     }  
-  
+
+    
 $_SESSION['username']= $username;
 $_SESSION['id_user']= $id_user;
+$_SESSION['cart']= $id_cart;
 
 
 
 
 
-$main->close();
+
 
 ?>  

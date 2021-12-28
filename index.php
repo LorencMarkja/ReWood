@@ -8,6 +8,7 @@
     require "include/isLogged.inc.php";
     
     $usernameLogged=$_SESSION['username'];
+    $id_cart=$_SESSION['cart'];
 
     $product_info = $mysqli->query("SELECT * FROM product_info ORDER BY id_product DESC LIMIT 8");
 

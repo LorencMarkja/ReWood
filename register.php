@@ -34,7 +34,7 @@
         if (count($errors) == 0) {
     	$password = md5($password);
 
-    	$query = "INSERT INTO user VALUES(0, '$name','$surname','$username','$telephone', '$email', '$password')";
+    	$query = "INSERT INTO user VALUES(0, '$name','$surname','$username', '$email', '$password','$telephone')";
     	  
 
         if(mysqli_query($mysqli, $query)){
@@ -43,6 +43,8 @@
 
           $query2 = "INSERT INTO wishlist VALUES ( 0,'$last_id')";
           $result = mysqli_query($mysqli, $query2);
+          $query3 = "INSERT INTO cart VALUES ( 0,'$last_id')";
+          $result2 = mysqli_query($mysqli, $query3);
           header('location: login-register.php');
         } 
         
