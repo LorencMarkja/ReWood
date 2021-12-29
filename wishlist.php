@@ -31,7 +31,7 @@
             
             $main->setContent("delete", "<a href='deleteItemWishlist.php?id=$id_product&idW=$id_wishlist' class='uk-icon-button uk-icon-times-circle'></a>");
             $main->setContent("status", "In Stock");
-            $main->setContent("cart", "<a class='uk-button uk-button-small idz-button-grey uk-margin-small-top' href=''>Add to Cart</a>");
+            $main->setContent("cart", "<a class='uk-button uk-button-small idz-button-grey uk-margin-small-top' href='addItemCart.php?id=$id_product''>Add to Cart</a>");
             
             
         };
