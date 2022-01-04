@@ -1,7 +1,7 @@
 <?php
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
-   
+    
     $errors = array();
     $username = "";
     $email    = "";
@@ -52,7 +52,8 @@
         
      } else {
       $main = new Template("dtml/login.html");
-      $main->setContent("buttonClick",  "<script type='text/javascript'>document.getElementById('registration123').click()</script>");
+      require "include/isLogged.inc.php";
+      $main->setContent("buttonClick",  "<script type='text/javascript'>window.onload = function(){ document.getElementById('reg-tab').click();}</script>");
       $main->setContent("error_message", "Username o email already in use");
      }
 }
