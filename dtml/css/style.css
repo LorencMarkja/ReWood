@@ -4500,3 +4500,8 @@ footer hr {
     height: 275px;
 }
 
+.uk-align-center.custom-img-category{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}

@@ -3,6 +3,11 @@
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
 
+    session_start();
+    $id_user=$_SESSION['id_user'];
+
+
+    
     $main = new Template("dtml/product-page.html");
     require "include/isLogged.inc.php";
 
@@ -11,6 +16,7 @@
     $product_info = $mysqli->query("SELECT * FROM product_info WHERE name='$name_prod'");
     while ($data = $product_info->fetch_assoc()) {
         $id_prod=$data["id_product"];
+        $main->setContent("id_prod", $data['id_product']);
         $main->setContent("name", $data['name']);
         $main->setContent("desc", $data['description']);
         $main->setContent("price", $data['price']);
@@ -48,8 +54,22 @@
             $main->setContent("name_categ", $data["name_categ"]);
             $main->setContent("id_categ", $category);
         }
-        //controllo solo 4 elementi da far vedere.
+       
     }
+    $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
+    $run1=mysqli_query($mysqli,$check_idWishlist);
+    while ($data = $run1->fetch_assoc()){
+        $id_wishlist = $data['id_wishlist'];     
+    }
+
+    $check_wishlist= $mysqli->query("SELECT * FROM product_wishlist where product='$id_prod' AND wishlist='$id_wishlist'");
+    $rowCount= mysqli_num_rows($check_wishlist);
+    if($rowCount == 0){
+        $main->setContent("wishlist", "<a href='addItemWishlist.php?id=$id_prod&idW=$id_wishlist'><button class='uk-button'><i class='uk-icon-heart-o'></i>Add to Wishlist</button></a>");
+    }else{
+        $main->setContent("wishlist", "<a href='deleteItemWishlist.php?id=$id_prod&idW=$id_wishlist'><button class='uk-button'><i class='uk-icon-heart-o' style='background: #fff; border: 1px solid black; color: #000'></i>Remove to Wishlist</button></a>");
+    }
+    
 
     $main->close();
 ?>
