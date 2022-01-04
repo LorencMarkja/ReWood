@@ -7,6 +7,7 @@
    if(isset($_SESSION['username'])){
     $count = "SELECT quantity FROM cart_info WHERE id_user = $id_user AND id_cart = (SELECT MAX(id_cart) FROM cart WHERE user = $id_user) ";
     $run=mysqli_query($mysqli,$count);
+    $cont=0;
     while ($data1 = $run->fetch_assoc()){
         $cont=$cont+$data1['quantity'];
     };

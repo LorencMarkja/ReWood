@@ -5,10 +5,16 @@ require "include/template2.inc.php";
 
 session_start();
 $id_user=$_SESSION['id_user'];
-
+$error_wishlist=$_SESSION['error_wishlist'];
 
 $main = new Template("dtml/shop-fullwidth.html");
 require "include/isLogged.inc.php";
+
+
+if($error_wishlist == 1){
+    $main->setContent("script", "<script type='text/javascript'>setTimeout(function () {alert('Product already in wishlist!');}, 500);</script>");
+    $_SESSION['error_wishlist']=0;
+}
 
 // Current Page Number
 if (isset($_GET['page-number']) && $_GET['page-number'] != "") {

@@ -172,7 +172,7 @@
                         <h4>Order Complete</h4>
                     </div>
                 </div>
-                <div class="uk-grid">
+                <div class="uk-grid" id="main-section">
                     <div class="uk-width-1-1 uk-margin-medium-top uk-margin-medium-bottom">
                         <table id="cart-table-top" class="uk-table uk-table-striped">
                             <thead>
@@ -196,7 +196,8 @@
                                     <td class="uk-hidden-small"><[price]></td>
                                     
                                     <td class="uk-hidden-small">
-                                        <form class="uk-form">
+                                        <form class="uk-form" id="updateForm" action="updateQuantityCart.php" >
+                                            <input type="hidden" name="id_prod" value="<[id_prod]>">
                                             <[quantityInput]>
                                         </form>
                                     </td>
@@ -205,7 +206,7 @@
                                 <[/foreach]>
                             </tbody>
                         </table>
-                        <table id="cart-table-bottom" class="uk-table">
+                        <!-- <table id="cart-table-bottom" class="uk-table">
                             <tr>
                                 <th>
                                     
@@ -214,7 +215,7 @@
                                     </div>
                                 </th>
                             </tr>
-                        </table>
+                        </table> -->
                     </div>
                 </div>
                 <div class="uk-grid uk-margin-large-bottom">

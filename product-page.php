@@ -65,9 +65,9 @@
     $check_wishlist= $mysqli->query("SELECT * FROM product_wishlist where product='$id_prod' AND wishlist='$id_wishlist'");
     $rowCount= mysqli_num_rows($check_wishlist);
     if($rowCount == 0){
-        $main->setContent("wishlist", "<a href='addItemWishlist.php?id=$id_prod&idW=$id_wishlist'><button class='uk-button'><i class='uk-icon-heart-o'></i>Add to Wishlist</button></a>");
+        $main->setContent("wishlist", "<a href='addItemWishlist.php?id=$id_prod&idW=$id_wishlist&name_prod=$name_prod'><button class='uk-button'><i class='uk-icon-heart-o'></i>Add to Wishlist</button></a>");
     }else{
-        $main->setContent("wishlist", "<a href='deleteItemWishlist.php?id=$id_prod&idW=$id_wishlist'><button class='uk-button'><i class='uk-icon-heart-o' style='background: #fff; border: 1px solid black; color: #000'></i>Remove to Wishlist</button></a>");
+        $main->setContent("wishlist", "<a href='deleteItemWishlist.php?id=$id_prod&idW=$id_wishlist&name_prod=$name_prod'><button class='uk-button'><i class='uk-icon-heart-o' style='background: #fff; border: 1px solid black; color: #000'></i>Remove from Wishlist</button></a>");
     }
     
 
