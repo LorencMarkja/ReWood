@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Site Properties -->
     <title>reWood - Minimalist Shopping Template</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -207,39 +208,36 @@
                     <div class="uk-width-4-10 uk-width-medium-1-2 uk-width-small-1-1 uk-margin-medium-top uk-margin-large-bottom">
                         <div class="uk-panel-box idz-panel grey uk-text-contrast">
                             <h4 class="uk-text-contrast">Your Order</h4>
-                            <table id="checkout-table" class="uk-table">
-                                <thead>
-                                    <tr>
-                                        <th class="product-name">Product</th>
-                                        <th class="product-name">Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <[foreach]>
-                                    <tr>
-                                        <td class="product-name"><[nameProduct]></td>
-                                        <td><[totalProduct]></td>
-                                    </tr>
-                                    <[/foreach]>
-                                        
+                            <div style="height: 335px; overflow-y: auto; position: relative; z-index: 9999;">
+                                <table id="checkout-table" class="uk-table">
+                                    <thead>
                                         <tr>
-                                            <td class="product-name">Shipping</td>
-                                            <td>Free Shipping</td>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-name">Total</th>
                                         </tr>
+                                    </thead>
+                                    <tbody>
+                                        <[foreach]>
                                         <tr>
-                                            <td class="product-name">Total</td>
-                                            <td><[total]></td>
+                                            <td class="product-name"><[nameProduct]></td>
+                                            <td><[totalProduct]></td>
                                         </tr>
-                                </tbody>
-                            </table>
+                                        <[/foreach]>
+                
+                                    </tbody>
+                                </table>
+                            </div>
                             <div id="payment-option">
-                                <ul>
-                                                               
+                                <div style="margin-top: 25px;">
+                                    <p style="font-size: 0.97rem;"> <span>Shipping :</span> Free Shipping</p>
+                                    <p style="font-size: 25px;"> <span style=" font-weight: bold;">TOTAL :</span> <[total]></p>
+                                </div>
+                                <ul style="margin: 25px 0;">       
                                     <li>
                                         <label for="third">Paypal</label>
-                                        <input type="radio" name="accordion" id="third">
+                                        <input type="radio" name="accordion" id="third" checked>
                                         <div class="content">
-                                            <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+                                            <p>Pay via PayPal; What is <a style="color:white;" href="https://www.paypal.com">Paypal?</a></p>
                                             <img src="dtml/images/paypal_payment.png" alt="" class="payment-img">
                                         </div>
                                     </li>

@@ -37,6 +37,7 @@ $total_records = mysqli_fetch_array($records);
 $total_records = $total_records['total_records'];
 $total_no_of_pages = ceil($total_records / $total_records_per_page);
 $second_last = $total_no_of_pages - 1;
+
 $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
     $run1=mysqli_query($mysqli,$check_idWishlist);
     while ($data = $run1->fetch_assoc()){

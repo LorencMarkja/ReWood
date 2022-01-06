@@ -57,6 +57,7 @@ else{ */
       $main = new Template("dtml/login.html");
       require "include/isLogged.inc.php";
       $main->setContent("message", "Username or password are incorrect!");
+      $main->close();
     }  
 
     

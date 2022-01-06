@@ -34,7 +34,7 @@ if($rowCount != 0){
     $main->setContent("checkout", "<a href='checkout.php' class='uk-button uk-button-small idz-button-white uk-width-1-1'>Proceed to Checkout</a>");
 
 } else {
-    $main->setContent("name", "There isn't any product in your cart");
+    $main->setContent("name", "<a href='shop-fullwidth.php'>Your cart is empty!</a>");
 }
 
 

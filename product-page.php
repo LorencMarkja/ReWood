@@ -12,6 +12,12 @@
     require "include/isLogged.inc.php";
 
 
+    $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
+    $run1=mysqli_query($mysqli,$check_idWishlist);
+    while ($data = $run1->fetch_assoc()){
+        $id_wishlist = $data['id_wishlist'];     
+    }
+
     $name_prod=$_GET["name"];
     $product_info = $mysqli->query("SELECT * FROM product_info WHERE name='$name_prod'");
     while ($data = $product_info->fetch_assoc()) {
@@ -46,21 +52,20 @@
 
         while ($data = $related->fetch_assoc()) {
             $id_prod_rel=$data["id_product"];
+            $main->setContent("id_rel", "$id_prod_rel");
             $name_prod_rel= $data['name_prod'];
+            $main->setContent("name_prod", "$name_prod");
             $main->setContent("name_rel", "<a href='product-page.php?name=$name_prod_rel'>$name_prod_rel</a>");
             $main->setContent("price_rel", $data['price']);
             $img_front_rel =  $data['front'];
             $main->setContent("img_rel", "<img src='dtml/images/product-images/$img_front_rel' style='object-fit: scale-down;margin-top: -25px;' alt='product image'>");
             $main->setContent("name_categ", $data["name_categ"]);
             $main->setContent("id_categ", $category);
+            $main->setContent("id_wishlist",  $id_wishlist);
         }
        
     }
-    $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
-    $run1=mysqli_query($mysqli,$check_idWishlist);
-    while ($data = $run1->fetch_assoc()){
-        $id_wishlist = $data['id_wishlist'];     
-    }
+
 
     $check_wishlist= $mysqli->query("SELECT * FROM product_wishlist where product='$id_prod' AND wishlist='$id_wishlist'");
     $rowCount= mysqli_num_rows($check_wishlist);

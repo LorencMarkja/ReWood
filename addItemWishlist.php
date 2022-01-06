@@ -21,9 +21,11 @@
 
    
     if(isset($_GET['name_prod'])){
-            header("Location: product-page.php?name=$name_prod");
+        header("Location: product-page.php?name=$name_prod");
+    }else if(isset($_GET['index'])){
+        header("Location: index.php#products-section");
     }else{
-            header("Location: shop-fullwidth.php");
+        header("Location: shop-fullwidth.php#products-section");
     }
     
 

@@ -39,7 +39,12 @@
             $run6=mysqli_query($mysqli,$updateCart);
         }
 
-        header("Location: shop-fullwidth.php");
+        if (isset($_GET['index'])){
+            header("Location: index.php#products-section");
+        }else{
+            header("Location: shop-fullwidth.php#products-section");
+        }
+      
     }
 
 
