@@ -41,10 +41,11 @@
     $check_orders="select * FROM rewood.order AS orders LEFT JOIN cart ON orders.cart=id_cart WHERE orders.user='$id_user' and cart.user='$id_user' ORDER BY date DESC LIMIT 5";
     $run6=mysqli_query($mysqli,$check_orders);
     while ($data1 = $run6->fetch_assoc()){
+        $orderNumber=$data1['order_number'];
         $main->setContent("orderNumber", $data1['order_number']);
         $main->setContent("date", $data1['date']);
         $main->setContent("total", $data1['total']);  
-        $main->setContent("view", "<a class='uk-button uk-button-small idz-button-grey uk-width-1-1'>View</a>");      
+        $main->setContent("view", "<a href='order-details.php?order=$orderNumber' class='uk-button uk-button-small idz-button-grey uk-width-1-1'>View</a>");      
     };
     $rowCount = mysqli_num_rows($run6);
     if($rowCount==0){

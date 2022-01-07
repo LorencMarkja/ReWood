@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site Properties -->
+    <title>reWood - Minimalist Shopping Template</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="dtml/css/uikit.css">
+    <link rel="stylesheet" href="dtml/css/style.css">
+    <link rel="stylesheet" href="dtml/css/components/small-icon.css">
+</head>
+
+<body>
+    <section id="main-container">
+        <header>
+            <div id="primary-info">
+                <div class="uk-container uk-container-center">
+                    <div class="uk-grid">
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- main logo begin -->
+                            <div id="logo">
+                                <a href="index.php"><img src="dtml/images/logo.svg" alt="reWood" /></a>
+                            </div>
+                            <div id="slogan">
+                                <p>making your home, as unique as you.</p>
+                            </div>
+                            <!-- main logo end -->
+                        </div>
+                        <div class="uk-width-1-2 uk-width-medium-1-1 uk-width-small-1-1">
+                            <!-- top info begin -->
+                            <div class="idz-header-list">
+                                <[logged]>
+                                <form id="header-search" class="uk-form uk-hidden-medium uk-hidden-small">
+                                    <fieldset>
+                                        <input type="text" placeholder="search...">
+                                        <select>
+                                            <option>all categories</option>
+                                            <option>new arrivals</option>
+                                            <option>furniture</option>
+                                            <option>living room</option>
+                                            <option>dining room</option>
+                                            <option>bedroom</option>
+                                            <option>accessories</option>
+                                        </select>
+                                        <button class="uk-button uk-icon-search"></button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- top info end -->
+                        </div>
+                        <div class="uk-width-1-1">
+                            <!-- mainmenu begin -->
+                            <div id="secondary-info">
+                                <nav id="mainmenu" class="uk-navbar">
+                                    <ul class="uk-navbar-nav uk-hidden-small">
+                                        <li class="uk-active uk-parent" data-uk-dropdown>
+                                            <a href="index.php">Home</a>
+                                        </li>
+                                        <li class="uk-parent" data-uk-dropdown="{justify:'#mainmenu'}"><a
+                                                href="#">Shop</a>
+                                            <div class="uk-dropdown uk-dropdown-navbar idz-megamenu">
+                                                <ul class="uk-grid" data-uk-grid-margin>
+                                                    <li class="uk-width-2-10 uk-width-medium-1-3">
+                                                        <ul class="uk-list idz-list-arrow">
+                                                            <li>
+                                                                <h5>Shopping</h5>
+                                                            </li>
+                                                            <li><a href="shop-fullwidth.php">All Items</a></li>
+                                                            <li><a href="category.php">Categories</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    
+                                                    <li class="uk-width-4-10 uk-hidden-medium">
+                                                        <h5>Why shop at reWood?</h5>
+                                                        <p>Lorem ipsum dolor sitamet consectetur adipiscing sed eiusmod
+                                                            tempor incididunt ut labore dolore magna aliqua ut enim ad
+                                                            minim veniam quis nostrud exercitation ullamco laboris nisi
+                                                            ut aliquip commodo.</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="catalog.php">Catalog</a></li>
+                                        <li><a href="blog.php">Blog</a></li>
+                                        <li><a href="about.php">About</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
+                                    </ul>
+                                    <!--menu mobile-->
+                                    <a href="#mobile-nav" class="uk-navbar-toggle uk-visible-small"
+                                        data-uk-offcanvas></a>
+                                </nav>
+                                <div id="mobile-nav" class="uk-offcanvas">
+                                    <div class="uk-offcanvas-bar">
+                                        <ul class="uk-nav uk-nav-offcanvas uk-nav-parent-icon" data-uk-nav>
+                                            <li class="uk-parent">
+                                                <a href="index.php">Home</a>
+                                            </li>
+                                            <li><a href="shop-fullwidth.php">Shop</a></li>
+                                            <li><a href="category-grid.php">Categories</a></li>
+                                            <li><a href="catalog.php">Catalog</a></li>
+                                            <li><a href="blog.php">Blog</a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- mainmenu end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="uk-container uk-container-center">
+                <div id="pagetitle">
+                    <div class="uk-grid">
+                        <!-- page title headline begin -->
+                        <div class="uk-width-3-10">
+                            <h2>Order Details</h2>
+                        </div>
+                        <!-- page title headline end -->
+                        <!-- breadcrumb begin -->
+                        <div class="uk-width-7-10">
+                            <ul id="breadcrumb-style" class="uk-breadcrumb uk-align-right">
+                                <li><a href="index.php">Home</a></li>
+                                <li class="uk-active"><span>Checkout</span></li>
+                            </ul>
+                        </div>
+                        <!-- breadcrumb end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="uk-padding">
+            <div class="uk-container uk-container-center">
+                
+                
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-bottom">
+                        
+                        <ul class="order-complete">
+                            <li class="">
+                                Order number :
+                                <br />
+                                <strong><[numberOrder]></strong>
+                            </li>
+                            <li class="">
+                                Date :
+                                <br />
+                                <strong><[date]></strong>
+                            </li>
+                            <li class="">
+                                Total :
+                                <br />
+                                <strong><[total]></strong>
+                            </li>
+                            <li class="">
+                                Payment method :
+                                <br />
+                                <strong>PayPal</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom">
+                        <h4>Order Details</h4>
+                        <table id="ord-cmpt-table" class="uk-table uk-table-striped">
+                            <thead>
+                                <tr>
+                                    <th class="product-name">Product</th>
+                                    <th class="product-name">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <[foreach]>
+                                <tr>
+                                    <td class="product-name"><[nameProduct]></td>
+                                    <td><[totalProduct]></td>
+                                </tr>
+                                <[/foreach]>
+                            
+                                <tr>
+                                    <td class="product-name">Shipping</td>
+                                    <td>Free Shipping</td>
+                                </tr>
+                                <tr>
+                                    <td class="product-name">Total</td>
+                                    <td><[total]></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="uk-grid">
+                    <div class="uk-width-1-1 uk-margin-medium-bottom uk-hidden-small">
+                        <h4>Customer Details</h4>
+                        <table id="ord-cmpt-table2" class="uk-table uk-table-striped">
+                            <tbody>
+                                <tr>
+                                    <td class="product-name">Email :</td>
+                                    <td><[email]></td>
+                                <tr>
+                                    <td class="product-name">Telephone :</td>
+                                    <td><[telephone]></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="uk-grid uk-margin-large-bottom">
+                    <div class="uk-width-1-2 uk-width-small-1-1 idz-margin-bottom-small">
+                        <h4>Shipping Address</h4>
+                        <address>
+                            <strong><[nameUser]> &nbsp; <[surname]></strong>
+                            <br> <[city]>
+                            <br> <[address]>
+                            <br> <[country]>
+                            <br> <[postcode]>
+                        </address>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </section>
+    <footer>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid">
+                <div id="left-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <h4>Newsletter Signup</h4>
+                    <form id="footer-newsletter" class="uk-form">
+                        <fieldset>
+                            <input type="text" placeholder="enter your email...">
+                            <button class="uk-button uk-icon-envelope-o"></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div id="right-footer-content" class="uk-width-1-2 uk-width-small-1-1">
+                    <div id="footer-social" class="idz-social uk-align-right">
+                        <ul>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-facebook"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-twitter"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-instagram"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-google-plus"></a>
+                            </li>
+                            <li>
+                                <a href="#" class="uk-icon-button uk-icon-pinterest-p"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4>Stay connected</h4>
+                </div>
+            </div>
+            <hr>
+            <div class="uk-grid">
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Company</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Press Releases</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Product Recalls</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Client Services</h4>
+                    <ul class="uk-list">
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Email Preferences</a></li>
+                        <li><a href="#">Remove from Mailing List</a></li>
+                        <li><a href="#">reWood Platinum Card</a></li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-3 uk-width-small-1-1">
+                    <h4>Need Help?</h4>
+                    <ul class="uk-list">
+                        <li>Contact Us:</li>
+                        <li>Phone: 100.200.1234</li>
+                        <li>Email: orders@xaragoshop.co.id</li>
+                        <li>Hours: Monday - Friday</li>
+                        <li>8:30am - 4:45pm EST</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-4 uk-width-medium-1-1 uk-width-small-1-1">
+                    <div class="instagram-hero">
+                        <a href="#">
+                            <h2>Stay update</h2>
+                            <h5>Check out our</h5>
+                            <h4>Instagram</h4>
+                            <i class="uk-icon-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-grid uk-margin-large-top uk-margin-large-bottom">
+                <div class="uk-width-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-text-right">
+                    <p class="copyright-text">&copy; 2016. reWood. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#top" class="to-top uk-icon-arrow-circle-o-up" data-uk-smooth-scroll></a>
+    </footer>
+    <!-- Javascript -->
+    <script src="dtml/js/jquery.js"></script>
+    <script src="dtml/js/uikit.min.js"></script>
+    <script src="dtml/js/config.js"></script>
+</body>
+
+</html>
