@@ -34,19 +34,15 @@
 
     while ($data = $run8->fetch_assoc()){
       $username = $data['username'];
-      $password = $data['password'];
       $id_user = $data['id_user'];
       $name = $data['name'];
       $surname = $data['surname'];
-      $email = $data['email'];
-      $telephone = $data['telephone'];
+  
       
     }
 
     $main->setContent("nameUser", "$name");
     $main->setContent("surname", "$surname");
-    $main->setContent("email", "$email");
-    $main->setContent("telephone", "$telephone");
 
     $check_cart="select cart from rewood.order WHERE user='$id_user' AND order_number='$order'";
     $run9=mysqli_query($mysqli,$check_cart);

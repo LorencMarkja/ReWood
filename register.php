@@ -54,7 +54,7 @@
       $main = new Template("dtml/login.html");
       require "include/isLogged.inc.php";
       $main->setContent("buttonClick",  "<script type='text/javascript'>window.onload = function(){ document.getElementById('reg-tab').click();}</script>");
-      $main->setContent("error_message", "Username o email already in use");
+      $main->setContent("error_message", "Username or email already in use");
      }
 }
 $main->close();
