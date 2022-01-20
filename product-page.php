@@ -46,9 +46,16 @@
         $main->setContent("category", "<a href='category-product.php?id=$id_cat'>$name_categ</a>");
     }
 
+    $product_catalog = $mysqli->query("SELECT catalog.* FROM product_catalog AS p_cat INNER JOIN catalog ON p_cat.catalog = catalog.id_catalog WHERE p_cat.product='$id_prod'");
+    while ($data = $product_catalog->fetch_assoc()) {
+        $name_catalog = $data["name"];
+        $id_cat= $data["id_catalog"];
+        $catalog_array[]=$id_cat;
+    } 
+
     $i=0;
-    foreach($category_array AS $category){
-        $related= $mysqli->query("SELECT *,product_info.name AS name_prod, category.*, category.name AS name_categ FROM product_info INNER JOIN product_category AS p_cat ON product_info.id_product=p_Cat.product INNER JOIN category ON p_cat.category = category.id_category WHERE p_cat.category='$category' AND product_info.id_product<>'$id_prod'");
+    foreach($catalog_array AS $catalog){
+        $related= $mysqli->query("SELECT *,product_info.name AS name_prod, catalog.*, catalog.name AS name_cat FROM product_info INNER JOIN product_catalog AS p_cat ON product_info.id_product=p_cat.product INNER JOIN catalog ON p_cat.catalog = catalog.id_catalog WHERE p_cat.catalog='$catalog' AND product_info.id_product<>'$id_prod'");
 
         while ($data = $related->fetch_assoc()) {
             $id_prod_rel=$data["id_product"];
@@ -59,8 +66,8 @@
             $main->setContent("price_rel", $data['price']);
             $img_front_rel =  $data['front'];
             $main->setContent("img_rel", "<img src='dtml/images/product-images/$img_front_rel' style='object-fit: scale-down;margin-top: -25px;' alt='product image'>");
-            $main->setContent("name_categ", $data["name_categ"]);
-            $main->setContent("id_categ", $category);
+            $main->setContent("name_catag", $data["name_cat"]);
+            $main->setContent("id_catag", $catalog);
             $main->setContent("id_wishlist",  $id_wishlist);
         }
        
