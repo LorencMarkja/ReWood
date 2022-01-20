@@ -48,10 +48,11 @@ if ($category_option != '7') {
     if ($rowcount != 0) {
         while ($data = $search->fetch_assoc()) {
             $id = $data['id_product'];
-            $main->setContent("name", $data['name']);
+            $name= $data['name'];
             $main->setContent("price", $data['price']);
             $price = $data['price'];
             $front = $data['front'];
+            $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");
             $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
           
@@ -59,7 +60,7 @@ if ($category_option != '7') {
         $main->setContent("euro", "€");
         if(isset($_SESSION['username'])){
         $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-        <button class='uk-button uk-icon-shopping-cart'></button>
+        <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
         <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
          </figcaption>");
         }else{
@@ -87,10 +88,11 @@ if ($category_option == '7') {
 
         while ($data = $search->fetch_assoc()) {
             $id = $data['id_product'];
-            $main->setContent("name", $data['name']);
+            $name= $data['name'];
             $main->setContent("price", $data['price']);
             $price = $data['price'];
             $front = $data['front'];
+            $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");
             $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
 
@@ -98,7 +100,7 @@ if ($category_option == '7') {
         $main->setContent("euro", "€");
         if(isset($_SESSION['username'])){
         $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-        <button class='uk-button uk-icon-shopping-cart'></button>
+        <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
         <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
          </figcaption>");
         }else{
