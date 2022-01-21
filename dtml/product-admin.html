@@ -14,7 +14,9 @@
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
         <link rel="stylesheet"  href="dtml/css/style-dash.css">
         <title>Administration dashboard</title>
@@ -38,15 +40,12 @@
                 <ion-icon name="book"></ion-icon>
                 <div class="text">Catalogs</div>
             </a>
-            <a href="blog-editor.php">
+            <a href="page-editor.php">
                 <ion-icon name="newspaper"></ion-icon>
-                <div class="text">Blog</div>
+                <div class="text">Edit Page</div>
             </a>
-            <a href="contacts-editor.php">
-                <ion-icon name="chatbubbles"></ion-icon>
-                <div class="text">Contacts</div>
-            </a>
-            <a class="tablink logout">
+            
+            <a class="tablink logout" href="logout.php">
                 <ion-icon name="log-out"></ion-icon>
                 <div class="text">Logout</div>
             </a>
@@ -100,7 +99,7 @@
                             <div class="flex-container-form">
                                 <div class="left-content">
                                     <input type="text" name="name" placeholder="Name" required/>
-                                    <textarea name="desc" placeholder="Description" required></textarea>
+                                    <textarea id='insert-editor' name="desc" placeholder="Description" required></textarea>
                                     <div class="images-up-container">
                                         <label for="files" class="btn">Select Front Image: </label>
                                         <input type="file" class="file" name="front_img" accept="image/png, image/gif, image/jpeg">
@@ -126,11 +125,11 @@
                                     <input type="text" name="material" placeholder="Material"required/>
 
                                    
-                                    <select id="categories" name="category[]" form="insert-form" required multiple>
+                                    <select id="categories" name="category[]" form="insert-form" style="height: 120px;" required multiple>
                                         <option value="" selected disabled hidden>Choose category</option>
                                         <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-                                    <select id="catalogs" name="catalog[]" form="insert-form" multiple>
+                                    <select id="catalogs" name="catalog[]" form="insert-form" style="height: 120px;" multiple>
                                         <option value="" selected disabled hidden>Choose catalog</option>
                                         <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
@@ -158,11 +157,11 @@
                                 <[left_content]>
                                 <div class='right-content'>
                                     <[right_content]>
-                                    <select id="categories" name="category[]" form="edit-form" required multiple>
+                                    <select id="categories" name="category[]" form="edit-form" style="height: 120px;"required multiple>
                                         <option value="" selected disabled hidden>Choose category</option>
                                         <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-                                    <select id="catalogs" name="catalog[]" form="edit-form" multiple>
+                                    <select id="catalogs" name="catalog[]" form="edit-form" style="height: 120px;" multiple>
                                         <option value="" selected disabled hidden>Choose catalog</option>
                                         <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
@@ -179,5 +178,30 @@
             </div>
         </div>
         <[script]>
+        <script>
+            $(document).ready(function() {
+                $('#edit-editor').summernote({
+                    tabsize: 2,
+                    height: 90,
+                    maxHeight: 100,
+                    toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                    ]
+                });
+
+                $('#insert-editor').summernote({
+                    tabsize: 2,
+                    height: 90,
+                    maxHeight: 100,
+                    toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                    ]
+                });
+            });
+        </script>
     </body>
 </html>

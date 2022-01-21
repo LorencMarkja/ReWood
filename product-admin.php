@@ -153,7 +153,7 @@
         "<div class='left-content'>
             <input type='text' name='id' value='$id' hidden/>
             <input type='text' name='name' placeholder='Name' value='$name'/>
-            <textarea name='desc' placeholder='Description'>$desc</textarea>
+            <textarea id='edit-editor' name='desc' placeholder='Description'>$desc</textarea>
             <div class='images-up-container'>
                 <label for='files' class='btn'>Select Front Image: </label>
                 <input type='file' class='file' name='front_img' accept='image/png, image/gif, image/jpeg'>

@@ -84,7 +84,7 @@
         "<div class='left-content'>
             <input type='text' name='id' value='$id' hidden/>
             <input type='text' name='name' placeholder='Name' value='$name'/>
-            <textarea name='desc' placeholder='Description'>$desc</textarea> 
+            <textarea id='edit-editor' name='desc' placeholder='Description'>$desc</textarea> 
         </div>");
         
         $main->setContent("right_content","<input type='date' name='date' value='$date' required>");

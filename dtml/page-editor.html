@@ -27,7 +27,7 @@
             <div class="logo-wrapper">
                 <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
             </div>
-            <a href="admin.php" class="active">
+            <a href="admin.php">
                 <ion-icon name="home"></ion-icon>
                 <div class="text">Dashboard</div>
             </a>
@@ -39,7 +39,7 @@
                 <ion-icon name="book"></ion-icon>
                 <div class="text">Catalogs</div>
             </a>
-            <a href="page-editor.php">
+            <a href="page-editor.php" class="active">
                 <ion-icon name="newspaper"></ion-icon>
                 <div class="text">Edit Page</div>
             </a>
@@ -52,52 +52,47 @@
         <!--end sidebar nav-->
         
         <div class="wrapper">
-            <div class="main-content">
-                <div class="box-wrapper">
-                    <div class="box" >
-                        <h1>Total income</h1>
-                        <p class="value">€ <[total_income]></p>
-                    </div>
-                    <div class="box">
-                        <h1>Orders</h1>
-                        <p class="value"><[orders_numb]></p>
-                    </div>
-                    <div class="box">
-                        <h1>Clients</h1>
-                        <p class="value"><[clients_numb]></p>
-                    </div>
+            <div class="main-content center">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for page.." title="Type in a page title">
+                <div class="wrapper-buttons">
+                    <ul id="myUL">
+                        <a href="editor-form.php">
+                            <div class="box-a insert-box">
+                                Add Page <ion-icon name="add-circle" style="width: 40px; height: 40px;"></ion-icon>
+                            </div>
+                        </a>
+                   
+                        <[foreach]>
+                            <li>
+                                <a href="editor-form.php?title=<[title]>">
+                                    <div class="box-a">
+                                        <div class="text"><[title]></div>
+                                    </div>
+                                </a>
+                            </li>
+                        <[/foreach]>
+                    </ul>
                 </div>
-
-                
-                <div class="section-table-container">
-                    <h3>Latest orders</h3>
-                    <br>
-                    <div class="table-container orders">
-                        <table class="custom-table">
-                            <thead>
-                                <tr>
-                                    <th>Orderd number</th>
-                                    <th>User</th>
-                                    <th>Date</th>
-                                    <th>Total Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <[foreach]>
-                                    <tr>
-                                        <td><[order_number]></td>
-                                        <td><[username]></td>
-                                        <td><[date]></td>
-                                        <td><[total_price]></td>
-                                    </tr>
-                                <[/foreach]>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
             </div>
-
         </div>
+
+        <script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            </script>
     </body>
 </html>

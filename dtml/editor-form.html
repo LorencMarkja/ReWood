@@ -12,9 +12,9 @@
         <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-        <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
-                                
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
         <!-- CSS -->
         <link rel="stylesheet"  href="dtml/css/style-dash.css">
 
@@ -27,7 +27,7 @@
             <div class="logo-wrapper">
                 <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
             </div>
-            <a href="admin.php" class="active">
+            <a href="admin.php">
                 <ion-icon name="home"></ion-icon>
                 <div class="text">Dashboard</div>
             </a>
@@ -39,7 +39,7 @@
                 <ion-icon name="book"></ion-icon>
                 <div class="text">Catalogs</div>
             </a>
-            <a href="page-editor.php">
+            <a href="page-editor.php" class="active">
                 <ion-icon name="newspaper"></ion-icon>
                 <div class="text">Edit Page</div>
             </a>
@@ -53,51 +53,27 @@
         
         <div class="wrapper">
             <div class="main-content">
-                <div class="box-wrapper">
-                    <div class="box" >
-                        <h1>Total income</h1>
-                        <p class="value">€ <[total_income]></p>
+                <[h1]>
+                <form autocomplete="off" id="editor-form" enctype="multipart/form-data" class="form" action="" method="post">
+                    <p class="message error"><[message]></p>
+                    <div style="column-gap: 10px; display: flex;align-items: center;"><h4>Title: </h4><[input_title]></div>
+                    <textarea id='content-editor' name="new_content" required> <[content]> </textarea>
+                    <div class="buttons">
+                        <[delete-btn]>
+                        <input type="submit" name="submit" value="SUBMIT" class="sub-btn">
                     </div>
-                    <div class="box">
-                        <h1>Orders</h1>
-                        <p class="value"><[orders_numb]></p>
-                    </div>
-                    <div class="box">
-                        <h1>Clients</h1>
-                        <p class="value"><[clients_numb]></p>
-                    </div>
-                </div>
-
-                
-                <div class="section-table-container">
-                    <h3>Latest orders</h3>
-                    <br>
-                    <div class="table-container orders">
-                        <table class="custom-table">
-                            <thead>
-                                <tr>
-                                    <th>Orderd number</th>
-                                    <th>User</th>
-                                    <th>Date</th>
-                                    <th>Total Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <[foreach]>
-                                    <tr>
-                                        <td><[order_number]></td>
-                                        <td><[username]></td>
-                                        <td><[date]></td>
-                                        <td><[total_price]></td>
-                                    </tr>
-                                <[/foreach]>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
+                </form>
             </div>
-
         </div>
+        <script>
+            $(document).ready(function() {
+                $('#content-editor').summernote({
+                    tabsize: 1,
+                    maxWidth: 200,
+                    height: 340,
+                    maxHeight: 340
+                });
+            });
+        </script>
     </body>
 </html>
