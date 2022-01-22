@@ -10,6 +10,7 @@ $error_wishlist=$_SESSION['error_wishlist'];
 $main = new Template("dtml/shop-fullwidth.html");
 require "include/isLogged.inc.php";
 
+$main->setContent("disabled", "hidden");
 
 if($error_wishlist == 1){
     $main->setContent("script", "<script type='text/javascript'>setTimeout(function () {alert('Product already in wishlist!');}, 500);</script>");

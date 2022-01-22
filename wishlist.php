@@ -38,6 +38,7 @@
 
         
     }  else {
+        $main->setContent("style", "pointer-events: none; cursor: default;");
         $main->setContent("name", "Your wishlist is empty");
         $main->setContent("status", "<a href='shop-fullwidth.php'>Check our products</a>");
     }

@@ -12,6 +12,7 @@ $username=$_SESSION['username'];
 
 //current category and search text
 $search_text = $_GET['search_text'];
+$main->setContent("searchtext", $search_text);
 
 if (isset($_GET['category_id'])) {
 
@@ -24,6 +25,7 @@ if (isset($_GET['page-number']) && $_GET['page-number'] != "") {
 } else {
     $page_no = 1;
 }
+
 
 $total_records_per_page = 12;
 
@@ -40,8 +42,43 @@ $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
         $id_wishlist = $data['id_wishlist'];     
     }
 
+if(isset($_GET['subcat-id'])){
+    $main->setContent("disabled", "hidden");
+    $id_subcat = $_GET['subcat-id'];
+    $search_adv= $mysqli->query("SELECT * FROM product_subcategory JOIN product ON product_subcategory.product = product.id_product JOIN images on product.id_product = images.product WHERE subcategory = $id_subcat AND (name LIKE '%$search_text%') ORDER BY images.product LIMIT $offset, $total_records_per_page ;");
+    $rowcount = mysqli_num_rows($search_adv);
+    if ($rowcount != 0) {
+        while ($data = $search_adv->fetch_assoc()) {
+            $id = $data['id_product'];
+            $name= $data['name'];
+            $main->setContent("price", $data['price']);
+            $price = $data['price'];
+            $front = $data['front'];
+            $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");
+            $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
+            $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
+        }
+        $main->setContent("euro", "€");
+        if(isset($_SESSION['username'])){
+            $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
+            <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
+            <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
+            </figcaption>");
+        }else{
+            $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
+            <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
+            <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
+            </figcaption>");
+        }
+    }else {
+        $showingOne = 0;
+        $main->setContent("noResults", "<p style='width:100%; font-size: 20px;'> No products found for the specified parameters</p>");
+    }
+  
+    $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM product_subcategory JOIN product ON product_subcategory.product = product.id_product WHERE subcategory = $id_subcat AND (name LIKE '%$search_text%');");
+}
 //case categories 1 to 6 selected
-if ($category_option != '7') {
+if (isset($_GET['category_id']) && $category_option != '7') {
 
     $search = $mysqli->query("SELECT * FROM product_search WHERE category = $category_option AND (name LIKE '%$search_text%') ORDER BY id_product LIMIT $offset, $total_records_per_page ;");
     $rowcount = mysqli_num_rows($search);
@@ -55,22 +92,28 @@ if ($category_option != '7') {
             $main->setContent("name", "<a href='product-page.php?name=$name'>$name</a>");
             $main->setContent("front", "<img src='dtml/images/product-images/$front' alt='product image'>");
             $main->setContent("info_sort", "<li data-id='$id' data-price='$price' class='items'>");
-          
         }
         $main->setContent("euro", "€");
         if(isset($_SESSION['username'])){
-        $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-        <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
-        <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
-         </figcaption>");
+            $main->setContent("figcaption"," <figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
+            <a href='addItemCart.php?id=$id'><button class='uk-button uk-icon-shopping-cart'></button></a>
+            <a href='addItemWishlist.php?id=$id&idW=$id_wishlist'><button class='uk-button uk-icon-heart-o'></button></a>
+            </figcaption>");
         }else{
             $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-            <button class='uk-button uk-icon-shopping-cart'></button>
+            <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
             <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
             </figcaption>");
         }
 
+        //subcategory
+        $subcategory = $mysqli->query("SELECT * FROM subcategory WHERE category = $category_option");
+        while ($data = $subcategory->fetch_assoc()){
+            $main->setContent("id_subcat", $data['id_subcategory']);
+            $main->setContent("name_subcat", $data['name']);
+        }
     } else {
+        $main->setContent("disabled", "hidden");
         $showingOne = 0;
         $main->setContent("noResults", "<p style='width:100%; font-size: 20px;'> No products found for the specified parameters</p>");
     }
@@ -80,8 +123,8 @@ if ($category_option != '7') {
 }
 
 // case all categories selected
-if ($category_option == '7') {
-
+if (isset($_GET['category_id']) && $category_option == '7') {
+    $main->setContent("disabled", "hidden");
     $search = $mysqli->query("SELECT * FROM product_search WHERE name LIKE '%$search_text%' GROUP BY id_product LIMIT $offset, $total_records_per_page;");
     $rowcount = mysqli_num_rows($search);
     if ($rowcount != 0) {
@@ -105,7 +148,7 @@ if ($category_option == '7') {
          </figcaption>");
         }else{
             $main->setContent("figcaption","<figcaption class='uk-overlay-panel uk-overlay-background uk-flex uk-flex-right uk-flex-bottom'>
-            <button class='uk-button uk-icon-shopping-cart'></button>
+            <a href='login-register.php'><button class='uk-button uk-icon-shopping-cart'></button></a>
             <a href='login-register.php'><button class='uk-button uk-icon-heart-o'></button></a>
             </figcaption>");
         }
@@ -117,6 +160,7 @@ if ($category_option == '7') {
 
     $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM `product_search` WHERE name LIKE '%$search_text%' ;");
 }
+
 
 //Total Number of Pages for Pagination
 $total_records = mysqli_fetch_array($records);

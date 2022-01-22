@@ -4505,3 +4505,17 @@ footer hr {
     height: 200px;
     object-fit: cover;
 }
+
+.adv-search{
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.adv-search select{
+    width: 40%;
+    height: 30px;
+}

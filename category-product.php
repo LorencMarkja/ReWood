@@ -11,7 +11,7 @@ session_start();
 $usernameLogged=$_SESSION['username'];
 $id_user=$_SESSION['id_user'];
 
-
+$main->setContent("disabled", "hidden");
 $id_category = $_GET['id'];
 
 $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";

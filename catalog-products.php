@@ -10,6 +10,7 @@
     $usernameLogged=$_SESSION['username'];
     $id_user=$_SESSION['id_user'];
 
+    $main->setContent("disabled", "hidden");
     $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
     $run1=mysqli_query($mysqli,$check_idWishlist);
     while ($data = $run1->fetch_assoc()){
