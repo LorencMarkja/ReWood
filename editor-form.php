@@ -1,7 +1,8 @@
 <?php
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
-
+	require "include/auth.inc.php";
+    
     $main = new Template("dtml/editor-form.html");
 
     if(isset($_GET['title'])){

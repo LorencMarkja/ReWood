@@ -1,7 +1,8 @@
 <?php
     require "include/connection_db.inc.php";
     require "include/template2.inc.php";
-
+	require "include/auth.inc.php";
+    
     $main = new Template("dtml/index-admin.html");
 
     $orders_info = $mysqli->query("
@@ -17,7 +18,7 @@
 		$main->setContent("order_number", $data['order_number']);
         $main->setContent("username", $data['username']);
         $main->setContent("date", $data['date']);
-        $main->setContent("total_price", $data['total']);
+        $main->setContent("total_price", $data['total']." €");
 
         $total_income = $data['total'] + $total_income;
         

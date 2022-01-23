@@ -2,7 +2,7 @@
   
   require "include/connection_db.inc.php";
   require "include/template2.inc.php";
-  
+
   session_start();
 
  /* if(empty($_POST["username"]) && empty($_POST["password"]))                           DA IMPLEMENTARE

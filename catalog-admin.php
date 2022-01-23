@@ -3,8 +3,8 @@
     require "include/template2.inc.php";
     
     $main = new Template("dtml/catalog-admin.html");
-    require "include/isLogged.inc.php";
-   
+    require "include/auth.inc.php";
+
     $catalog_info = $mysqli->query("SELECT * FROM rewood.catalog ORDER BY id_catalog DESC");
 
     while ($data = $catalog_info->fetch_assoc()) {
