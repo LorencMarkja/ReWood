@@ -22,8 +22,8 @@
 </head>
 
 <body>
-     <!--sidebar nav-->
-     <div class="sidebar">
+    <!--sidebar nav-->
+    <div class="sidebar">
         <div class="logo-wrapper">
             <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
         </div>
@@ -47,11 +47,11 @@
             <ion-icon name="cube"></ion-icon>
             <div class="text">Products</div>
         </a>
-        <a href="category-admin.php">
+        <a href="category-admin.php" class="active">
             <ion-icon name="file-tray-stacked"></ion-icon>
             <div class="text">Categories</div>
         </a>
-        <a href="catalog-admin.php" class="active">
+        <a href="catalog-admin.php">
             <ion-icon name="book"></ion-icon>
             <div class="text">Catalogs</div>
         </a>
@@ -69,7 +69,7 @@
     <div class="wrapper">
         <div class="main-content">
             <div class="flex-container">
-                <h1>CATALOGS</h1>
+                <h1>CATEGORIES</h1>
                 <button class="add-btn">
                     <button id="openForm" class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
                 </button>
@@ -80,7 +80,6 @@
                         <tr>
                             <th class="id">ID</th>
                             <th>Name</th>
-                            <th>Date of creation</th>
                             <th class="desc">Description</th>
                             <th></th>
                         </tr>
@@ -90,7 +89,6 @@
                             <tr>
                                 <td><[id]></td>
                                 <td><[name]></td>
-                                <td><[date]></td>
                                 <td class="desc"><[desc]></td>
                                 <td class="btn-container">
                                     <[btn_form]>
@@ -105,7 +103,7 @@
                 <div class="modal-content">
                   <div class="content-container">
                     <button onclick="document.getElementById('insert').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
-                    <h1>Insert new Catalog</h1>
+                    <h1>Insert new Category</h1>
                     <form autocomplete="off" id="insert-form" enctype="multipart/form-data" class="form" action="" method="post">
                         <p class="message error"><[message]></p>
                         <div class="flex-container-form">
@@ -114,7 +112,6 @@
                                 <textarea id="insert-editor" name="desc" placeholder="Description" required></textarea>
                             </div>
                             <div class="right-content">
-                                <input type="date" value="" required>
                                 <div class="images-up-container" style="margin-top: 10px;">
                                     <label for="files" class="btn">Select Image: </label>
                                     <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
@@ -135,7 +132,7 @@
                 <div class="modal-content">
                   <div class="content-container">
                     <button onclick="document.getElementById('edit').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
-                    <h1>Edit Catalog</h1>
+                    <h1>Edit Category</h1>
                     <form autocomplete="off" id="edit-form" enctype="multipart/form-data" class="form" action="" method="post">
                         <p class="message error"><[message_edit]></p>
                         <div class="flex-container-form">

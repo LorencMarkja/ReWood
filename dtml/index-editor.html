@@ -12,9 +12,11 @@
         <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+ 
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
         <!-- CSS -->
         <link rel="stylesheet"  href="dtml/css/style-dash.css">
 
@@ -31,11 +33,11 @@
                 <ion-icon name="home"></ion-icon>
                 <div class="text">Dashboard</div>
             </a>
-            <a href="contacts-editor.php">
+            <a href="contacts-editor.php" >
                 <ion-icon name="chatbubbles"></ion-icon>
                 <div class="text">Info Company</div>
             </a>
-            <a href="index-editor.php">
+            <a href="index-editor.php" class="active">
                 <ion-icon name="browsers"></ion-icon>
                 <div class="text">Index Editor</div>
             </a>
@@ -55,7 +57,7 @@
                 <ion-icon name="book"></ion-icon>
                 <div class="text">Catalogs</div>
             </a>
-            <a href="page-editor.php" class="active">
+            <a href="page-editor.php">
                 <ion-icon name="newspaper"></ion-icon>
                 <div class="text">Edit Page</div>
             </a>
@@ -69,25 +71,68 @@
         
         <div class="wrapper">
             <div class="main-content">
-                <[h1]>
-                <form autocomplete="off" id="editor-form" enctype="multipart/form-data" class="form" action="" method="post">
-                    <p class="message error"><[message]></p>
-                    <div style="column-gap: 10px; display: flex;align-items: center;"><h4>Title: </h4><[input_title]></div>
-                    <textarea id='content-editor' name="new_content" required> <[content]> </textarea>
-                    <div class="buttons">
-                        <[delete-btn]>
-                        <input type="submit" name="submit" value="SUBMIT" class="sub-btn">
+               
+                <div class="flex-container">
+                    <h1>INDEX ELEMENTS</h1>
+                </div>
+
+                <div class="table-container" style="margin-top: 20px;">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th class="name">Section name</th>
+                                <th class="desc">Content</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <[foreach]>
+                                <tr>
+                                    <td class="name"><[section_name]></td>
+                                    <td class="desc"><[content_prev]></td>
+                                    <td class="btn-container">
+                                        <[btn_form]>
+                                    </td>                               
+                                </tr>
+                            <[/foreach]>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="edit" class="modal">
+                    <div class="modal-content">
+                      <div class="content-container">
+                        <button onclick="document.getElementById('edit').style.display='none';" class="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+                        <h1>Edit product</h1>
+                        <form autocomplete="off" id="edit-form" enctype="multipart/form-data" class="form" action="" method="post">
+                            <p class="message error"><[message_edit]></p>
+                            <div class="flex-container-form">
+                                <label for="sname">Section name:</label>
+                                <input type="text" name="sname" value="name"/>
+                                <label for="content">Content:</label>
+                               <textarea id='content-editor' name="content" required> <[content]> </textarea> -->
+                            </div>
+                            <div class="buttons">
+                                <input type="submit" name="edit" value="SUBMIT" class="sub-btn">
+                            </div>
+                        </form>
+                      </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
+        <[script]>
         <script>
             $(document).ready(function() {
                 $('#content-editor').summernote({
-                    tabsize: 1,
-                    maxWidth: 200,
-                    height: 340,
-                    maxHeight: 340
+                    tabsize: 2,
+                    height: 90,
+                    maxHeight: 100,
+                    toolbar: [
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                    ]
                 });
             });
         </script>

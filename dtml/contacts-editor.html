@@ -1,59 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="stylesheet"  href="css/style-dash.css">
-        <title>Administration dashboard</title>
-    </head>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <body>
-        <div class="wrapper">
+    <link rel="stylesheet" href="dtml/css/style-dash.css">
+    <title>Administration dashboard</title>
+</head>
 
-            <!--sidebar nav-->
-            <div class="sidebar">
-                <div class="logo-wrapper">
-                    <img src="images/logo.svg" alt="reWood" class="logo" />
-                </div>
-                <a href="index-admin.html">
-                    <ion-icon name="home"></ion-icon>
-                    <div class="text">Dashboard</div>
-                </a>
-                <a href="product.html">
-                    <ion-icon name="cube"></ion-icon>
-                    <div class="text">Products</div>
-                </a>
-                <a href="catalogs.html">
-                    <ion-icon name="book"></ion-icon>
-                    <div class="text">Catalogs</div>
-                </a>
-                <a href="blog-editor.html">
-                    <ion-icon name="newspaper"></ion-icon>
-                    <div class="text">Blog</div>
-                </a>
-                <a href="contacts-editor.html" class="active">
-                    <ion-icon name="chatbubbles"></ion-icon>
-                    <div class="text">Contacts</div>
-                </a>
-                <a class="tablink logout">
-                    <ion-icon name="log-out"></ion-icon>
-                    <div class="text">Logout</div>
-                </a>
+<body>
+    <div class="wrapper">
+
+        <!--sidebar nav-->
+        <div class="sidebar">
+            <div class="logo-wrapper">
+                <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
             </div>
-            <!--end sidebar nav-->
+            <a href="admin.php">
+                <ion-icon name="home"></ion-icon>
+                <div class="text">Dashboard</div>
+            </a>
+            <a href="contacts-editor.php"  class="active">
+                <ion-icon name="chatbubbles"></ion-icon>
+                <div class="text">Info Company</div>
+            </a>
+            <a href="index-editor.php">
+                <ion-icon name="browsers"></ion-icon>
+                <div class="text">Index Editor</div>
+            </a>
+            <a href="slider-editor.php">
+                <ion-icon name="images"></ion-icon>
+                <div class="text">Slider</div>
+            </a>
+            <a href="product-admin.php">
+                <ion-icon name="cube"></ion-icon>
+                <div class="text">Products</div>
+            </a>
+            <a href="category-admin.php">
+                <ion-icon name="file-tray-stacked"></ion-icon>
+                <div class="text">Categories</div>
+            </a>
+            <a href="catalog-admin.php">
+                <ion-icon name="book"></ion-icon>
+                <div class="text">Catalogs</div>
+            </a>
+            <a href="page-editor.php">
+                <ion-icon name="newspaper"></ion-icon>
+                <div class="text">Edit Page</div>
+            </a>
 
-
-
+            <a class="tablink logout" href="logout.php">
+                <ion-icon name="log-out"></ion-icon>
+                <div class="text">Logout</div>
+            </a>
         </div>
-    </body>
+        <!--end sidebar nav-->
+    </div>
+    <div class="wrapper">
+        <div class="main-content">
+            <h1>Company informations:</h1>
+            <[error-message]>
+            <form autocomplete="off" id="contacts-form" enctype="multipart/form-data" class="form" action="" method="post">
+                <div class="text-info">
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" value="">
+                </div>
+                <div class="text-info">
+                    <label for="tnumber">Telephone number:</label>
+                    <input type="text" id="tnumber" name="tnumber" value="">
+                </div>
+                <div class="text-info">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" value="">
+                </div>
+                <div class="logo-upload">
+                    <h2>Update company's logo</h2>
+                    <div>
+                        <img src="dtml/images/logo.svg"/>
+                        <div style="margin-left: 40px">
+                            <label for="files" class="btn">Select Logo: </label>
+                            <input type="file" class="file" name="logo" accept="image/png, image/gif, image/jpeg">
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <input type="submit" name="submit" value="UPDATE" class="sub-btn">
+                </div>
+            </form>
+        
+        </div>
+    </div>
+   
+</body>
+
 </html>
