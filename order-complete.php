@@ -9,6 +9,8 @@
     
     $main = new Template("dtml/order-complete.html");
     require "include/isLogged.inc.php";
+    require "include/info_company.inc.php";
+
 
     $sql = "SELECT MAX(cart) AS id_cart FROM rewood.order WHERE user = '$id_user'";
     $result = $mysqli -> query($sql);

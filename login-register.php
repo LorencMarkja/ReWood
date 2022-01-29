@@ -4,7 +4,8 @@
 
     $main = new Template("dtml/login.html");
     require "include/isLogged.inc.php";
-    
+    require "include/info_company.inc.php";
+
     $main->close();
 
 ?>

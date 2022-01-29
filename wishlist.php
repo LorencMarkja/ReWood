@@ -9,7 +9,8 @@
     
     $main = new Template("dtml/wishlist.html");
     require "include/isLogged.inc.php";
-   
+    require "include/info_company.inc.php";
+
     $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
     $run1=mysqli_query($mysqli,$check_idWishlist);
     while ($data = $run1->fetch_assoc()){

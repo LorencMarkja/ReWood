@@ -11,6 +11,7 @@
 
     $main = new Template("dtml/order-details.html");
     require "include/isLogged.inc.php";
+    require "include/info_company.inc.php";
 
     
     $check_address="select * from address WHERE user='$id_user'";

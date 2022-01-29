@@ -8,6 +8,7 @@ $id_cart = $SESSION['cart'];
 
 $main = new Template("dtml/checkout.html");
 require "include/isLogged.inc.php";
+require "include/info_company.inc.php";
 
 //recupero dal form i dati inseriti
 $nameForm=($_POST['name']);

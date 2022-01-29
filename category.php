@@ -6,6 +6,7 @@ require "include/template2.inc.php";
 session_start();
 $main = new Template("dtml/category-grid.html");
 require "include/isLogged.inc.php";
+require "include/info_company.inc.php";
 
 $usernameLogged=$_SESSION['username'];
 

@@ -8,6 +8,8 @@ $id_cart = $SESSION['cart'];
 
 $main = new Template("dtml/shopping-cart.html");
 require "include/isLogged.inc.php";
+require "include/info_company.inc.php";
+
 
 $check_idChart = "SELECT * FROM cart_info where id_cart='$id_cart'";
 $run1 = mysqli_query($mysqli, $check_idChart);

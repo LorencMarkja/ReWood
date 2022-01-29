@@ -66,29 +66,30 @@
         <!--end sidebar nav-->
     </div>
     <div class="wrapper">
-        <div class="main-content">
+        <div class="main-content" style="grid-column: 4 / span 9; margin-right: 0;">
             <h1>Company informations:</h1>
             <[error-message]>
             <form autocomplete="off" id="contacts-form" enctype="multipart/form-data" class="form" action="" method="post">
                 <div class="text-info">
                     <label for="email">E-mail:</label>
-                    <input type="text" id="email" name="email" value="">
+                    <input type="text" id="email" name="email" value="<[company_email]>">
                 </div>
                 <div class="text-info">
-                    <label for="tnumber">Telephone number:</label>
-                    <input type="text" id="tnumber" name="tnumber" value="">
+                    <label for="tnumber">Phone:</label>
+                    <input type="text" id="tnumber" name="phone" value="<[company_phone]>">
                 </div>
                 <div class="text-info">
                     <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" value="">
+                    <input type="text" id="address" name="address" value="<[company_address]>">
                 </div>
                 <div class="logo-upload">
                     <h2>Update company's logo</h2>
                     <div>
-                        <img src="dtml/images/logo.svg"/>
+                        <img src="dtml/images/<[company_logo]>"/>
                         <div style="margin-left: 40px">
                             <label for="files" class="btn">Select Logo: </label>
-                            <input type="file" class="file" name="logo" accept="image/png, image/gif, image/jpeg">
+                            <input type="file" id="logo-file" name="logo" accept="image/png, image/gif, image/jpeg" style="display: none;" >
+                            <input type="button" value="Select new file" class="file-btn" onclick="document.getElementById('logo-file').click();" />
                         </div>
                     </div>
                 </div>

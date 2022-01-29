@@ -6,6 +6,7 @@
 
     $main = new Template("dtml/index.html");
     require "include/isLogged.inc.php";
+    require "include/info_company.inc.php";
 
     $id_user=$_SESSION['id_user'];
     $usernameLogged=$_SESSION['username'];

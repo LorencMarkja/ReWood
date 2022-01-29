@@ -9,6 +9,7 @@ $error_wishlist=$_SESSION['error_wishlist'];
 
 $main = new Template("dtml/shop-fullwidth.html");
 require "include/isLogged.inc.php";
+require "include/info_company.inc.php";
 
 $main->setContent("disabled", "hidden");
 

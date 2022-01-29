@@ -521,3 +521,12 @@ input[type=number] {
 #contacts-form .logo-upload div input[type="file"]{
     width: 75%
  }
+ .file-btn{
+    width: 30%;
+    height: 30px;
+    cursor: pointer;
+ }
+ .file-btn:hover{
+    background-color: #444444;
+    color: #fff;
+ }

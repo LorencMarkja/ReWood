@@ -5,6 +5,8 @@
     if(isset($_GET['title'])){
         $main = new Template("dtml/about.html");
         require "include/isLogged.inc.php";
+        require "include/info_company.inc.php";
+
 
         $title = $_GET['title'];
         $page = $mysqli->query("SELECT * FROM page WHERE title = '$title'");

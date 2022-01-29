@@ -7,6 +7,7 @@
     
     $main = new Template("dtml/catalog.html");
     require "include/isLogged.inc.php";
+    require "include/info_company.inc.php";
    
     $catalog_info = $mysqli->query("SELECT * FROM rewood.catalog ORDER BY id_catalog DESC LIMIT 12");
     

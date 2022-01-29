@@ -10,6 +10,7 @@
     
     $main = new Template("dtml/product-page.html");
     require "include/isLogged.inc.php";
+    require "include/info_company.inc.php";
 
 
     $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
