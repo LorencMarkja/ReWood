@@ -3,7 +3,7 @@
     require "include/template2.inc.php";
 
     if(isset($_GET['title'])){
-        $main = new Template("dtml/about.html");
+        $main = new Template("dtml/page.html");
         require "include/isLogged.inc.php";
         require "include/info_company.inc.php";
 
