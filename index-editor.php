@@ -21,6 +21,49 @@
     };
 
 
+
+
+    if($_POST['action'] && $_POST['id_index']) {
+        $index_page = $_POST['id_index'];
+
+        if ($_POST['action'] == 'EDIT') {
+            $main->setContent("script",  "<script type='text/javascript'>document.getElementById('edit').style.display='block';</script>");
+            $index_page2 = $mysqli->query("SELECT * FROM index_page WHERE id_index = '$index_page'");
+
+            while ($data = $index_page2->fetch_assoc()) {
+                $id = $data['id_index'];
+                $name = $data['section_name'];
+                $content = $data['content'];
+            };
+        }
+    }
+        
+
+
+    if(isset($_POST['edit'])){
+
+        $id = $_POST['id_index'];
+        $name =  $_POST['section_name'];
+        $content = $_POST['content'];
+        
+        $update_index="UPDATE index_page SET section_name = '$name', content = '$content' WHERE id_index = '$index_page'"; 
+      
+   
+        if(!mysqli_query($mysqli, $update_index)){
+            $main->setContent("message_edit", "ERROR! section not updated!");
+            $main->setContent("script", "<script type='text/javascript'>document.getElementById('open_edit').click()</script>");
+        }else{
+            $main->setContent("script", "<script type='text/javascript'> 
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+                window.location.reload();
+            }
+            </script>");
+        }
+    }
+
+
+
     $main->close();
 
 ?>

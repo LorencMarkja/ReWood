@@ -56,9 +56,25 @@
     // $_SESSION['cart']= $id_cart;    
 
     //dynamic contents
-    $query_index_icons = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icons'");
-    while ($data = $query_index_icons->fetch_assoc()){
-        $main->setContent("index_icons", $data['content']);
+    $query_index_icon1 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon1'");
+    while ($data = $query_index_icon1->fetch_assoc()){
+        $main->setContent("index_icon1", $data['content']);
+    }
+    $query_index_icon2 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon2'");
+    while ($data = $query_index_icon2->fetch_assoc()){
+        $main->setContent("index_icon2", $data['content']);
+    }
+    $query_index_icon3 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon3'");
+    while ($data = $query_index_icon3->fetch_assoc()){
+        $main->setContent("index_icon3", $data['content']);
+    }
+    $query_index_icon4 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon4'");
+    while ($data = $query_index_icon4->fetch_assoc()){
+        $main->setContent("index_icon4", $data['content']);
+    }
+    $query_index_icon5 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon5'");
+    while ($data = $query_index_icon5->fetch_assoc()){
+        $main->setContent("index_icon5", $data['content']);
     }
 
     $query_furniture_sentence = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_furniture_sentence'");
@@ -76,10 +92,10 @@
         $main->setContent("index_image", $data['content']);
     }
 
-    $query_index_slider= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_slider'");
-    while ($data = $query_index_slider->fetch_assoc()){
-        $main->setContent("index_slider", $data['content']);
-    }
+//    $query_index_slider= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_slider'");
+//    while ($data = $query_index_slider->fetch_assoc()){
+//       $main->setContent("index_slider", $data['content']);
+//   }
 
 
    
