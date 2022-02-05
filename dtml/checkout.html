@@ -47,13 +47,8 @@
                                     <fieldset>
                                         <input type="text" name = "search_text" placeholder="search...">
                                         <select name = "category_id">
-                                            <option value="7">all categories</option>
-                                            <option value="3">bedroom</option>
-                                            <option value="5">decor</option>
-                                            <option value="1">chairs</option>
-                                            <option value="4">living room</option>
-                                            <option value="6">office</option>
-                                            <option value="2">tables</option>
+                                        <option value="10" >All categories</option>
+                                                <[category::select table="category" key="id_category" value="name" library="widget"]>
                                         </select>
 
                                         <button type="submit" id="search-button" class="uk-button uk-icon-search"></button>

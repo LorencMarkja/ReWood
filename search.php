@@ -78,8 +78,8 @@ if(isset($_GET['subcat-id'])){
   
     $records = mysqli_query($mysqli, "SELECT COUNT(DISTINCT id_product) AS total_records FROM product_subcategory JOIN product ON product_subcategory.product = product.id_product WHERE subcategory = $id_subcat AND (name LIKE '%$search_text%');");
 }
-//case categories 1 to 6 selected
-if (isset($_GET['category_id']) && $category_option != '7') {
+//case specific category 
+if (isset($_GET['category_id']) && $category_option != '10') {
 
     $search = $mysqli->query("SELECT * FROM product_search WHERE category = $category_option AND (name LIKE '%$search_text%') ORDER BY id_product LIMIT $offset, $total_records_per_page ;");
     $rowcount = mysqli_num_rows($search);
@@ -124,7 +124,7 @@ if (isset($_GET['category_id']) && $category_option != '7') {
 }
 
 // case all categories selected
-if (isset($_GET['category_id']) && $category_option == '7') {
+if (isset($_GET['category_id']) && $category_option == '10') {
     $main->setContent("disabled", "hidden");
     $search = $mysqli->query("SELECT * FROM product_search WHERE name LIKE '%$search_text%' GROUP BY id_product LIMIT $offset, $total_records_per_page;");
     $rowcount = mysqli_num_rows($search);

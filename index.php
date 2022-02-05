@@ -55,5 +55,34 @@
     // $_SESSION['id_user']= $id_user;
     // $_SESSION['cart']= $id_cart;    
 
+    //dynamic contents
+    $query_index_icons = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icons'");
+    while ($data = $query_index_icons->fetch_assoc()){
+        $main->setContent("index_icons", $data['content']);
+    }
+
+    $query_furniture_sentence = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_furniture_sentence'");
+    while ($data = $query_furniture_sentence->fetch_assoc()){
+        $main->setContent("furniture_sentence", $data['content']);
+    }
+
+    $query_index_description = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_description'");
+    while ($data = $query_index_description->fetch_assoc()){
+        $main->setContent("index_description", $data['content']);
+    }
+
+    $query_index_image= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_image'");
+    while ($data = $query_index_image->fetch_assoc()){
+        $main->setContent("index_image", $data['content']);
+    }
+
+    $query_index_slider= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_slider'");
+    while ($data = $query_index_slider->fetch_assoc()){
+        $main->setContent("index_slider", $data['content']);
+    }
+
+
+   
+
     $main->close();
 ?>
