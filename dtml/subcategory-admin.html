@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,300,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Damion" rel="stylesheet" type="text/css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+    <link rel="stylesheet" href="dtml/css/style-dash.css">
+    <title>Administration dashboard</title>
+</head>
+
+<body>
+    <!--sidebar nav-->
+    <div class="sidebar">
+        <div class="logo-wrapper">
+            <img src="dtml/images/logo.svg" alt="reWood" class="logo" />
+        </div>
+        <a href="admin.php">
+            <ion-icon name="home"></ion-icon>
+            <div class="text">Dashboard</div>
+        </a>
+        <a href="contacts-editor.php">
+            <ion-icon name="chatbubbles"></ion-icon>
+            <div class="text">Info Company</div>
+        </a>
+        <a href="index-editor.php">
+             <ion-icon name="browsers"></ion-icon>
+                <div class="text">Index Editor</div>
+        </a>
+        <a href="slider-editor.php">
+            <ion-icon name="images"></ion-icon>
+            <div class="text">Slider</div>
+        </a>
+        <a href="product-admin.php">
+            <ion-icon name="cube"></ion-icon>
+            <div class="text">Products</div>
+        </a>
+        <a href="category-admin.php" class="active">
+            <ion-icon name="file-tray-stacked"></ion-icon>
+            <div class="text">Categories</div>
+        </a>
+        <a href="catalog-admin.php">
+            <ion-icon name="book"></ion-icon>
+            <div class="text">Catalogs</div>
+        </a>
+        <a href="page-editor.php">
+            <ion-icon name="newspaper"></ion-icon>
+            <div class="text">EDIT PAGES</div>
+        </a>
+
+        <a class="tablink logout" href="logout.php">
+            <ion-icon name="log-out"></ion-icon>
+            <div class="text">Logout</div>
+        </a>
+    </div>
+    <!--end sidebar nav-->
+    <div class="wrapper">
+        <div class="main-content" style="grid-column: 5 / span 6; margin-right: 0;">
+            <div class="flex-container" style="justify-content: start; column-gap: 20px;">
+                <a href="category-admin.php" style="color: black; text-decoration: none;"><ion-icon name="arrow-back" style="width: 35px; height: 35px"></ion-icon></a>
+                <h1>SUBCATEGORIES</h1>
+            </div>
+            
+
+            <div class="form-box">
+                <form action="" method="post"  autocomplete="off" >
+                    <label for="name">Subcategory name:</label>
+                    <input type="text" name="name" id="name">
+                    <input type="submit" class="sub-btn" name="insert" value="insert">
+                </form>
+            </div>
+
+            <div class="table-container" style="margin: 20px 0  30px; height: 450px;">
+                <table class="custom-table" style="width: 98%;">
+                    <thead>
+                        <tr>
+                            <th class="id">ID</th>
+                            <th>Name</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <[foreach]>
+                            <tr>
+                                <td style='width: 35px;'><[id]></td>
+                                <td style=><[name]></td>
+                                <td class="btn-container">
+                                    <[btn_form]>
+                                </td>
+                            </tr>
+                        <[/foreach]>
+                    </tbody>
+                </table>
+            </div>
+
+            <h1 style="color: red;"><[message]></h1>
+            
+        </div>
+    </div>
+    <[script]>
+</body>
+
+</html>

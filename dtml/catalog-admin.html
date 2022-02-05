@@ -57,7 +57,7 @@
         </a>
         <a href="page-editor.php">
             <ion-icon name="newspaper"></ion-icon>
-            <div class="text">Edit Page</div>
+            <div class="text">EDIT PAGES</div>
         </a>
 
         <a class="tablink logout" href="logout.php">
@@ -79,6 +79,7 @@
                     <thead>
                         <tr>
                             <th class="id">ID</th>
+                            <th>Image</th>
                             <th>Name</th>
                             <th>Date of creation</th>
                             <th class="desc">Description</th>
@@ -88,9 +89,10 @@
                     <tbody>
                         <[foreach]>
                             <tr>
-                                <td><[id]></td>
-                                <td><[name]></td>
-                                <td><[date]></td>
+                                <td style='width: 35px;'><[id]></td>
+                                <td style='width: 60px;'><[image]></td>
+                                <td style='width: 12%;'><[name]></td>
+                                <td style='width: 10%;'><[date]></td>
                                 <td class="desc"><[desc]></td>
                                 <td class="btn-container">
                                     <[btn_form]>

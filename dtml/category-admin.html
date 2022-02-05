@@ -55,9 +55,10 @@
             <ion-icon name="book"></ion-icon>
             <div class="text">Catalogs</div>
         </a>
+
         <a href="page-editor.php">
             <ion-icon name="newspaper"></ion-icon>
-            <div class="text">Edit Page</div>
+            <div class="text">EDIT PAGES</div>
         </a>
 
         <a class="tablink logout" href="logout.php">
@@ -74,11 +75,12 @@
                     <button id="openForm" class="add-btn" onclick="document.getElementById('insert').style.display='block'"><ion-icon name="add-circle"></ion-icon></button>
                 </button>
             </div>
-            <div class="table-container" style="margin-top: 20px;">
+            <div class="table-container" style="margin: 20px 0  30px; height: 480px;">
                 <table class="custom-table">
                     <thead>
                         <tr>
                             <th class="id">ID</th>
+                            <th>Image</th>
                             <th>Name</th>
                             <th class="desc">Description</th>
                             <th></th>
@@ -87,8 +89,9 @@
                     <tbody>
                         <[foreach]>
                             <tr>
-                                <td><[id]></td>
-                                <td><[name]></td>
+                                <td style='width: 35px;'><[id]></td>
+                                <td style='width: 60px;'><[image]></td>
+                                <td style='width: 10%;'><[name]></td>
                                 <td class="desc"><[desc]></td>
                                 <td class="btn-container">
                                     <[btn_form]>
@@ -98,7 +101,7 @@
                     </tbody>
                 </table>
             </div>
-
+            <span class="span-btn"><a href="subcategory-admin.php"></a></span>
             <div id="insert" class="modal">
                 <div class="modal-content">
                   <div class="content-container">
@@ -108,7 +111,7 @@
                         <p class="message error"><[message]></p>
                         <div class="flex-container-form">
                             <div class="left-content">
-                                <input type="text" name="name" placeholder="Name" required/>
+                                <input type="text" name="name" placeholder="Name"  required/>
                                 <textarea id="insert-editor" name="desc" placeholder="Description" required></textarea>
                             </div>
                             <div class="right-content">
@@ -116,6 +119,11 @@
                                     <label for="files" class="btn">Select Image: </label>
                                     <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
                                 </div>
+                                <h4>This category contains:</h4>
+                                <select id="subcategories" name="subcategory[]" form="insert-form" style="height: 225px;" multiple>
+                                    <option value="" selected disabled hidden>Choose subcategory</option>
+                                    <[subcategory::select table="subcategory" key="id_subcategory" value="name" library="widget"]>
+                                </select>
                             </div>
                         </div>
                   
@@ -136,13 +144,21 @@
                     <form autocomplete="off" id="edit-form" enctype="multipart/form-data" class="form" action="" method="post">
                         <p class="message error"><[message_edit]></p>
                         <div class="flex-container-form">
-                           <[left_content]>
+                            <div class="left-content">
+                                <input type='text' name='id' value='<[edit_id]>' hidden/>
+                                <input type="text" name="name" placeholder="Name" value='<[edit_name]>' required/>
+                                <textarea id="edit-editor" name="desc" placeholder="Description" required><[edit_desc]></textarea>
+                            </div>
                             <div class="right-content">
-                                <[right_content]>
                                 <div class="images-up-container" style="margin-top: 10px;">
                                     <label for="files" class="btn">Select Image: </label>
                                     <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
                                 </div>
+                                <h4>This category contains:</h4>
+                                <select id="subcategories" name="subcategory[]" form="edit-form" style="height: 225px;" multiple>
+                                    <option value="" selected disabled hidden>Choose subcategory</option>
+                                    <[subcategory::select table="subcategory" key="id_subcategory" value="name" library="widget"]>
+                                </select>
                             </div>
                         </div>
                         <div class="buttons">

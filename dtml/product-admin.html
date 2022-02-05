@@ -58,7 +58,7 @@
            </a>
            <a href="page-editor.php">
                <ion-icon name="newspaper"></ion-icon>
-               <div class="text">Edit Page</div>
+               <div class="text">EDIT PAGES</div>
            </a>
 
            <a class="tablink logout" href="logout.php">
@@ -132,7 +132,7 @@
                                     
                                     <div class="flex-container">
                                         <input type="number" name="pieces" placeholder="Pieces" required>
-                                        <input type="text" name="price" placeholder="Price" required>
+                                        <input type="number" name="price" placeholder="Price" required>
                                     </div>
                                     
                                 </div>
@@ -142,11 +142,15 @@
                                     <input type="text" name="material" placeholder="Material"required/>
 
                                    
-                                    <select id="categories" name="category[]" form="insert-form" style="height: 120px;" required multiple>
+                                    <select id="categories" name="category[]" form="insert-form" style="height: 60px;" required multiple>
                                         <option value="" selected disabled hidden>Choose category</option>
                                         <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-                                    <select id="catalogs" name="catalog[]" form="insert-form" style="height: 120px;" multiple>
+                                    <select id="subcategories" name="subcategory[]" form="insert-form" style="height: 60px;"required multiple>
+                                        <option value=""  disabled>Choose subcategory</option>
+                                        <[subcategory::select table="subcategory" key="id_subcategory" value="name" library="widget"]>
+                                    </select>
+                                    <select id="catalogs" name="catalog[]" form="insert-form" style="height: 80px;" multiple>
                                         <option value="" selected disabled hidden>Choose catalog</option>
                                         <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
@@ -174,12 +178,16 @@
                                 <[left_content]>
                                 <div class='right-content'>
                                     <[right_content]>
-                                    <select id="categories" name="category[]" form="edit-form" style="height: 120px;"required multiple>
-                                        <option value="" selected disabled hidden>Choose category</option>
+                                    <select id="categories" name="category[]" form="edit-form" style="height: 60px;"required multiple>
+                                        <option value=""  disabled >Choose category</option>
                                         <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-                                    <select id="catalogs" name="catalog[]" form="edit-form" style="height: 120px;" multiple>
-                                        <option value="" selected disabled hidden>Choose catalog</option>
+                                    <select id="subcategories" name="subcategory[]" form="edit-form" style="height: 60px;"required multiple>
+                                        <option value=""  disabled>Choose subcategory</option>
+                                        <[subcategory::select table="subcategory" key="id_subcategory" value="name" library="widget"]>
+                                    </select>
+                                    <select id="catalogs" name="catalog[]" form="edit-form" style="height: 80px;" multiple>
+                                        <option value=""  disabled >Choose catalog</option>
                                         <[catalog::select table="catalog" key="id_catalog" value="name" library="widget"]>
                                     </select>
                                     
