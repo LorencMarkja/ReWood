@@ -184,6 +184,7 @@ tr:nth-child(even) {
 }
 
 .btn-container{
+    height: 60px;
     display: flex;
     justify-content: space-between;
 }
@@ -530,3 +531,67 @@ input[type=number] {
     background-color: #444444;
     color: #fff;
  }
+
+ span.span-btn{
+    position: relative;
+    display: inline-flex;
+    width: 250px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  span.span-btn a{
+    font-size: 18px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .30s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  span.span-btn a:before,
+  span.span-btn a:after{
+    position: absolute;
+    content: "MANAGE SUBCATEGORIES";
+    height: 55px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #383838;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span.span-btn a:before{
+    color: #fff;
+    background: #383838;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span.span-btn a:after{
+    color: #383838;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  span.span-btn a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+.form-box{
+    margin: 20px 0;  
+}
+.form-box form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+.form-box form input[type="text"]{
+    width: 57%;
+}
+.form-box form .sub-btn{
+    width: 100px;
+    height: 30px;
+    background-color: #c2c2c2;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 900;
+}

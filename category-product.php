@@ -5,7 +5,7 @@ require "include/template2.inc.php";
 
 $main = new Template("dtml/shop-fullwidth.html");
 require "include/isLogged.inc.php";
-
+require "include/info_company.inc.php";
 
 session_start();
 $usernameLogged=$_SESSION['username'];

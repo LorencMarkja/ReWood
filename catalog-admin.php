@@ -5,11 +5,13 @@
     $main = new Template("dtml/catalog-admin.html");
     require "include/auth.inc.php";
 
-    $catalog_info = $mysqli->query("SELECT * FROM rewood.catalog ORDER BY id_catalog DESC");
+    $catalog_info = $mysqli->query("SELECT * FROM rewood.catalog ORDER BY creation_date DESC");
 
     while ($data = $catalog_info->fetch_assoc()) {
         $id=$data['id_catalog'];
         $main->setContent("id", $id);
+        $img = $data['image'];
+        $main->setContent("image", "<img src='dtml/images/catalog-images/$img' style='width: 45px; height: 45px;' alt='category image'>");
         $main->setContent("name", $data['name']);
         $main->setContent("date", $data['creation_date']);
         $main->setContent("desc", $data['description']);

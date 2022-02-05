@@ -38,6 +38,7 @@
             $weight = $_REQUEST['weight'];
             $material =  $_REQUEST['material'];
             $categories = $_REQUEST['category'];
+            $subcategories = $_REQUEST['subcategory'];
             $catalogs = $_REQUEST['catalog'];
 
             $front = $_FILES["front_img"]["name"];
@@ -70,7 +71,43 @@
                     '$side',
                     '$last_id')";
                 
+                if(!mysqli_query($mysqli, $feature_ins)){
+                    $main->setContent("message", "ERROR! product not created!");
+                }
+                   
+                if(!mysqli_query($mysqli, $images_ins)){
+                    $main->setContent("message", "ERROR! product not created!");
+                }
+                
                 foreach($categories as $category){
+                    
+                    foreach($subcategories as $subcategory){
+                        $check_relation=$mysqli->query("SELECT COUNT(category) as nRow FROM category_subcategory WHERE category = '$category' AND subcat = '$subcategory'");
+                        $res = mysqli_fetch_array($check_relation);
+                        if ($res['nRow'] < 1) {
+                            $insert_rel="INSERT INTO category_subcategory  VALUES (
+                                0,
+                                '$category',
+                                '$subcategory')";
+                            $flag = mysqli_query($mysqli, $insert_rel);
+
+                            if(!$flag){
+                                $main->setContent("message", "ERROR! product not created!");
+                            }
+                        }
+
+                        $prod_subcat = "INSERT INTO product_subcategory  VALUES (
+                            0,
+                            '$subcategory',
+                            '$last_id')";
+                        $flag = mysqli_query($mysqli, $prod_subcat);
+
+                        if(!$flag){
+                            $main->setContent("message", "ERROR! product not created!");
+                        }
+
+                    }
+
                     $prod_cat = "INSERT INTO product_category  VALUES (
                         0,
                         '$last_id',
@@ -95,15 +132,7 @@
                         $main->setContent("message", "ERROR! product not created!");
                     }
                 }
-                                       
-
-                if(!mysqli_query($mysqli, $feature_ins)){
-                    $main->setContent("message", "ERROR! product not created!");
-                }
-                   
-                if(!mysqli_query($mysqli, $images_ins)){
-                    $main->setContent("message", "ERROR! product not created!");
-                }
+                                    
 
                 $main->setContent("script", "<script type='text/javascript'> 
                     if ( window.history.replaceState ) {
@@ -192,6 +221,7 @@
         $weight = $_POST['weight'];
         $material =  $_POST['material'];
         $categories = $_REQUEST['category'];
+        $subcategories = $_REQUEST['subcategory'];
         $catalogs = $_REQUEST['catalog'];
 
         $front = $_FILES["front_img"]["name"];
@@ -233,10 +263,39 @@
             }
         }
 
-        if(isset($_REQUEST["category"])){
-            $delete = $mysqli->query("DELETE FROM product_category WHERE product='$id'");
+        if(isset($_REQUEST["category"]) && isset($_REQUEST["subcategory"])){
+            $delete1 = $mysqli->query("DELETE FROM product_category WHERE product='$id'");
+            $delete2 = $mysqli->query("DELETE FROM product_subcategory WHERE product='$id'");
             
             foreach($categories as $category){
+                
+                foreach($subcategories as $subcategory){
+                    $check_relation=$mysqli->query("SELECT COUNT(category) as nRow FROM category_subcategory WHERE category = '$category' AND subcat = '$subcategory'");
+                    $res = mysqli_fetch_array($check_relation);
+                    if ($res['nRow'] < 1) {
+                        $insert_rel="INSERT INTO category_subcategory  VALUES (
+                            0,
+                            '$category',
+                            '$subcategory')";
+                        $flag = mysqli_query($mysqli, $insert_rel);
+
+                        if(!$flag){
+                            $main->setContent("message", "ERROR! product not created!");
+                        }
+                    }
+
+                    $prod_subcat = "INSERT INTO product_subcategory  VALUES (
+                        0,
+                        '$subcategory',
+                        '$id')";
+                    $flag = mysqli_query($mysqli, $prod_subcat);
+
+                    if(!$flag){
+                        $main->setContent("message", "ERROR! product not created!");
+                    }
+
+                }
+
                 $update_cat = "INSERT INTO product_category  VALUES (
                     0,
                     '$id',
