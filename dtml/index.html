@@ -254,10 +254,10 @@
                         <div class="uk-grid uk-margin-medium-top">
                             <div class="uk-width-3-5 uk-width-medium-1-2 uk-width-small-1-1">
                                 <div class="uk-panel idz-product-panel left uk-text-contrast">
-                                    <img src="dtml\images\portfolio-big\wood-palette.jpg" alt="wood palette" style="width: 60%; height: 388px;" class="uk-align-right">
-                                    <h1 class="uk-text-contrast uk-margin-medium-top">Modern</h1>
+                                    <img src="dtml\images\catalog-images\<[catalog_image]>" alt="wood palette" style="width: 60%; height: 388px;" class="uk-align-right">
+                                    <h1 class="uk-text-contrast uk-margin-medium-top"> <[catalog_name]> </h1>
                                     <p class="uk-text-large">Style Furnitures</p>
-                                    <a class="uk-button uk-button-small idz-button-white uk-margin-medium-top uk-hidden-medium uk-hidden-small" href="catalog-products.php?id=5">Shop Now</a>
+                                    <a class="uk-button uk-button-small idz-button-white uk-margin-medium-top uk-hidden-medium uk-hidden-small" href="catalog-products.php?id=<[catalog_id]>">Shop Now</a>
                                 </div>
                             </div>
                             <div class="uk-width-2-5 uk-width-medium-1-2 uk-width-small-1-1">
@@ -277,38 +277,17 @@
                 <div class="uk-grid">
                     <div class="uk-width-1-1 uk-margin-medium-bottom">
                         <div class="uk-grid uk-grid-divider">
+                            <[foreach]>
                             <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
-                                <img src="dtml/images/category-images/chairs.jpg" alt="category-image" class="uk-align-center custom-img-category">
-                                <a href="category-product.php?id=1">
+                               
+                                <img src="dtml/images/category-images/<[category_image]>" alt="category-image" class="uk-align-center custom-img-category">
+                                <a href="category-product.php?id=<[category_id]>">
                                     <p class="uk-margin-bottom-remove">Shop</p>
-                                    <h3 class="uk-margin-top-remove">Chairs</h3>
+                                    <h3 class="uk-margin-top-remove"><[category_name]></h3>
                                     <i class="uk-icon-arrow-circle-o-right"></i>
                                 </a>
                             </div>
-                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
-                                <img src="dtml/images/category-images/tables.jpg" alt="category image" class="uk-align-center custom-img-category">
-                                <a href="category-product.php?id=2">
-                                    <p class="uk-margin-bottom-remove">Shop</p>
-                                    <h3 class="uk-margin-top-remove">Tables</h3>
-                                    <i class="uk-icon-arrow-circle-o-right"></i>
-                                </a>
-                            </div>
-                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
-                                <img src="dtml/images/category-images/bedroom.jpg" alt="category image" class="uk-align-center custom-img-category">
-                                <a href="category-product.php?id=3">
-                                    <p class="uk-margin-bottom-remove">Shop</p>
-                                    <h3 class="uk-margin-top-remove">Bedroom</h3>
-                                    <i class="uk-icon-arrow-circle-o-right"></i>
-                                </a>
-                            </div>
-                            <div class="uk-width-1-4 uk-width-medium-1-2 uk-width-small-1-1 idz-home3">
-                                <img src="dtml/images/category-images/office.jpg" alt="category image" class="uk-align-center custom-img-category">
-                                <a href="category-product.php?id=6">
-                                    <p class="uk-margin-bottom-remove">Shop</p>
-                                    <h3 class="uk-margin-top-remove">Office</h3>
-                                    <i class="uk-icon-arrow-circle-o-right"></i>
-                                </a>
-                            </div>
+                            <[/foreach]>
                         </div>
                     </div>
                 </div>

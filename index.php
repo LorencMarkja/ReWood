@@ -55,6 +55,25 @@
     // $_SESSION['id_user']= $id_user;
     // $_SESSION['cart']= $id_cart;    
 
+    //dynamic catalogs
+    $last_catalog =  $mysqli->query("SELECT * from catalog ORDER BY id_catalog DESC LIMIT 1");
+    while ($data = $last_catalog->fetch_assoc()) {
+        $main->setContent("catalog_name", $data['name']);
+        $main->setContent("catalog_image", $data['image']);
+        $main->setContent("catalog_id", $data['id_catalog']);
+    
+    };
+
+    //dynamic categories
+    $last_category =  $mysqli->query("SELECT * from category ORDER BY id_category DESC LIMIT 4");
+    while ($data = $last_category->fetch_assoc()) {
+        $main->setContent("category_name", $data['name']);
+        $main->setContent("category_image", $data['image']);
+        $main->setContent("category_id", $data['id_category']);
+    
+    };
+
+
     //dynamic contents
     $query_index_icon1 = $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_icon1'");
     while ($data = $query_index_icon1->fetch_assoc()){
