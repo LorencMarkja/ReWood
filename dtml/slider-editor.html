@@ -91,8 +91,9 @@
                         <tbody>
                             <[foreach]>
                                 <tr>
-                                    <td class="img"><[img]></td>
-                                    <td class="desc"><[content_prev]></td>
+                                
+                                    <td class="img"> <img src='dtml/images/slideshow/<[slider_image]>' style='width: 85px; height: 85px;' alt='slide image'></td>
+                                    <td class="desc"><[slider_content]></td>
                                     <td class="btn-container">
                                         <[btn_form]>
                                     </td>                               
@@ -112,7 +113,7 @@
                             <div class="flex-container-form">
                                 <label for="files" class="btn">Select Image: </label>
                                 <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
-                                <textarea id="insert-editor" name="desc" placeholder="Description" required></textarea>
+                                <textarea id="insert-editor" name="slider_content" placeholder="Description" required></textarea>
                             </div>
                       
                             <div class="buttons">
@@ -134,7 +135,8 @@
                             <div class="flex-container-form">
                                 <label for="files" class="btn">Select Image: </label>
                                 <input type="file" class="file" name="img" accept="image/png, image/gif, image/jpeg">
-                                <textarea id="insert-editor" name="desc" placeholder="Description" required></textarea>
+                                <textarea id="edit-editor" name="slider_content" placeholder="Description" required><[slider_content_edit]></textarea>
+                                <[input_id]>
                             </div>
                             <div class="buttons">
                                 <input type="submit" name="edit" value="SUBMIT" class="sub-btn">
@@ -149,25 +151,11 @@
         <script>
             $(document).ready(function() {
                 $('#edit-editor').summernote({
-                    tabsize: 2,
-                    height: 90,
-                    maxHeight: 100,
-                    toolbar: [
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']]
-                    ]
+                    tabsize: 2                              
                 });
 
                 $('#insert-editor').summernote({
-                    tabsize: 2,
-                    height: 90,
-                    maxHeight: 100,
-                    toolbar: [
-                    ['font', ['bold', 'underline', 'clear']],
-                    ['color', ['color']],
-                    ['para', ['ul', 'ol', 'paragraph']]
-                    ]
+                    tabsize: 2
                 });
             });
         </script>

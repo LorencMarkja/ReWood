@@ -108,13 +108,16 @@
 
     $query_index_image= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_image'");
     while ($data = $query_index_image->fetch_assoc()){
-        $main->setContent("index_image", $data['content']);
+        $image_name = $data['content'];
+        $image_name = trim($image_name);
+        $main->setContent("index_image", $image_name);
     }
 
-//    $query_index_slider= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_slider'");
-//    while ($data = $query_index_slider->fetch_assoc()){
-//       $main->setContent("index_slider", $data['content']);
-//   }
+    $query_index_slider= $mysqli->query("SELECT * FROM slider ");
+    while ($data = $query_index_slider->fetch_assoc()){
+       $main->setContent("slider_content", $data['slider_content']);
+       $main->setContent("slider_image", $data['slider_image']);
+   }
 
 
    

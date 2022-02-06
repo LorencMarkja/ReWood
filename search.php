@@ -108,10 +108,11 @@ if (isset($_GET['category_id']) && $category_option != '10') {
         }
 
         //subcategory
-        $subcategory = $mysqli->query("SELECT * FROM subcategory WHERE category = $category_option");
+        $subcategory = $mysqli->query("SELECT * FROM cat_subcat_info WHERE id_category = $category_option");
         while ($data = $subcategory->fetch_assoc()){
             $main->setContent("id_subcat", $data['id_subcategory']);
-            $main->setContent("name_subcat", $data['name']);
+            $main->setContent("name_subcat", $data['subcategory']);
+
         }
     } else {
         $main->setContent("disabled", "hidden");
