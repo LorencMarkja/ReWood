@@ -16,7 +16,8 @@
         $main->setContent("id", $data['id_product']);
         $id=$data['id_product'];
         $main->setContent("name", $data['name']);
-        $main->setContent("desc", $data['description']);
+        $decodedString = strip_tags($data['description']);
+        $main->setContent("desc", $decodedString);
         $main->setContent("price", $data['price']);
         $main->setContent("pieces", $data['pieces']);
         $main->setContent("btn_form", 

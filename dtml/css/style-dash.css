@@ -116,7 +116,7 @@ body{
     margin-top: 60px;
 }
 .table-container {
-    height: 590px;
+    height: 500px;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -183,12 +183,15 @@ tr:nth-child(even) {
     transition: .3s all ease-in-out;
 }
 
-.btn-container{
-    height: 60px;
+
+
+.btn-container form{
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.btn-container input[type="submit"]{
+
+.btn-container form input[type="submit"]{
     border: none;
     outline: none;
     width: 45%;

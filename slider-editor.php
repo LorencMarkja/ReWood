@@ -10,7 +10,8 @@
     while ($data = $slider->fetch_assoc()) {
         $id=$data['id_slider'];
         $main->setContent("slider_image", $data['slider_image']);
-        $main->setContent("slider_content", $data['slider_content']);
+        $decodedString = strip_tags($data['slider_content']);
+        $main->setContent("slider_content", $decodedString);
         $main->setContent("btn_form", 
             "<form style='width: 100%;' method='POST'>
                 <input id='open_edit' type='submit' class='edit-btn' name='action' value='EDIT' />

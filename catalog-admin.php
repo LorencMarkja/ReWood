@@ -14,7 +14,8 @@
         $main->setContent("image", "<img src='dtml/images/catalog-images/$img' style='width: 45px; height: 45px;' alt='category image'>");
         $main->setContent("name", $data['name']);
         $main->setContent("date", $data['creation_date']);
-        $main->setContent("desc", $data['description']);
+        $decodedString = strip_tags($data['description']);
+        $main->setContent("desc", $decodedString);
         $main->setContent("btn_form", 
             "<form style='width: 100%;' method='POST'>
                 <input id='open_edit' type='submit' class='edit-btn' name='action' value='EDIT' />
