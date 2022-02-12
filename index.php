@@ -108,8 +108,10 @@
 
     $query_index_image= $mysqli->query("SELECT * FROM index_page WHERE section_name = 'index_image'");
     while ($data = $query_index_image->fetch_assoc()){
+        
         $image_name = $data['content'];
-        $image_name = trim($image_name);
+        $decodedString = strip_tags($image_name);
+        $image_name = trim($decodedString);
         $main->setContent("index_image", $image_name);
     }
 

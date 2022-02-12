@@ -178,11 +178,11 @@
                                 <[left_content]>
                                 <div class='right-content'>
                                     <[right_content]>
-                                    <select id="categories" name="category[]" form="edit-form" style="height: 60px;"required multiple>
+                                    <select id="categories" name="category[]" form="edit-form" style="height: 60px;" multiple>
                                         <option value=""  disabled >Choose category</option>
                                         <[category::select table="category" key="id_category" value="name" library="widget"]>
                                     </select>
-                                    <select id="subcategories" name="subcategory[]" form="edit-form" style="height: 60px;"required multiple>
+                                    <select id="subcategories" name="subcategory[]" form="edit-form" style="height: 60px;" multiple>
                                         <option value=""  disabled>Choose subcategory</option>
                                         <[subcategory::select table="subcategory" key="id_subcategory" value="name" library="widget"]>
                                     </select>

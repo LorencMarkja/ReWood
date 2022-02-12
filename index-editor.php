@@ -49,9 +49,8 @@
         $id1 = $_POST['id_index'];
         $name1 =  $_POST['sname'];
         $content1 = $_POST['content'];
-        $decodedString = strip_tags($content1);
 
-        $update_index="UPDATE index_page SET section_name = '$name1', content = '$decodedString' WHERE id_index = '$id1'"; 
+        $update_index="UPDATE index_page SET section_name = '$name1', content = '$content1' WHERE id_index = '$id1'"; 
    
         if(!mysqli_query($mysqli, $update_index)){
             $main->setContent("message_edit", "ERROR! section not updated!");

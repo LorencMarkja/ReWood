@@ -5,13 +5,10 @@
 
     session_start();
     $id_user=$_SESSION['id_user'];
-
-
     
     $main = new Template("dtml/product-page.html");
     require "include/isLogged.inc.php";
     require "include/info_company.inc.php";
-
 
     $check_idWishlist="SELECT id_wishlist FROM wishlist where user='$id_user'";
     $run1=mysqli_query($mysqli,$check_idWishlist);
@@ -44,7 +41,7 @@
         $name_categ = $data["name"];
         $id_cat= $data["id_category"];
         $category_array[]=$id_cat;
-        $main->setContent("category", "<a href='category-product.php?id=$id_cat'>$name_categ</a>");
+        $main->setContent("category_name", "<a href='category-product.php?id=$id_cat'>$name_categ</a>");
     }
 
     $product_catalog = $mysqli->query("SELECT catalog.* FROM product_catalog AS p_cat INNER JOIN catalog ON p_cat.catalog = catalog.id_catalog WHERE p_cat.product='$id_prod'");
